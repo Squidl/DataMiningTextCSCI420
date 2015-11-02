@@ -43,7 +43,7 @@ def add_files_inter():
 
 settings_path="source_settings"
 text=None
-raw=None
+cached={}
 try:
     with open(settings_path) as settingsfile:
         text=pickle.load(settingsfile)
@@ -65,6 +65,14 @@ if __name__=="__main__":
                 text["dat"][k]=newau
     with open(settings_path,'w') as settingsfile:
         pickle.dump(text,settingsfile)
-raw=[]
-for k in text["dat"].keys():
-    raw.append(load_texts(k,text["dat"][k]))
+
+def get(name,cache=True):
+    if cache and name in cached:
+        return cached[name]
+    else:
+        result=load_texts(name,text["dat"][name])
+        cached[name]=result
+        return result
+
+def getnames():
+    return text["dat"].keys()

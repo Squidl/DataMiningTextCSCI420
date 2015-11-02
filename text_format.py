@@ -20,8 +20,16 @@ class sentence:
 class word:
     def __init__(self,data):
         self.text=data
+cached={}
 
-texts=[]
-for x in load_texts.raw:
-    texts.append(book(x[1],x[2]))
+def get(name,cache=True):
+    if name in cached:
+        return cached[name]
+    else:
+        raw=load_texts.get(name,cache=cache)
+        dat=book(raw[1],raw[2])
+        cached[name]=dat
+        return dat
 
+def getnames():
+    return load_texts.getnames()
