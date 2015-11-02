@@ -13,15 +13,7 @@ def load_texts(name,auth):
     ind = data.find("*** END OF THIS PROJECT")
     if ind != -1:
         data=data[:ind]
-    data=data.splitlines()
-    newdata=[]
-    lastnl=0
-    for i in range(len(data)):
-        if data[i] == "":
-            newdata.append(" ".join(data[lastnl:i]))
-            lastnl=i
-    data=newdata
-    return [name,auth,data]
+    return (name,auth,data)
 
 def isyes(inp):
     return inp[0]=="y" or inp[0]=="Y"
@@ -51,28 +43,28 @@ def add_files_inter():
 
 settings_path="source_settings"
 text=None
+raw=None
 try:
     with open(settings_path) as settingsfile:
         text=pickle.load(settingsfile)
 except:
     text={"dir":"texts",
           "dat":{}}
-print("source")
-print("filename\t\tAuthor")
-for k in text["dat"].keys():
-    print("%s\t\t%s"%(k,text["dat"][k]))
-if isyes( raw_input("Would you like to add files to source?") ):
-    add_files_inter()
-if isyes( raw_input("Would you like to modify the files?") ):
+if __name__=="__main__":
+    print("source")
+    print("filename\t\tAuthor")
     for k in text["dat"].keys():
-        peek(k)
-        newau=raw_input("Author for "+k+":")
-        if newau.strip() != "":
-            text["dat"][k]=newau
-with open(settings_path,'w') as settingsfile:
-    pickle.dump(text,settingsfile)
+        print("%s\t\t%s"%(k,text["dat"][k]))
+    if isyes( raw_input("Would you like to add files to source?") ):
+        add_files_inter()
+    if isyes( raw_input("Would you like to modify the files?") ):
+        for k in text["dat"].keys():
+            peek(k)
+            newau=raw_input("Author for "+k+":")
+            if newau.strip() != "":
+                text["dat"][k]=newau
+    with open(settings_path,'w') as settingsfile:
+        pickle.dump(text,settingsfile)
 raw=[]
 for k in text["dat"].keys():
     raw.append(load_texts(k,text["dat"][k]))
-
-#print(raw)
