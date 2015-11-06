@@ -1,4 +1,5 @@
 import load_texts
+import string
 
 class book:
     def __init__(self,author,data):
@@ -8,14 +9,26 @@ class book:
 class chapter:
     def __init__(self,data):
         self.paragraphs=[paragraph(x) for x in data.split("\n\n")]
+        
+    def get_words(self):
+        words = [paragraph.get_words() for paragraph in self.paragraphs]
+        return [item for sublist in words for item in sublist]
 
 class paragraph:
     def __init__(self,data):
         self.sentences=[sentence(x) for x in data.split(".")]
+        
+    def get_words(self):
+        words = [sentence.get_words() for sentence in self.sentences]
+        return [item for sublist in words for item in sublist]
 
 class sentence:
     def __init__(self,data):
         self.words=[word(x) for x in data.split(" ")]
+
+    def get_words(self):
+        words = [string.lower(word.text) for word in self.words]
+        return filter(lambda x : not x in string.punctuation, words)
 
 class word:
     def __init__(self,data):
