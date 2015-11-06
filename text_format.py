@@ -19,7 +19,11 @@ class sentence:
 
 class word:
     def __init__(self,data):
-        self.text=data
+        self.text=data.strip()
+    def __str__(self):
+        return self.text
+    def __repr__(self):
+        return self.__str__()
 cached={}
 
 def get(name,cache=True):

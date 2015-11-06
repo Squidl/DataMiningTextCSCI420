@@ -8,7 +8,8 @@ import pickle
 
 def stat_record(name,sample):
     record={
-        "name":name
+        "name":name,
+        "author":sample.author,
         }
     return record
 
