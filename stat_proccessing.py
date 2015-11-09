@@ -1,7 +1,8 @@
 import numpy as np
 
 def proccess_book(book):
-    data = filter(None, [proccess_chapter(x) for x in book.chapters])
+    for chapter in book.chapters:
+        proccess_chapter(chapter)
 
 def proccess_chapter(chapter):
     words = chapter.get_words()
@@ -9,16 +10,21 @@ def proccess_chapter(chapter):
         #Get the lexical richness, and the average length per paragraph
         lex_rich = float(len(words)) / len(set(words))
         sents_per_pp = np.array([len(x.sentences) for x in chapter.paragraphs])
-        
         #Get the average length per sentence, comma per sentence, and semicolon per sentence
         (ls, cs, ss) = get_frequencies(chapter)
         words_per_sent = np.array(ls)
         commas_per_sent = np.array(cs)
         semis_per_sent = np.array(ss)
         
-        return (lex_rich, sents_per_pp.mean(), sents_per_pp.std(), words_per_sent.mean(),
-                words_per_sent.std(), commas_per_sent.mean(), semis_per_sent.mean())
-    return None
+        chapter.stat_features = {
+            "lex_rich": lex_rich,
+            "sents_pp_mean": sents_per_pp.mean(),
+            "sents_pp_std" : sents_per_pp.std(),
+            "words_sent_mean" : words_per_sent.mean(),
+            "words_sent_std" : words_per_sent.std(),
+            "commas_sent_mean" : commas_per_sent.mean(),
+            "semis_sent_mean" : semis_per_sent.mean()
+        }
         
 def get_frequencies(chapter):
     """ Compute lengths, comma counts, and semicolon counts for each paragraph in a chapter """
