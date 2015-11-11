@@ -13,6 +13,7 @@ def load_texts(name,auth):
     ind = data.find("*** END OF THIS PROJECT")
     if ind != -1:
         data=data[:ind]
+    data=data.encode('unicode_escape')
     return (name,auth,data)
 
 def isyes(inp):

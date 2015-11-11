@@ -1,5 +1,9 @@
-import load_texts
+from nltk import data as nltk_data, word_tokenize
 import string
+
+import load_texts
+
+sent_detector = nltk_data.load('tokenizers/punkt/english.pickle')
 
 class book:
     def __init__(self,author,data):
@@ -16,7 +20,7 @@ class chapter:
 
 class paragraph:
     def __init__(self,data):
-        self.sentences=[sentence(x) for x in data.split(".")]
+        self.sentences=[sentence(x) for x in sent_detector.tokenize(data)]
         
     def get_words(self):
         words = [sentence.get_words() for sentence in self.sentences]
@@ -24,7 +28,7 @@ class paragraph:
 
 class sentence:
     def __init__(self,data):
-        self.words=[word(x) for x in data.split(" ")]
+        self.words=[word(x) for x in word_tokenize(data)]
 
     def get_words(self):
         words = [string.lower(word.text) for word in self.words]
