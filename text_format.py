@@ -13,6 +13,7 @@ class book:
 class chapter:
     def __init__(self,data):
         self.paragraphs=[paragraph(x) for x in data.split("\n\n")]
+        self.stat_features = None
         
     def get_words(self):
         words = [paragraph.get_words() for paragraph in self.paragraphs]
