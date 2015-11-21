@@ -1,12 +1,21 @@
 import numpy as np
+import nltk
+from sklearn.feature_extraction.text import CountVectorizer
 
 def proccess_book(book):
     for chapter in book.chapters:
-        proccess_chapter(chapter)
+        proccess_chapter(chapter, book.author)    
 
-def proccess_chapter(chapter):
+def truncate(f, n):
+    s = '{}'.format(f)
+    if 'e' in s or 'E' in s:
+        return '{0:.{1}f}'.format(f, n)
+    i, p, d = s.partition('.')
+    return '.'.join([i, (d+'0'*n)[:n]])
+
+def proccess_chapter(chapter, author):
     words = chapter.get_words()
-    if len(words) > 100:
+    if len(words) > 500:
         #Get the lexical richness, and the average length per paragraph
         lex_rich = float(len(words)) / len(set(words))
         sents_per_pp = np.array([len(x.sentences) for x in chapter.paragraphs])
@@ -16,14 +25,19 @@ def proccess_chapter(chapter):
         commas_per_sent = np.array(cs)
         semis_per_sent = np.array(ss)
         
+        top_ten = nltk.FreqDist(words).most_common(10)
+        top_ten_frequencies = [float(freq * 100) / len(words) for (word,freq) in top_ten]
+        
         chapter.stat_features = {
+            "author" : author,
             "lex_rich": lex_rich,
             "sents_pp_mean": sents_per_pp.mean(),
             "sents_pp_std" : sents_per_pp.std(),
             "words_sent_mean" : words_per_sent.mean(),
             "words_sent_std" : words_per_sent.std(),
             "commas_sent_mean" : commas_per_sent.mean(),
-            "semis_sent_mean" : semis_per_sent.mean()
+            "semis_sent_mean" : semis_per_sent.mean(),
+            "word_sparsity" : top_ten_frequencies
         }
         
 def get_frequencies(chapter):
