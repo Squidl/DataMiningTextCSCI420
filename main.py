@@ -14,37 +14,25 @@ def stat_record(name,sample):
         }
     return record
 
-
-combinedInitialized = False
-combinedFileName = 'stat/combined.csv'
-
 def print_csv_files(book, filename):
     global combinedInitialized
     if filename.endswith('.txt'):
         filename = filename[:-4]
     with open(filename + '.csv', 'wb') as f:
         header = ["author", "lex_rich", "sents_pp_mean", "sents_pp_std", "words_sent_mean",
-                  "words_sent_std", "commas_sent_mean", "semis_sent_mean", "word_sparsity"]
+                  "words_sent_std", "commas_sent_mean", "semis_sent_mean"]
+        header2 = ["w_spars_{}".format(i+1) for i in range(0, 10)]
         writer = csv.writer(f)
-        totalFile = open(combinedFileName, 'a')
-        writer2 = csv.writer(totalFile)
-        writer.writerow(header)
-        if not combinedInitialized:
-            writer2.writerow(header)
-            combinedInitialized = True
+        writer.writerow(header + header2)
         for chapter in book.chapters:
             if chapter.stat_features != None:
                 data = [chapter.stat_features[key] for key in header]
-                writer.writerow(data)
-                writer2.writerow(data)
-        totalFile.close()
-        
+                data += chapter.stat_features["word_sparsity"]
+                writer.writerow(data)        
 
 def main(args):
     samples=[]
     records=[]
-    if(os.path.isfile(combinedFileName)):
-        os.remove(combinedFileName)
     for x in text_format.getnames():
         sample=None
         record=None

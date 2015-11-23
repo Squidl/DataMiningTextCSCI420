@@ -1,6 +1,5 @@
 import numpy as np
 import nltk
-from sklearn.feature_extraction.text import CountVectorizer
 
 def proccess_book(book):
     for chapter in book.chapters:
