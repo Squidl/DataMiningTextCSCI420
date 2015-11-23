@@ -26,7 +26,7 @@ def print_csv_files(record, filename):
     if filename.endswith('.txt'):
         filename = filename[:-4]
     with open(filename + '.csv', 'wb') as f:
-        header = ["author", "lex_rich", "sents_pp_mean", "sents_pp_std", "words_sent_mean",
+        header = ["author", "chapter_number", "lex_rich", "sents_pp_mean", "sents_pp_std", "words_sent_mean",
                   "words_sent_std", "commas_sent_mean", "semis_sent_mean"]
         header2 = ["w_spars_{}".format(i+1) for i in range(0, 10)]
         writer = csv.writer(f)
@@ -38,8 +38,10 @@ def print_csv_files(record, filename):
             if not combinedInitialized:
                 writer2.writerow(header + header2)
                 combinedInitialized = True
-        for chapter in record["chapters"]:
+        for i in range(len(record["chapters"])):
+            chapter=record["chapters"][i]
             if chapter != None:
+                chapter["chapter_number"]=i
                 data = [chapter[key] for key in header]
                 data += chapter["word_sparsity"]
                 writer.writerow(data)
