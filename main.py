@@ -8,6 +8,7 @@ import argparse
 import os
 import pickle
 import csv
+from threading import Thread
 
 def stat_record(name,sample):
     record={
@@ -50,9 +51,27 @@ def print_csv_files(record, filename):
         if totalFile is not None:
             totalFile.close()
 
+def paraiter(x,resultplace,force=False):
+    filepath="stat/"+x
+    record=None
+    if ( not os.path.exists(filepath) ) or args.force:
+        print("Loading file : {}.".format(x))
+        sample=text_format.get(x)
+        print(len(sample.chapters))
+        text_proccessing.proccess_book(sample)
+        stat_proccessing.proccess_book(sample)
+        record=stat_record(x,sample)
+        with open(filepath,"w") as statfile:
+            pickle.dump(record,statfile)
+    else:
+        with open(filepath) as statfile:
+            record=pickle.load(statfile)
+    print_csv_files(record, filepath)
+    resultplace.append(record)
+
 def main(args):
-    records=[]
     texts=[]
+    results=[]
     if combinedFileName is not None and (os.path.exists(combinedFileName) ):
         print("Combined file already exists")
         exit(1)
@@ -63,30 +82,32 @@ def main(args):
         if args.author is not None:
             authors=args.author.split(",")
         texts=text_format.getnames(authors=authors)
+    threads=[]
     for x in texts:
         sample=None
         record=None
-        filepath="stat/"+x
-        if ( not os.path.exists(filepath) ) or args.force:
-            print("Loading file : {}.".format(x))
-            sample=text_format.get(x)
-            print(len(sample.chapters))
-            text_proccessing.proccess_book(sample)
-            stat_proccessing.proccess_book(sample)
-            record=stat_record(x,sample)
-            with open(filepath,"w") as statfile:
-                pickle.dump(record,statfile)
+        if args.async:
+            newb=[]
+            newthr=Thread(target=paraiter, args=(x, newb, args.force))
+            newthr.start()
+            threads.append(newthr)
+            results.append(newb)
         else:
-            with open(filepath) as statfile:
-                record=pickle.load(statfile)
-        records.append(record)
-        print_csv_files(record, filepath)
-
+            newb=[]
+            paraiter(x, newb, args.force)
+            results.append(newb)
+    for t in threads:
+        t.join()
+    fres=[result[0] for result in results if len(result)>0]
 parser = argparse.ArgumentParser(description="Perform data mining on test set")
 parser.add_argument('-f','--force',
                     dest='force',
                     action='store_true',
                     help='recalculate all stats')
+parser.add_argument('--async',
+                    dest='async',
+                    action='store_true',
+                    help='user multiple threads')
 parser.add_argument('-t','--texts',
                     dest='texts',
                     action='store',

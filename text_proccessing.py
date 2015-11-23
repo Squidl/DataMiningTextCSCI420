@@ -27,8 +27,9 @@ def proccess_sentence(sentencedata):
         sentencedata.characterbigrams.append(ngrams(2,"^"+x+"$"))
         try:
             sentencedata.synsets.append(wn.synsets(x))
-        except:
-            print("problem finding word:"+worddata.text)
+        except BaseException as e:
+            print(e)
+            print("problem finding word:"+x)
             sentencedata.synsets.append(None)
 
 def ngrams(n,seq):
