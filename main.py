@@ -18,40 +18,47 @@ def stat_record(name,sample):
 combinedInitialized = False
 combinedFileName = None
 
-def print_csv_files(book, filename):
+
+def print_csv_files(record, filename):
     global combinedInitialized
     if filename.endswith('.txt'):
         filename = filename[:-4]
     with open(filename + '.csv', 'wb') as f:
         header = ["author", "lex_rich", "sents_pp_mean", "sents_pp_std", "words_sent_mean",
-                  "words_sent_std", "commas_sent_mean", "semis_sent_mean", "word_sparsity"]
+                  "words_sent_std", "commas_sent_mean", "semis_sent_mean"]
+        header2 = ["w_spars_{}".format(i+1) for i in range(0, 10)]
         writer = csv.writer(f)
-        writer.writerow(header)
+        writer.writerow(header + header2)
+        totalFile=None
         if combinedFileName is not None:
             totalFile = open(combinedFileName, 'a')
             writer2 = csv.writer(totalFile)
             if not combinedInitialized:
-                writer2.writerow(header)
+                writer2.writerow(header + header2)
                 combinedInitialized = True
         for chapter in record["chapters"]:
             if chapter != None:
                 data = [chapter[key] for key in header]
+                data += chapter["word_sparsity"]
                 writer.writerow(data)
                 if combinedFileName is not None:
                     writer2.writerow(data)
-        totalFile.close()
-        
+        if totalFile is not None:
+            totalFile.close()
 
 def main(args):
     records=[]
     texts=[]
-    if (os.path.exists(combinedFileName) ):
+    if combinedFileName is not None and (os.path.exists(combinedFileName) ):
         print("Combined file already exists")
         exit(1)
     if args.texts is not None:
         texts=args.text.split(",")
     else:
-        text_format.getnames(authors=args.author.split(","))
+        authors=None
+        if args.author is not None:
+            authors=args.author.split(",")
+        texts=text_format.getnames(authors=authors)
     for x in texts:
         sample=None
         record=None

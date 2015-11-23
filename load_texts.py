@@ -14,7 +14,6 @@ def load_texts(name,auth):
     if ind != -1:
         data=data[:ind]
     data=data.decode('unicode_escape')
-    print(repr(data[:100]))
     return (name,auth,data)
 
 def isyes(inp):
@@ -77,7 +76,7 @@ def get(name,cache=True):
         return result
 
 def getnames(authors=None):
-    if author is not None:
+    if authors is not None:
         return [name for name in text["dat"].keys() if text["dat"][name] in authors]
     else:
         return text["dat"].keys()
