@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import text_format
 import text_proccessing
 import stat_proccessing
@@ -18,9 +20,9 @@ def stat_record(name,sample):
 combinedInitialized = False
 combinedFileName = None
 
-
 def print_csv_files(record, filename):
     global combinedInitialized
+    #print(text_format.getauthors())
     if filename.endswith('.txt'):
         filename = filename[:-4]
     with open(filename + '.csv', 'wb') as f:

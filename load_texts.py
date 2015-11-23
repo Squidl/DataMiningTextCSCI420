@@ -75,6 +75,9 @@ def get(name,cache=True):
         cached[name]=result
         return result
 
+def getauthors():
+    return list(set([text["dat"][k] for k in text["dat"].keys()]))
+
 def getnames(authors=None):
     if authors is not None:
         return [name for name in text["dat"].keys() if text["dat"][name] in authors]
