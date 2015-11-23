@@ -1,4 +1,4 @@
-import re
+import re, os
 from nltk import data as nltk_data, word_tokenize
 import string
 
