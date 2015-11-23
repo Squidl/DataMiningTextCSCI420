@@ -15,7 +15,11 @@ def stat_record(name,sample):
         }
     return record
 
-def print_csv_files(record, filename):
+combinedInitialized = False
+combinedFileName = None
+
+def print_csv_files(book, filename):
+    global combinedInitialized
     if filename.endswith('.txt'):
         filename = filename[:-4]
     with open(filename + '.csv', 'wb') as f:
@@ -23,14 +27,27 @@ def print_csv_files(record, filename):
                   "words_sent_std", "commas_sent_mean", "semis_sent_mean", "word_sparsity"]
         writer = csv.writer(f)
         writer.writerow(header)
+        if combinedFileName is not None:
+            totalFile = open(combinedFileName, 'a')
+            writer2 = csv.writer(totalFile)
+            if not combinedInitialized:
+                writer2.writerow(header)
+                combinedInitialized = True
         for chapter in record["chapters"]:
             if chapter != None:
                 data = [chapter[key] for key in header]
                 writer.writerow(data)
+                if combinedFileName is not None:
+                    writer2.writerow(data)
+        totalFile.close()
+        
 
 def main(args):
     records=[]
     texts=[]
+    if (os.path.exists(combinedFileName) ):
+        print("Combined file already exists")
+        exit(1)
     if args.texts is not None:
         texts=args.text.split(",")
     else:
@@ -66,5 +83,11 @@ parser.add_argument('-a','--author',
                     dest='author',
                     action='store',
                     help='recalculate one author')
+parser.add_argument('-o','--output',
+                    dest='output',
+                    action='store',
+                    help='set combined output')
 args = parser.parse_args()
+if args.output is not None:
+    combinedFileName='stat/'+args.output
 main(args)
