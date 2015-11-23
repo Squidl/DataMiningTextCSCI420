@@ -1,8 +1,5 @@
 import numpy as np
 
-def proccess_book(book):
-    for chapter in book.chapters:
-        proccess_chapter(chapter)
 
 def proccess_chapter(chapter):
     words = chapter.get_words()
@@ -38,7 +35,7 @@ def get_frequencies(chapter):
 
 def count_p(p, words):
     """ Count the number of words that end with the char p """
-    return sum(1 for w in words if w.text.endswith(p))
+    return sum(1 for w in words if w.endswith(p))
         
 def proccess_paragraph(paragraph):
     """ Compute the lengths, comma count, and semicolon count for each sentence in a paragraph"""

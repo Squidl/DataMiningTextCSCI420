@@ -21,18 +21,15 @@ def proccess_paragraph(paragraphdata):
 printed=False
 def proccess_sentence(sentencedata):
     sentencedata.wordbigrams=ngrams(2,sentencedata.words)
+    sentencedata.synsets=[]
+    sentencedata.characterbigrams=[]
     for x in sentencedata.words:
-        proccess_word(x)
-
-def proccess_word(worddata):
-    worddata.characterbigrams=ngrams(2,"^"+worddata.text+"$")
-    try:
-        
-        worddata.synsets=wn.synsets(worddata.text)
-    except:
-        print("problem finding word:"+worddata.text)
-        worddata.synsets=None
-
+        sentencedata.characterbigrams.append(ngrams(2,"^"+x+"$"))
+        try:
+            sentencedata.synsets.append(wn.synsets(x))
+        except:
+            print("problem finding word:"+worddata.text)
+            sentencedata.synsets.append(None)
 
 def ngrams(n,seq):
     grams=dictreducer()

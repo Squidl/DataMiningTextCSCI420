@@ -21,7 +21,10 @@ class chapter:
 
 class paragraph:
     def __init__(self,data):
-        self.sentences=[sentence(x) for x in sent_detector.tokenize(data)]
+        try:
+            self.sentences=[sentence(x) for x in sent_detector.tokenize(data)]
+        except:
+            self.sentences=[]
         
     def get_words(self):
         words = [sentence.get_words() for sentence in self.sentences]
@@ -29,19 +32,11 @@ class paragraph:
 
 class sentence:
     def __init__(self,data):
-        self.words=[word(x) for x in word_tokenize(data)]
+        self.words=[string.lower(x.strip()) for x in word_tokenize(data)]
 
     def get_words(self):
-        words = [string.lower(word.text) for word in self.words]
-        return filter(lambda x : not x in string.punctuation, words)
+        return filter(lambda x : not x in string.punctuation, self.words)
 
-class word:
-    def __init__(self,data):
-        self.text=data.strip()
-    def __str__(self):
-        return self.text
-    def __repr__(self):
-        return self.__str__()
 cached={}
 
 def get(name,cache=True):
@@ -53,5 +48,5 @@ def get(name,cache=True):
         cached[name]=dat
         return dat
 
-def getnames():
-    return load_texts.getnames()
+def getnames(author=None):
+    return load_texts.getnames(author=author)
