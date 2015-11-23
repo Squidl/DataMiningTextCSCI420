@@ -68,6 +68,7 @@ def main(args):
         if ( not os.path.exists(filepath) ) or args.force:
             print("Loading file : {}.".format(x))
             sample=text_format.get(x)
+            print(len(sample.chapters))
             text_proccessing.proccess_book(sample)
             stat_proccessing.proccess_book(sample)
             record=stat_record(x,sample)

@@ -6,14 +6,18 @@ import load_texts
 
 sent_detector = nltk_data.load('tokenizers/punkt/english.pickle')
 
+newline="\n\r"
+if os.name=='nt':
+    newline="\n"
+
 class book:
     def __init__(self,author,data):
         self.author=author
-        self.chapters=[chapter(x) for x in re.split(r"\n[\r]\n[\r]\n[\r]",data)]
+        self.chapters=[chapter(x) for x in re.split(newline*3,data)]
 
 class chapter:
     def __init__(self,data):
-        self.paragraphs=[paragraph(x) for x in re.split(r"\n[\r]\n[\r]",data)]
+        self.paragraphs=[paragraph(x) for x in re.split(newline*2,data)]
         self.stat_features = None
         
     def get_words(self):
