@@ -8,11 +8,11 @@ sent_detector = nltk_data.load('tokenizers/punkt/english.pickle')
 class book:
     def __init__(self,author,data):
         self.author=author
-        self.chapters=[chapter(x) for x in data.split("\n\n\n")]
+        self.chapters=[chapter(x) for x in data.split("\n\r\n\r\n\r")]
 
 class chapter:
     def __init__(self,data):
-        self.paragraphs=[paragraph(x) for x in data.split("\n\n")]
+        self.paragraphs=[paragraph(x) for x in data.split("\n\r\n\r")]
         self.stat_features = None
         
     def get_words(self):
@@ -48,5 +48,5 @@ def get(name,cache=True):
         cached[name]=dat
         return dat
 
-def getnames(author=None):
-    return load_texts.getnames(author=author)
+def getnames(authors=None):
+    return load_texts.getnames(authors=authors)
