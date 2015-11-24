@@ -82,7 +82,7 @@ def main(args):
             print("Combined file already exists")
             exit(1)
     if args.texts is not None:
-        texts=args.text.split(",")
+        texts=args.texts.split(",")
     else:
         authors=None
         if args.author is not None:
@@ -92,16 +92,6 @@ def main(args):
     for x in texts:
         sample=None
         record=None
-        filepath="stat/"+x
-        if ( not os.path.exists(filepath) ) or args.force:
-            print("Loading file : {}.".format(x))
-            sample=text_format.get(x)
-            print(len(sample.chapters))
-            text_proccessing.proccess_book(sample)
-            stat_proccessing.proccess_book(sample)
-            record=stat_record(x,sample)
-            with open(filepath,"w") as statfile:
-                pickle.dump(record,statfile)
         if args.async:
             newb=[]
             newthr=Thread(target=paraiter, args=(x, newb, args.force))
