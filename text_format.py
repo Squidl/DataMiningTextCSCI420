@@ -19,6 +19,7 @@ class chapter:
     def __init__(self,data):
         self.paragraphs=[paragraph(x) for x in re.split(newline*2,data)]
         self.stat_features = None
+        self.text_features = None
         
     def get_words(self):
         words = [paragraph.get_words() for paragraph in self.paragraphs]
