@@ -3,8 +3,7 @@ import nltk
 
 def proccess_book(book):
     for chapter in book.chapters:
-        if chapter.text_features != None:
-            proccess_chapter(chapter, book.author)    
+        proccess_chapter(chapter, book.author)    
 
 def truncate(f, n):
     s = '{}'.format(f)
@@ -37,6 +36,8 @@ def proccess_chapter(chapter, author):
             "words_sent_std" : words_per_sent.std(),
             "commas_sent_mean" : commas_per_sent.mean(),
             "semis_sent_mean" : semis_per_sent.mean(),
+            "commas_word_mean" : float(commas_per_sent.sum())/words_per_sent.sum(),
+            "semis_word_mean" : float(semis_per_sent.sum())/words_per_sent.sum(),
             "word_sparsity" : top_ten_frequencies
         }
         

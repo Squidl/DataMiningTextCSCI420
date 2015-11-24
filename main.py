@@ -29,7 +29,9 @@ header_dict = OrderedDict([
     ("words_sent_mean","numeric"),
     ("words_sent_std","numeric"),
     ("commas_sent_mean","numeric"),
-    ("semis_sent_mean","numeric")
+    ("semis_sent_mean","numeric"),
+    ("commas_word_mean","numeric"),
+    ("semis_word_mean","numeric")
 ])
 
 def print_csv_files(records, filename):
@@ -41,16 +43,14 @@ def print_csv_files(records, filename):
         for k in header_dict.keys():
             f.write("@attribute %s %s\n"%(k,header_dict[k]))
         f.write("\n\n@data\n")
-        header = header_dict.keys()
         #header2 = ["w_spars_{}".format(i+1) for i in range(0, 10)]
         writer = csv.writer(f)
-        #writer.writerow(header + header2)
         for record in records:
             for i in range(len(record["chapters"])):
                 chapter=record["chapters"][i]
                 if chapter != None:
                     chapter["chapter_number"]=i
-                    data = [chapter[key] for key in header]
+                    data = [chapter[key] for key in header_dict.keys()]
                     #data += chapter["word_sparsity"]
                     writer.writerow(data)
 
@@ -90,8 +90,6 @@ def main(args):
         texts=text_format.getnames(authors=authors)
     threads=[]
     for x in texts:
-        sample=None
-        record=None
         if args.async:
             newb=[]
             newthr=Thread(target=paraiter, args=(x, newb, args.force))

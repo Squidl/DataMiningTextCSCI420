@@ -6,7 +6,7 @@ import load_texts
 
 sent_detector = nltk_data.load('tokenizers/punkt/english.pickle')
 
-newline="\n\r"
+newline="\n\r?"
 if os.name=='nt':
     newline="\n"
 

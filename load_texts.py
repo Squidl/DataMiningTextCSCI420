@@ -14,7 +14,6 @@ def load_texts(name,auth):
     if ind != -1:
         data=data[:ind]
     data=data.decode('unicode_escape')
-    print(repr(data[:100]))
     return (name,auth,data)
 
 def isyes(inp):
