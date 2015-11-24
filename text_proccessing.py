@@ -12,21 +12,22 @@ def proccess_book(bookdata):
         proccess_chapter(x)
 
 def proccess_chapter(chapter):
-    words = chapter.get_words()
-    if len(words) > 500:
-        pos_freq = {
-            "NN" : 0,
-            "NNP" : 0,
-            "DT" : 0,
-            "IN" : 0,
-            "JJ" : 0,
-            "NNS" : 0
-        }
-        for pos in nltk.pos_tag(words):
-            if pos[1] in pos_freq:
-                pos_freq[pos[1]] += 1
-        pos_freq = [(float(pos_freq[pos])/len(words)) for pos in pos_freq.keys()]
-        chapter.text_features = {"pos_freq" : pos_freq}
+    pass
+    #words = chapter.get_words()
+    #if len(words) > 500:
+    #    pos_freq = {
+    #        "NN" : 0,
+    #        "NNP" : 0,
+    #        "DT" : 0,
+    #        "IN" : 0,
+    #        "JJ" : 0,
+    #        "NNS" : 0
+    #    }
+    #    for pos in nltk.pos_tag(words):
+    #        if pos[1] in pos_freq:
+    #            pos_freq[pos[1]] += 1
+    #    pos_freq = [(float(pos_freq[pos])/len(words)) for pos in pos_freq.keys()]
+    #    chapter.text_features = {"pos_freq" : pos_freq}
 
 def proccess_paragraph(paragraphdata):
     for x in paragraphdata.sentences:
