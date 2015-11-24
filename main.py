@@ -9,6 +9,8 @@ import os
 import pickle
 import csv
 from threading import Thread
+from collections import OrderedDict
+
 
 def stat_record(name,sample):
     record={
@@ -18,38 +20,39 @@ def stat_record(name,sample):
         }
     return record
 
-combinedInitialized = False
-combinedFileName = None
+header_dict = OrderedDict([
+    ("author","{%s}"%(", ".join(text_format.getauthors())) ),
+    ("chapter_number","numeric"),
+    ("lex_rich","numeric"),
+    ("sents_pp_mean","numeric"),
+    ("sents_pp_std","numeric"),
+    ("words_sent_mean","numeric"),
+    ("words_sent_std","numeric"),
+    ("commas_sent_mean","numeric"),
+    ("semis_sent_mean","numeric")
+])
 
-def print_csv_files(record, filename):
-    global combinedInitialized
+def print_csv_files(records, filename):
     #print(text_format.getauthors())
     if filename.endswith('.txt'):
         filename = filename[:-4]
-    with open(filename + '.csv', 'wb') as f:
-        header = ["author", "chapter_number", "lex_rich", "sents_pp_mean", "sents_pp_std", "words_sent_mean",
-                  "words_sent_std", "commas_sent_mean", "semis_sent_mean"]
-        header2 = ["w_spars_{}".format(i+1) for i in range(0, 10)]
+    with open(filename + '.arff', 'wb') as f:
+        f.write("@relation %s\n\n"%filename.split("/")[-1].split(".")[0])
+        for k in header_dict.keys():
+            f.write("@attribute %s %s\n"%(k,header_dict[k]))
+        f.write("\n\n@data\n")
+        header = header_dict.keys()
+        #header2 = ["w_spars_{}".format(i+1) for i in range(0, 10)]
         writer = csv.writer(f)
-        writer.writerow(header + header2)
-        totalFile=None
-        if combinedFileName is not None:
-            totalFile = open(combinedFileName, 'a')
-            writer2 = csv.writer(totalFile)
-            if not combinedInitialized:
-                writer2.writerow(header + header2)
-                combinedInitialized = True
-        for i in range(len(record["chapters"])):
-            chapter=record["chapters"][i]
-            if chapter != None:
-                chapter["chapter_number"]=i
-                data = [chapter[key] for key in header]
-                data += chapter["word_sparsity"]
-                writer.writerow(data)
-                if combinedFileName is not None:
-                    writer2.writerow(data)
-        if totalFile is not None:
-            totalFile.close()
+        #writer.writerow(header + header2)
+        for record in records:
+            for i in range(len(record["chapters"])):
+                chapter=record["chapters"][i]
+                if chapter != None:
+                    chapter["chapter_number"]=i
+                    data = [chapter[key] for key in header]
+                    #data += chapter["word_sparsity"]
+                    writer.writerow(data)
 
 def paraiter(x,resultplace,force=False):
     filepath="stat/"+x
@@ -66,15 +69,18 @@ def paraiter(x,resultplace,force=False):
     else:
         with open(filepath) as statfile:
             record=pickle.load(statfile)
-    print_csv_files(record, filepath)
+    print_csv_files([record], filepath)
     resultplace.append(record)
 
 def main(args):
     texts=[]
     results=[]
-    if combinedFileName is not None and (os.path.exists(combinedFileName) ):
-        print("Combined file already exists")
-        exit(1)
+    combinedFileName=None
+    if args.output is not None:
+        combinedFileName='stat/'+args.output
+        if combinedFileName is not None and (os.path.exists(combinedFileName) ):
+            print("Combined file already exists")
+            exit(1)
     if args.texts is not None:
         texts=args.text.split(",")
     else:
@@ -99,6 +105,9 @@ def main(args):
     for t in threads:
         t.join()
     fres=[result[0] for result in results if len(result)>0]
+    if combinedFileName is not None:
+        print_csv_files(fres,combinedFileName)
+
 parser = argparse.ArgumentParser(description="Perform data mining on test set")
 parser.add_argument('-f','--force',
                     dest='force',
@@ -121,6 +130,4 @@ parser.add_argument('-o','--output',
                     action='store',
                     help='set combined output')
 args = parser.parse_args()
-if args.output is not None:
-    combinedFileName='stat/'+args.output
 main(args)
