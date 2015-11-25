@@ -3,9 +3,11 @@
 import text_format
 import text_proccessing
 import stat_proccessing
+from frequency_vector import findbest
 
 import argparse
 import os
+import re
 import pickle
 import csv
 from threading import Thread
@@ -16,7 +18,12 @@ def stat_record(name,sample):
     record={
         "name":name,
         "author":sample.author,
-        "chapters":[chap.stat_features for chap in sample.chapters]
+        "chapters":[{"stats":chap.stat_features,
+                     "words":chap.chapter_register["word_freq_dict"]
+                     }
+                          for chap
+                          in sample.chapters
+                          if chap.chapter_register["validwords"]>100]
         }
     return record
 
@@ -34,6 +41,10 @@ header_dict = OrderedDict([
     ("semis_word_mean","numeric")
 ])
 
+wordpattern = re.compile("^[A-Za-z]+$")
+def is_valid_word(word):
+    return True if wordpattern.match(word) else False
+
 def print_csv_files(records, filename):
     #print(text_format.getauthors())
     if filename.endswith('.txt'):
@@ -42,16 +53,21 @@ def print_csv_files(records, filename):
         f.write("@relation %s\n\n"%filename.split("/")[-1].split(".")[0])
         for k in header_dict.keys():
             f.write("@attribute %s %s\n"%(k,header_dict[k]))
+        most_words=findbest([chapter["words"]
+                          for record in records
+                          for chapter in record["chapters"]],
+                            filter=is_valid_word)
+        for k in most_words:
+            f.write("@attribute w_%s_freq numeric\n"%k)
         f.write("\n\n@data\n")
-        #header2 = ["w_spars_{}".format(i+1) for i in range(0, 10)]
         writer = csv.writer(f)
         for record in records:
             for i in range(len(record["chapters"])):
                 chapter=record["chapters"][i]
                 if chapter != None:
-                    chapter["chapter_number"]=i
-                    data = [chapter[key] for key in header_dict.keys()]
-                    #data += chapter["word_sparsity"]
+                    chapter["stats"]["chapter_number"]=i
+                    data = [chapter["stats"][key] for key in header_dict.keys()]
+                    data += [chapter["words"][key] for key in most_words]
                     writer.writerow(data)
 
 def paraiter(x,resultplace,force=False):
@@ -60,7 +76,6 @@ def paraiter(x,resultplace,force=False):
     if ( not os.path.exists(filepath) ) or args.force:
         print("Loading file : {}.".format(x))
         sample=text_format.get(x)
-        print(len(sample.chapters))
         text_proccessing.proccess_book(sample)
         stat_proccessing.proccess_book(sample)
         record=stat_record(x,sample)

@@ -1,5 +1,7 @@
-from nltk.corpus import wordnet as wn
 import nltk
+from nltk.corpus import wordnet as wn
+
+from frequency_vector import freqdict, normalize
 
 try:
     wn.synsets("test")
@@ -12,7 +14,19 @@ def proccess_book(bookdata):
         proccess_chapter(x)
 
 def proccess_chapter(chapter):
-    pass
+    chapter_register={}
+    chapter_register["validwords"]=0
+    chapter_register["word_freq_dict"]=freqdict()
+    chapter_register["region_freq_dict"]=freqdict()
+    chapter_register["topic_freq_dict"]=freqdict()
+    chapter_register["usage_freq_dict"]=freqdict()
+    for x in chapter.paragraphs:
+        proccess_paragraph(x,chapter_register)
+    normalize(chapter_register["word_freq_dict"])
+    normalize(chapter_register["region_freq_dict"])
+    normalize(chapter_register["topic_freq_dict"])
+    normalize(chapter_register["usage_freq_dict"])
+    chapter.chapter_register=chapter_register
     #words = chapter.get_words()
     #if len(words) > 500:
     #    pos_freq = {
@@ -29,23 +43,46 @@ def proccess_chapter(chapter):
     #    pos_freq = [(float(pos_freq[pos])/len(words)) for pos in pos_freq.keys()]
     #    chapter.text_features = {"pos_freq" : pos_freq}
 
-def proccess_paragraph(paragraphdata):
+def proccess_paragraph(paragraphdata,chapter_register):
     for x in paragraphdata.sentences:
-        proccess_sentence(x)
+        proccess_sentence(x,chapter_register)
 
-printed=False
-def proccess_sentence(sentencedata):
-    sentencedata.wordbigrams=ngrams(2,sentencedata.words)
-    sentencedata.synsets=[]
-    sentencedata.characterbigrams=[]
+
+def proccess_sentence(sentencedata,chapter_register):
     for x in sentencedata.words:
-        sentencedata.characterbigrams.append(ngrams(2,"^"+x+"$"))
+        words=chapter_register["word_freq_dict"]
+        words.plusplus(x,1)
         try:
-            sentencedata.synsets.append(wn.synsets(x))
+            sets=wn.synsets(x)
+            if len(sets)<=0:
+                break
+            chapter_register["validwords"]=chapter_register["validwords"]+1
+            usage=chapter_register["usage_freq_dict"]
+            usages = [inner for outer in sets for inner in outer.usage_domains()]
+            for use in usages:
+                usage.plusplus(use,float(1)/len(usages))
+            topic=chapter_register["topic_freq_dict"]
+            topics = [inner for outer in sets for inner in outer.topic_domains()]
+            for top in topics:
+                topic.plusplus(top,float(1)/len(topics))
+            region=chapter_register["region_freq_dict"]
+            regions = [inner for outer in sets for inner in outer.region_domains()]
+            for reg in regions:
+                region.plusplus(reg,float(1)/len(regions))
         except BaseException as e:
             print(e)
-            print("problem finding word:"+x)
-            sentencedata.synsets.append(None)
+            print("problem finding word:"+x)        
+    #sentencedata.wordbigrams=ngrams(2,sentencedata.words)
+    #sentencedata.synsets=[]
+    #sentencedata.characterbigrams=[]
+    #for x in sentencedata.words:
+    #    sentencedata.characterbigrams.append(ngrams(2,"^"+x+"$"))
+    #    try:
+    #        sentencedata.synsets.append(wn.synsets(x))
+    #    except BaseException as e:
+    #        print(e)
+    #        print("problem finding word:"+x)
+    #        sentencedata.synsets.append(None)
 
 def ngrams(n,seq):
     grams=dictreducer()

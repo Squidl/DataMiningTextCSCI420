@@ -3,6 +3,8 @@ import nltk
 
 def proccess_book(book):
     for chapter in book.chapters:
+        if chapter.chapter_register["validwords"]<100:
+            continue
         proccess_chapter(chapter, book.author)    
 
 def truncate(f, n):
@@ -29,6 +31,7 @@ def proccess_chapter(chapter, author):
         
         chapter.stat_features = {
             "author" : author,
+            "valid_words" : chapter.chapter_register["validwords"],
             "lex_rich": lex_rich,
             "sents_pp_mean": sents_per_pp.mean(),
             "sents_pp_std" : sents_per_pp.std(),
