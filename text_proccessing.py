@@ -60,15 +60,15 @@ def proccess_sentence(sentencedata,chapter_register):
             usage=chapter_register["usage_freq_dict"]
             usages = [inner for outer in sets for inner in outer.usage_domains()]
             for use in usages:
-                usage.plusplus(use,float(1)/len(usages))
+                usage.plusplus(use._name,float(1)/len(usages))
             topic=chapter_register["topic_freq_dict"]
             topics = [inner for outer in sets for inner in outer.topic_domains()]
             for top in topics:
-                topic.plusplus(top,float(1)/len(topics))
+                topic.plusplus(top._name,float(1)/len(topics))
             region=chapter_register["region_freq_dict"]
             regions = [inner for outer in sets for inner in outer.region_domains()]
             for reg in regions:
-                region.plusplus(reg,float(1)/len(regions))
+                region.plusplus(reg._name,float(1)/len(regions))
         except BaseException as e:
             print(e)
             print("problem finding word:"+x)        

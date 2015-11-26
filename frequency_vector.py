@@ -1,9 +1,9 @@
 from collections import OrderedDict
 
-def findbest(freqdicts,n=10,filter=None):
+def findbest(freqdicts,n=10,filter=None,t=False):
     total=freqdict()
     for newdict in freqdicts:
-        for key in newdict:
+        for key in newdict.keys():
             if filter is not None:
                 if not filter(key):
                     continue
@@ -36,7 +36,7 @@ class freqdict(dict):
         else:
             return self.default
     def plusplus(self, key, number=1):
-        newval=self[key]+number
+        newval=float(self[key])+float(number)
         self[key]=newval
         return newval
     def dictplusplus(self, other):

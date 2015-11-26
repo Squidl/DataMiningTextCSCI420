@@ -19,7 +19,10 @@ def stat_record(name,sample):
         "name":name,
         "author":sample.author,
         "chapters":[{"stats":chap.stat_features,
-                     "words":chap.chapter_register["word_freq_dict"]
+                     "words":chap.chapter_register["word_freq_dict"],
+                     "usage":chap.chapter_register["usage_freq_dict"],
+                     "topic":chap.chapter_register["topic_freq_dict"],
+                     "region":chap.chapter_register["region_freq_dict"]
                      }
                           for chap
                           in sample.chapters
@@ -41,6 +44,11 @@ header_dict = OrderedDict([
     ("semis_word_mean","numeric")
 ])
 
+wordfreq=False
+usagefreq=False
+regionfreq=False
+topicfreq=True
+
 wordpattern = re.compile("^[A-Za-z]+$")
 def is_valid_word(word):
     return True if wordpattern.match(word) else False
@@ -53,12 +61,34 @@ def print_csv_files(records, filename):
         f.write("@relation %s\n\n"%filename.split("/")[-1].split(".")[0])
         for k in header_dict.keys():
             f.write("@attribute %s %s\n"%(k,header_dict[k]))
-        most_words=findbest([chapter["words"]
-                          for record in records
-                          for chapter in record["chapters"]],
-                            filter=is_valid_word)
-        for k in most_words:
-            f.write("@attribute w_%s_freq numeric\n"%k)
+        if wordfreq:
+            most_words=findbest([chapter["words"]
+                                 for record in records
+                                 for chapter in record["chapters"]],
+                                filter=is_valid_word)
+            for k in most_words:
+                f.write("@attribute wfreq_%s numeric\n"%k)
+        if usagefreq:
+            most_use=findbest([chapter["usage"]
+                               for record in records
+                               for chapter in record["chapters"]],
+                              t=True)
+            for k in most_use:
+                f.write("@attribute ufreq_%s numeric\n"%(k.replace(".","_")))
+        if topicfreq:
+            most_topic=findbest([chapter["topic"]
+                                 for record in records
+                                 for chapter in record["chapters"]],
+                                t=True)
+            for k in most_topic:
+                f.write("@attribute tfreq_%s numeric\n"%(k.replace(".","_")))
+        if regionfreq:
+            most_region=findbest([chapter["region"]
+                                  for record in records
+                                  for chapter in record["chapters"]],
+                                 t=True)
+            for k in most_region:
+                f.write("@attribute rfreq_%s numeric\n"%(k.replace(".","_")))
         f.write("\n\n@data\n")
         writer = csv.writer(f)
         for record in records:
@@ -67,7 +97,14 @@ def print_csv_files(records, filename):
                 if chapter != None:
                     chapter["stats"]["chapter_number"]=i
                     data = [chapter["stats"][key] for key in header_dict.keys()]
-                    data += [chapter["words"][key] for key in most_words]
+                    if wordfreq:
+                        data += [chapter["words"][key] for key in most_words]
+                    if usagefreq:
+                        data += [chapter["usage"][key] for key in most_use]
+                    if topicfreq:
+                        data += [chapter["topic"][key] for key in most_topic]
+                    if regionfreq:
+                        data += [chapter["region"][key] for key in most_region]
                     writer.writerow(data)
 
 def paraiter(x,resultplace,force=False):
