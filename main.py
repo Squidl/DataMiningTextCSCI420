@@ -47,7 +47,7 @@ header_dict = OrderedDict([
 wordfreq=False
 usagefreq=False
 regionfreq=False
-topicfreq=True
+topicfreq=False
 
 wordpattern = re.compile("^[A-Za-z]+$")
 def is_valid_word(word):
