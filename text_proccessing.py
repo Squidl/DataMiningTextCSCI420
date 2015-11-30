@@ -1,12 +1,19 @@
 import nltk
 from nltk.corpus import wordnet as wn
+from nltk.corpus import sentiwordnet as swn
 
 from frequency_vector import freqdict, normalize
 
+test=None
 try:
-    wn.synsets("test")
+    test=wn.synsets("test")
 except:
     print("Problem with WordNet, make sure it is downloaded. (run 'nltk.download()' )")
+    exit(1)
+try:
+    swn.senti_synsets("test")
+except BaseException as e:
+    print("Problem with SentiWordNet, make sure it is downloaded. (run 'nltk.download()' )")
     exit(1)
 
 def proccess_book(bookdata):
@@ -20,28 +27,15 @@ def proccess_chapter(chapter):
     chapter_register["region_freq_dict"]=freqdict()
     chapter_register["topic_freq_dict"]=freqdict()
     chapter_register["usage_freq_dict"]=freqdict()
+    chapter_register["sense_dist_dict"]=freqdict()
     for x in chapter.paragraphs:
         proccess_paragraph(x,chapter_register)
     normalize(chapter_register["word_freq_dict"])
     normalize(chapter_register["region_freq_dict"])
     normalize(chapter_register["topic_freq_dict"])
     normalize(chapter_register["usage_freq_dict"])
+    normalize(chapter_register["sense_dist_dict"],cachetotal="total")
     chapter.chapter_register=chapter_register
-    #words = chapter.get_words()
-    #if len(words) > 500:
-    #    pos_freq = {
-    #        "NN" : 0,
-    #        "NNP" : 0,
-    #        "DT" : 0,
-    #        "IN" : 0,
-    #        "JJ" : 0,
-    #        "NNS" : 0
-    #    }
-    #    for pos in nltk.pos_tag(words):
-    #        if pos[1] in pos_freq:
-    #            pos_freq[pos[1]] += 1
-    #    pos_freq = [(float(pos_freq[pos])/len(words)) for pos in pos_freq.keys()]
-    #    chapter.text_features = {"pos_freq" : pos_freq}
 
 def proccess_paragraph(paragraphdata,chapter_register):
     for x in paragraphdata.sentences:
@@ -69,20 +63,18 @@ def proccess_sentence(sentencedata,chapter_register):
             regions = [inner for outer in sets for inner in outer.region_domains()]
             for reg in regions:
                 region.plusplus(reg._name,float(1)/len(regions))
+            sense=chapter_register["sense_dist_dict"]
+            sentis = [swn.senti_synset(synset._name) for synset in sets]
+            if None in sentis:
+                continue
+            for sen in sentis:
+                sense.plusplus("pos",float(sen.pos_score())/len(sentis))
+                sense.plusplus("neg",float(sen.neg_score())/len(sentis))
+                sense.plusplus("obj",float(sen.obj_score())/len(sentis))
+            sense.plusplus("total",1)
         except BaseException as e:
             print(e)
-            print("problem finding word:"+x)        
-    #sentencedata.wordbigrams=ngrams(2,sentencedata.words)
-    #sentencedata.synsets=[]
-    #sentencedata.characterbigrams=[]
-    #for x in sentencedata.words:
-    #    sentencedata.characterbigrams.append(ngrams(2,"^"+x+"$"))
-    #    try:
-    #        sentencedata.synsets.append(wn.synsets(x))
-    #    except BaseException as e:
-    #        print(e)
-    #        print("problem finding word:"+x)
-    #        sentencedata.synsets.append(None)
+            print("problem finding word:"+x)
 
 def ngrams(n,seq):
     grams=dictreducer()

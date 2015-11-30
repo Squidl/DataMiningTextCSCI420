@@ -12,6 +12,15 @@ import pickle
 import csv
 from threading import Thread
 from collections import OrderedDict
+from subprocess import call
+
+
+minwords=100
+
+wordpattern = re.compile("^[A-Za-z]+$")
+def is_valid_word(word):
+    return True if wordpattern.match(word) else False
+
 
 
 def stat_record(name,sample):
@@ -22,11 +31,12 @@ def stat_record(name,sample):
                      "words":chap.chapter_register["word_freq_dict"],
                      "usage":chap.chapter_register["usage_freq_dict"],
                      "topic":chap.chapter_register["topic_freq_dict"],
-                     "region":chap.chapter_register["region_freq_dict"]
+                     "region":chap.chapter_register["region_freq_dict"],
+                     "sense":chap.chapter_register["sense_dist_dict"]
                      }
                           for chap
                           in sample.chapters
-                          if chap.chapter_register["validwords"]>100]
+                          if chap.chapter_register["validwords"]>minwords]
         }
     return record
 
@@ -48,10 +58,7 @@ wordfreq=False
 usagefreq=False
 regionfreq=False
 topicfreq=False
-
-wordpattern = re.compile("^[A-Za-z]+$")
-def is_valid_word(word):
-    return True if wordpattern.match(word) else False
+sensefreq=True
 
 def print_csv_files(records, filename):
     #print(text_format.getauthors())
@@ -89,6 +96,9 @@ def print_csv_files(records, filename):
                                  t=True)
             for k in most_region:
                 f.write("@attribute rfreq_%s numeric\n"%(k.replace(".","_")))
+        if sensefreq:
+            for k in ["pos","neg","obj"]:
+                f.write("@attribute sfreq_%s numeric\n"%k)
         f.write("\n\n@data\n")
         writer = csv.writer(f)
         for record in records:
@@ -105,6 +115,8 @@ def print_csv_files(records, filename):
                         data += [chapter["topic"][key] for key in most_topic]
                     if regionfreq:
                         data += [chapter["region"][key] for key in most_region]
+                    if sensefreq:
+                        data += [chapter["sense"][key] for key in ["pos","neg","obj"]]
                     writer.writerow(data)
 
 def paraiter(x,resultplace,force=False):
@@ -157,16 +169,18 @@ def main(args):
     fres=[result[0] for result in results if len(result)>0]
     if combinedFileName is not None:
         print_csv_files(fres,combinedFileName)
+        if args.weka:
+            call(["weka",combinedFileName+".arff"])
 
 parser = argparse.ArgumentParser(description="Perform data mining on test set")
+parser.add_argument('--async',
+                    dest='async',
+                    action='store_true',
+                    help='use multiple threads')
 parser.add_argument('-f','--force',
                     dest='force',
                     action='store_true',
                     help='recalculate all stats')
-parser.add_argument('--async',
-                    dest='async',
-                    action='store_true',
-                    help='user multiple threads')
 parser.add_argument('-t','--texts',
                     dest='texts',
                     action='store',
@@ -174,10 +188,14 @@ parser.add_argument('-t','--texts',
 parser.add_argument('-a','--author',
                     dest='author',
                     action='store',
-                    help='recalculate one author')
+                    help='recalculate only for authors in comma seperated list')
 parser.add_argument('-o','--output',
                     dest='output',
                     action='store',
                     help='set combined output')
+parser.add_argument('-w','--weka',
+                    dest='weka',
+                    action='store_true',
+                    help='Chain opening combined output in weka. Must we used with -o.')
 args = parser.parse_args()
 main(args)

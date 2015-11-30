@@ -13,10 +13,14 @@ def findbest(freqdicts,n=10,filter=None,t=False):
         # total.dictplusplus(newdict)
     return top_n(total,n=n).keys()
 
-def normalize(tonorm,copy=False):
+def normalize(tonorm,copy=False,cachetotal=None):
     if copy:
         tonorm=dict(tonorm)
-    total=sum(tonorm.values())
+    total=None
+    if cachetotal is None:
+        total=sum(tonorm.values())
+    else:
+        total=tonorm[cachetotal]
     for k in tonorm.keys():
         tonorm[k]=float(tonorm[k])/total
     return tonorm
