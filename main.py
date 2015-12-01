@@ -22,7 +22,6 @@ def is_valid_word(word):
     return True if wordpattern.match(word) else False
 
 
-
 def stat_record(name,sample):
     record={
         "name":name,
@@ -33,7 +32,8 @@ def stat_record(name,sample):
                      "topic":chap.chapter_register["topic_freq_dict"],
                      "region":chap.chapter_register["region_freq_dict"],
                      "sense":chap.chapter_register["sense_dist_dict"],
-                     "character_ngrams":chap.chapter_register["character_ngrams"]
+                     "character_ngrams":chap.chapter_register["character_ngrams"],
+                     "word_ngrams":chap.chapter_register["word_ngrams"]
                      }
                           for chap
                           in sample.chapters
@@ -105,6 +105,16 @@ def print_csv_files(records, filename):
                                         t=True)
                 for k in most_ngrams[n]:
                     f.write("@attribute c%sgram_%s numeric\n"%(str(n),"".join(k)))
+        most_wngrams={}
+        if wordngrams:
+            for n in text_proccessing.word_ngrams:
+                most_wngrams[n]=findbest([chap["word_ngrams"][n]
+                                         for record in records
+                                         for chap in record["chapters"]],
+                                         t=True,
+                                         filter=lambda x: not False in [is_valid_word(y) for y in x])
+                for k in most_wngrams[n]:
+                    f.write("@attribute c%sgram_%s numeric\n"%(str(n),"".join(k)))
         f.write("\n\n@data\n")
         writer = csv.writer(f)
         for record in records:
@@ -124,8 +134,11 @@ def print_csv_files(records, filename):
                     if sensefreq:
                         data += [chapter["sense"][key] for key in ["pos","neg","obj"]]
                     if charngrams:
-                        for n in chapter["character_ngrams"]:
+                        for n in text_proccessing.character_ngrams:
                             data += [chapter["character_ngrams"][n][key] for key in most_ngrams[n]]
+                    if wordngrams:
+                        for n in text_proccessing.word_ngrams:
+                            data += [chapter["word_ngrams"][n][key] for key in most_wngrams[n]]
                     writer.writerow(data)
 
 def paraiter(x,resultplace,force=False):
@@ -210,7 +223,7 @@ parser.add_argument('-s','--nostat',
                     dest='hidestat',
                     action='store_true',
                     help='Hides the flat stats.')
-for x in ["wordfreq","usagefreq","regionfreq","topicfreq","sensefreq","charngrams"]:
+for x in ["wordfreq","usagefreq","regionfreq","topicfreq","sensefreq","charngrams","wordngrams"]:
     parser.add_argument("--"+x,
                         dest=x,
                         action="store_true",
@@ -222,5 +235,6 @@ regionfreq=args.regionfreq
 topicfreq=args.topicfreq
 sensefreq=args.sensefreq
 charngrams=args.charngrams
+wordngrams=args.wordngrams
 usestat=not args.hidestat
 main(args)

@@ -5,7 +5,7 @@ from nltk.corpus import sentiwordnet as swn
 from frequency_vector import freqdict, normalize
 
 character_ngrams=[2,3,4]
-words_ngrams=[]
+word_ngrams=[2,3]
 
 test=None
 try:
@@ -34,6 +34,9 @@ def proccess_chapter(chapter):
     chapter_register["character_ngrams"]={}
     for n in character_ngrams:
         chapter_register["character_ngrams"][n]=freqdict()
+    chapter_register["word_ngrams"]={}
+    for n in word_ngrams:
+        chapter_register["word_ngrams"][n]=freqdict()
     for x in chapter.paragraphs:
         proccess_paragraph(x,chapter_register)
     normalize(chapter_register["word_freq_dict"])
@@ -43,6 +46,8 @@ def proccess_chapter(chapter):
     normalize(chapter_register["sense_dist_dict"],cachetotal="total")
     for ngrams in chapter_register["character_ngrams"]:
         normalize(chapter_register["character_ngrams"][ngrams])
+    for ngrams in chapter_register["word_ngrams"]:
+        normalize(chapter_register["word_ngrams"][ngrams])
     chapter.chapter_register=chapter_register
 
 def proccess_paragraph(paragraphdata,chapter_register):
@@ -51,6 +56,10 @@ def proccess_paragraph(paragraphdata,chapter_register):
 
 
 def proccess_sentence(sentencedata,chapter_register):
+    wordngrams=chapter_register["word_ngrams"]
+    for n in wordngrams:
+        if len(sentencedata.words)>n:
+            ngrams(wordngrams[n],n,sentencedata.words)
     for x in sentencedata.words:
         words=chapter_register["word_freq_dict"]
         words.plusplus(x,1)
@@ -83,7 +92,7 @@ def proccess_sentence(sentencedata,chapter_register):
             charngrams=chapter_register["character_ngrams"]
             for n in character_ngrams:
                 if len(x)>n:
-                    charngram = ngrams(charngrams[n],n,"^"+x+"*")
+                    ngrams(charngrams[n],n,"^"+x+"*")
         except BaseException as e:
             print(e)
             print("problem finding word:"+x)
