@@ -60,7 +60,7 @@ def print_csv_files(records, filename):
     #print(text_format.getauthors())
     if filename.endswith('.txt'):
         filename = filename[:-4]
-    header=[x for x in header_dict.keys() if header_dict[x]["use"]]
+    header=[x for x in header_dict.keys() if header_dict[x]["use"] and (usestat or header_dict[x]["set"]!="stat")]
     with open(filename + '.arff', 'wb') as f:
         f.write("@relation %s\n\n"%filename.split("/")[-1].split(".")[0])
         for k in header:
@@ -206,6 +206,10 @@ parser.add_argument('-w','--weka',
                     dest='weka',
                     action='store_true',
                     help='Chain opening combined output in weka. Must we used with -o.')
+parser.add_argument('-s','--nostat',
+                    dest='hidestat',
+                    action='store_true',
+                    help='Hides the flat stats.')
 for x in ["wordfreq","usagefreq","regionfreq","topicfreq","sensefreq","charngrams"]:
     parser.add_argument("--"+x,
                         dest=x,
@@ -218,4 +222,5 @@ regionfreq=args.regionfreq
 topicfreq=args.topicfreq
 sensefreq=args.sensefreq
 charngrams=args.charngrams
+usestat=not args.hidestat
 main(args)
