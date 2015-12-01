@@ -1,0 +1,170 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.BFTree -S 1 -M 2 -N 5 -C 1.0 -P POSTPRUNED
+Relation:     sensef
+Instances:    315
+Attributes:   4
+              author
+              sfreq_pos
+              sfreq_neg
+              sfreq_obj
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Best-First Decision Tree
+
+sfreq_neg < 0.05006
+|  sfreq_pos < 0.02347
+|  |  sfreq_obj < 0.93126: Melville(3.0/0.0)
+|  |  sfreq_obj >= 0.93126
+|  |  |  sfreq_neg < 0.0277
+|  |  |  |  sfreq_neg < 0.02186: Melville(2.0/0.0)
+|  |  |  |  sfreq_neg >= 0.02186: Twain(2.0/1.0)
+|  |  |  sfreq_neg >= 0.0277
+|  |  |  |  sfreq_neg < 0.02876: Doyle(2.0/0.0)
+|  |  |  |  sfreq_neg >= 0.02876
+|  |  |  |  |  sfreq_pos < 0.01879: Melville(2.0/0.0)
+|  |  |  |  |  sfreq_pos >= 0.01879
+|  |  |  |  |  |  sfreq_obj < 0.94588
+|  |  |  |  |  |  |  sfreq_obj < 0.94221
+|  |  |  |  |  |  |  |  sfreq_pos < 0.02195
+|  |  |  |  |  |  |  |  |  sfreq_pos < 0.0206: Dickens(2.0/0.0)
+|  |  |  |  |  |  |  |  |  sfreq_pos >= 0.0206: Doyle(1.0/1.0)
+|  |  |  |  |  |  |  |  sfreq_pos >= 0.02195
+|  |  |  |  |  |  |  |  |  sfreq_pos < 0.02288: Twain(2.0/2.0)
+|  |  |  |  |  |  |  |  |  sfreq_pos >= 0.02288: Doyle(2.0/1.0)
+|  |  |  |  |  |  |  sfreq_obj >= 0.94221: Melville(3.0/0.0)
+|  |  |  |  |  |  sfreq_obj >= 0.94588: Doyle(2.0/2.0)
+|  sfreq_pos >= 0.02347
+|  |  sfreq_pos < 0.02961: Doyle(24.0/60.0)
+|  |  sfreq_pos >= 0.02961
+|  |  |  sfreq_pos < 0.03312: Stoker(13.0/18.0)
+|  |  |  sfreq_pos >= 0.03312
+|  |  |  |  sfreq_pos < 0.04417
+|  |  |  |  |  sfreq_obj < 0.92434
+|  |  |  |  |  |  sfreq_neg < 0.0485
+|  |  |  |  |  |  |  sfreq_neg < 0.03995: Stoker(1.0/2.0)
+|  |  |  |  |  |  |  sfreq_neg >= 0.03995
+|  |  |  |  |  |  |  |  sfreq_pos < 0.03639
+|  |  |  |  |  |  |  |  |  sfreq_obj < 0.92155
+|  |  |  |  |  |  |  |  |  |  sfreq_neg < 0.04503: Dickens(2.0/0.0)
+|  |  |  |  |  |  |  |  |  |  sfreq_neg >= 0.04503: Stoker(1.0/1.0)
+|  |  |  |  |  |  |  |  |  sfreq_obj >= 0.92155: Doyle(3.0/1.0)
+|  |  |  |  |  |  |  |  sfreq_pos >= 0.03639
+|  |  |  |  |  |  |  |  |  sfreq_pos < 0.0385: Doyle(4.0/1.0)
+|  |  |  |  |  |  |  |  |  sfreq_pos >= 0.0385: Twain(2.0/2.0)
+|  |  |  |  |  |  sfreq_neg >= 0.0485: Stoker(1.0/3.0)
+|  |  |  |  |  sfreq_obj >= 0.92434: Austen(5.0/5.0)
+|  |  |  |  sfreq_pos >= 0.04417: Stoker(4.0/2.0)
+sfreq_neg >= 0.05006
+|  sfreq_neg < 0.06552
+|  |  sfreq_pos < 0.02391: Melville(6.0/4.0)
+|  |  sfreq_pos >= 0.02391
+|  |  |  sfreq_obj < 0.902
+|  |  |  |  sfreq_neg < 0.06256: Shelley(5.0/2.0)
+|  |  |  |  sfreq_neg >= 0.06256: Hawthorne(5.0/3.0)
+|  |  |  sfreq_obj >= 0.902
+|  |  |  |  sfreq_obj < 0.91492
+|  |  |  |  |  sfreq_pos < 0.0375
+|  |  |  |  |  |  sfreq_pos < 0.03591
+|  |  |  |  |  |  |  sfreq_pos < 0.02782: Melville(2.0/1.0)
+|  |  |  |  |  |  |  sfreq_pos >= 0.02782
+|  |  |  |  |  |  |  |  sfreq_pos < 0.02891: Twain(2.0/1.0)
+|  |  |  |  |  |  |  |  sfreq_pos >= 0.02891
+|  |  |  |  |  |  |  |  |  sfreq_obj < 0.91274
+|  |  |  |  |  |  |  |  |  |  sfreq_obj < 0.90615: Shelley(2.0/1.0)
+|  |  |  |  |  |  |  |  |  |  sfreq_obj >= 0.90615
+|  |  |  |  |  |  |  |  |  |  |  sfreq_pos < 0.03308
+|  |  |  |  |  |  |  |  |  |  |  |  sfreq_pos < 0.03079: Dickens(1.0/2.0)
+|  |  |  |  |  |  |  |  |  |  |  |  sfreq_pos >= 0.03079
+|  |  |  |  |  |  |  |  |  |  |  |  |  sfreq_pos < 0.03204: Hawthorne(2.0/0.0)
+|  |  |  |  |  |  |  |  |  |  |  |  |  sfreq_pos >= 0.03204: Hawthorne(1.0/1.0)
+|  |  |  |  |  |  |  |  |  |  |  sfreq_pos >= 0.03308
+|  |  |  |  |  |  |  |  |  |  |  |  sfreq_pos < 0.03405: Shelley(2.0/0.0)
+|  |  |  |  |  |  |  |  |  |  |  |  sfreq_pos >= 0.03405: Twain(1.0/2.0)
+|  |  |  |  |  |  |  |  |  sfreq_obj >= 0.91274: Stoker(2.0/2.0)
+|  |  |  |  |  |  sfreq_pos >= 0.03591: Austen(3.0/0.0)
+|  |  |  |  |  sfreq_pos >= 0.0375
+|  |  |  |  |  |  sfreq_obj < 0.90311: Doyle(2.0/1.0)
+|  |  |  |  |  |  sfreq_obj >= 0.90311
+|  |  |  |  |  |  |  sfreq_pos < 0.03788: Stoker(2.0/0.0)
+|  |  |  |  |  |  |  sfreq_pos >= 0.03788
+|  |  |  |  |  |  |  |  sfreq_neg < 0.05448: Stoker(1.0/2.0)
+|  |  |  |  |  |  |  |  sfreq_neg >= 0.05448: Melville(2.0/0.0)
+|  |  |  |  sfreq_obj >= 0.91492
+|  |  |  |  |  sfreq_pos < 0.03295
+|  |  |  |  |  |  sfreq_pos < 0.02623
+|  |  |  |  |  |  |  sfreq_neg < 0.05522: Dickens(2.0/0.0)
+|  |  |  |  |  |  |  sfreq_neg >= 0.05522: Stoker(2.0/0.0)
+|  |  |  |  |  |  sfreq_pos >= 0.02623
+|  |  |  |  |  |  |  sfreq_pos < 0.0276: Hawthorne(2.0/2.0)
+|  |  |  |  |  |  |  sfreq_pos >= 0.0276: Dickens(3.0/7.0)
+|  |  |  |  |  sfreq_pos >= 0.03295: Hawthorne(4.0/0.0)
+|  sfreq_neg >= 0.06552
+|  |  sfreq_neg < 0.09043
+|  |  |  sfreq_pos < 0.04261
+|  |  |  |  sfreq_pos < 0.03662
+|  |  |  |  |  sfreq_neg < 0.07639
+|  |  |  |  |  |  sfreq_obj < 0.89677: Austen(4.0/0.0)
+|  |  |  |  |  |  sfreq_obj >= 0.89677
+|  |  |  |  |  |  |  sfreq_obj < 0.89944: Hawthorne(3.0/2.0)
+|  |  |  |  |  |  |  sfreq_obj >= 0.89944
+|  |  |  |  |  |  |  |  sfreq_pos < 0.02432: Stoker(1.0/1.0)
+|  |  |  |  |  |  |  |  sfreq_pos >= 0.02432
+|  |  |  |  |  |  |  |  |  sfreq_pos < 0.02854: Austen(4.0/0.0)
+|  |  |  |  |  |  |  |  |  sfreq_pos >= 0.02854: Stoker(2.0/2.0)
+|  |  |  |  |  sfreq_neg >= 0.07639
+|  |  |  |  |  |  sfreq_pos < 0.02754: Shelley(2.0/0.0)
+|  |  |  |  |  |  sfreq_pos >= 0.02754
+|  |  |  |  |  |  |  sfreq_pos < 0.03331: Austen(2.0/1.0)
+|  |  |  |  |  |  |  sfreq_pos >= 0.03331: Melville(2.0/1.0)
+|  |  |  |  sfreq_pos >= 0.03662
+|  |  |  |  |  sfreq_neg < 0.0688: Dickens(2.0/0.0)
+|  |  |  |  |  sfreq_neg >= 0.0688: Austen(3.0/4.0)
+|  |  |  sfreq_pos >= 0.04261: Austen(5.0/0.0)
+|  |  sfreq_neg >= 0.09043: Hawthorne(2.0/2.0)
+
+Size of the Tree: 111
+
+Number of Leaf Nodes: 56
+
+Time taken to build model: 0.14 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          71               22.5397 %
+Incorrectly Classified Instances       244               77.4603 %
+Kappa statistic                          0.0917
+Mean absolute error                      0.2095
+Root mean squared error                  0.3333
+Relative absolute error                 96.4288 %
+Root relative squared error            101.1512 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.02      0.038      0.091     0.02      0.033      0.456    Stoker
+                 0.083     0.1        0.097     0.083     0.09       0.532    Hawthorne
+                 0         0          0         0         0          0.635    Twain
+                 0.843     0.508      0.243     0.843     0.377      0.649    Doyle
+                 0         0.007      0         0         0          0.554    Dickens
+                 0.476     0.22       0.25      0.476     0.328      0.628    Austen
+                 0.091     0.014      0.333     0.091     0.143      0.622    Shelley
+                 0.047     0.022      0.25      0.047     0.078      0.445    Melville
+Weighted Avg.    0.225     0.134      0.156     0.225     0.141      0.559
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+  1  6  0 27  0 15  0  1 |  a = Stoker
+  3  3  0 13  1 13  2  1 |  b = Hawthorne
+  0  2  0 26  0  3  0  1 |  c = Twain
+  2  1  0 43  0  4  0  1 |  d = Doyle
+  2  2  0 29  0  6  0  0 |  e = Dickens
+  2  6  0 10  1 20  2  1 |  f = Austen
+  1  5  0  3  0 10  2  1 |  g = Shelley
+  0  6  0 26  0  9  0  2 |  h = Melville
+

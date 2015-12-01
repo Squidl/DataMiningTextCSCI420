@@ -1,0 +1,554 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     wordngram
+Instances:    315
+Attributes:   21
+              author
+              c2gram_ofthe
+              c2gram_inthe
+              c2gram_tothe
+              c2gram_itwas
+              c2gram_tobe
+              c2gram_andthe
+              c2gram_onthe
+              c2gram_itis
+              c2gram_atthe
+              c2gram_ofhis
+              c3gram_therewasa
+              c3gram_outofthe
+              c3gram_itwasa
+              c3gram_oneofthe
+              c3gram_thatitwas
+              c3gram_icannot
+              c3gram_therewasno
+              c3gram_idonot
+              c3gram_thathewas
+              c3gram_thathehad
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -0.8391364399387469
+    Node 8    -0.6216105473992639
+    Node 9    -8.40167620760923
+    Node 10    0.37435337271656066
+    Node 11    6.454692136870987
+    Node 12    12.094703699160721
+    Node 13    -8.28712595990737
+    Node 14    -8.850848585522082
+    Node 15    -0.5083631928359723
+    Node 16    8.399706247308625
+    Node 17    0.46897839449926954
+    Node 18    -8.667599279467908
+    Node 19    -5.711474328502549
+    Node 20    0.2695877882899886
+    Node 21    -1.975164287142122
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -3.4408193923484136
+    Node 8    8.532647893439673
+    Node 9    -3.636458311931088
+    Node 10    3.0464697281119064
+    Node 11    -4.38207004916388
+    Node 12    -3.2715881612604245
+    Node 13    2.548214410020561
+    Node 14    -10.643697630631548
+    Node 15    -7.864262412160866
+    Node 16    -0.931164512807646
+    Node 17    -7.8678461342611525
+    Node 18    -7.1296265324648935
+    Node 19    -10.80092834992673
+    Node 20    -1.9927928732751845
+    Node 21    -2.85223888664189
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -3.2591096491834355
+    Node 8    -0.7992554521909169
+    Node 9    -6.223338286518509
+    Node 10    -9.104538987647256
+    Node 11    2.017638289412085
+    Node 12    -5.604120050293526
+    Node 13    4.307968876108845
+    Node 14    8.196811301957181
+    Node 15    2.857114532107807
+    Node 16    -3.3801882840759103
+    Node 17    2.5381460196427486
+    Node 18    2.974849690223885
+    Node 19    -9.5554379946127
+    Node 20    -8.607509857373108
+    Node 21    -1.538639717860964
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -5.73165074196603
+    Node 8    -4.324371550393797
+    Node 9    2.9019986090242376
+    Node 10    5.8520675128336945
+    Node 11    5.762930050681046
+    Node 12    -7.064950188090169
+    Node 13    -7.6925222211303605
+    Node 14    5.6528851402198885
+    Node 15    -8.593813361392382
+    Node 16    -7.125891072985844
+    Node 17    -10.39899329121764
+    Node 18    9.228235131009301
+    Node 19    -1.7978598419929162
+    Node 20    2.637962865706513
+    Node 21    4.935147410895378
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -0.5145424145945138
+    Node 8    -5.6521753878025205
+    Node 9    0.2561832484338857
+    Node 10    -1.4622528163056088
+    Node 11    -7.125324870218354
+    Node 12    1.7132628223988844
+    Node 13    4.244296836964218
+    Node 14    1.0932144301680036
+    Node 15    -8.039155126343491
+    Node 16    -2.667376544372819
+    Node 17    7.56328635938502
+    Node 18    -6.589213557259289
+    Node 19    -10.56581920166681
+    Node 20    5.685884323287189
+    Node 21    -8.165051391114678
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -9.283559525355361
+    Node 8    -10.92211928327741
+    Node 9    4.991991138518118
+    Node 10    1.2046205156978234
+    Node 11    -3.1881260693497357
+    Node 12    0.7456804531735116
+    Node 13    2.5784763642990702
+    Node 14    -1.8959607425102891
+    Node 15    5.974376403944155
+    Node 16    -7.696657165897927
+    Node 17    -0.9469874133003537
+    Node 18    -1.126384655426023
+    Node 19    5.022118981164604
+    Node 20    -3.9553431828034267
+    Node 21    3.8025918965262484
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -7.967699477486153
+    Node 8    -0.0030389329091285076
+    Node 9    -4.854146680711967
+    Node 10    -5.7467842435614385
+    Node 11    -8.192755998980905
+    Node 12    -5.396784293813567
+    Node 13    4.601929419941651
+    Node 14    -4.330118698062572
+    Node 15    1.8374653232814615
+    Node 16    5.734126086726486
+    Node 17    -3.3255959101342887
+    Node 18    -0.5830349703044247
+    Node 19    2.8177964861712494
+    Node 20    5.1113320957105985
+    Node 21    3.6349391449265553
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -9.941217033229716
+    Node 8    6.53671830576865
+    Node 9    3.7676152971253933
+    Node 10    -5.107058093689186
+    Node 11    -6.1489231512068185
+    Node 12    -8.503025493143966
+    Node 13    -4.441702315714727
+    Node 14    -1.6291433070223684
+    Node 15    8.280682942712815
+    Node 16    -5.656999754459846
+    Node 17    2.750413453327915
+    Node 18    -2.019548973446095
+    Node 19    10.983659967315221
+    Node 20    -0.9126897268044586
+    Node 21    -4.664225610220952
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -8.312194204214624
+    Attrib c2gram_ofthe    7.98151629553795
+    Attrib c2gram_inthe    9.07069050409217
+    Attrib c2gram_tothe    -2.459066615484712
+    Attrib c2gram_itwas    0.8919305612265424
+    Attrib c2gram_tobe    -1.0866997598128956
+    Attrib c2gram_andthe    -5.766890130594228
+    Attrib c2gram_onthe    -2.867640855966957
+    Attrib c2gram_itis    -3.217681623596653
+    Attrib c2gram_atthe    3.114740068923957
+    Attrib c2gram_ofhis    3.568012828425765
+    Attrib c3gram_therewasa    0.6796942972307297
+    Attrib c3gram_outofthe    1.1626467200541006
+    Attrib c3gram_itwasa    -2.371406427605939
+    Attrib c3gram_oneofthe    1.821970576051089
+    Attrib c3gram_thatitwas    -1.0397437245904115
+    Attrib c3gram_icannot    -3.9659377187623206
+    Attrib c3gram_therewasno    -1.8559236615935724
+    Attrib c3gram_idonot    -2.119864340762009
+    Attrib c3gram_thathewas    -3.6257724599511207
+    Attrib c3gram_thathehad    -0.9467013208757965
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    1.4617369817630315
+    Attrib c2gram_ofthe    0.41186581321573934
+    Attrib c2gram_inthe    5.076539308910987
+    Attrib c2gram_tothe    5.973864877035789
+    Attrib c2gram_itwas    2.058042331040676
+    Attrib c2gram_tobe    7.8138193718170585
+    Attrib c2gram_andthe    -5.628079115065672
+    Attrib c2gram_onthe    2.5141599756632185
+    Attrib c2gram_itis    2.457172574511338
+    Attrib c2gram_atthe    -6.05968433503532
+    Attrib c2gram_ofhis    4.619910225166835
+    Attrib c3gram_therewasa    -2.9741966345079365
+    Attrib c3gram_outofthe    -1.0607172725132152
+    Attrib c3gram_itwasa    1.9753269075498587
+    Attrib c3gram_oneofthe    1.761348475981788
+    Attrib c3gram_thatitwas    -6.185933355652227
+    Attrib c3gram_icannot    2.1725516185039813
+    Attrib c3gram_therewasno    -2.510669588746953
+    Attrib c3gram_idonot    2.809815643273888
+    Attrib c3gram_thathewas    -1.6998963453504201
+    Attrib c3gram_thathehad    0.6214265158048459
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    9.408323243458108
+    Attrib c2gram_ofthe    -0.9128063764214442
+    Attrib c2gram_inthe    2.3289923253758085
+    Attrib c2gram_tothe    -3.0527129521737875
+    Attrib c2gram_itwas    0.7056687782814401
+    Attrib c2gram_tobe    4.412432259128568
+    Attrib c2gram_andthe    -3.8355136591685075
+    Attrib c2gram_onthe    1.6869819196632097
+    Attrib c2gram_itis    0.8457687787129522
+    Attrib c2gram_atthe    4.690032892059884
+    Attrib c2gram_ofhis    2.4957021879071437
+    Attrib c3gram_therewasa    -0.2231057488191719
+    Attrib c3gram_outofthe    -2.8473111844835106
+    Attrib c3gram_itwasa    5.983903572963521
+    Attrib c3gram_oneofthe    2.519733343954748
+    Attrib c3gram_thatitwas    2.338092148534013
+    Attrib c3gram_icannot    -2.138962629837139
+    Attrib c3gram_therewasno    0.06881775757897865
+    Attrib c3gram_idonot    -4.135372112077794
+    Attrib c3gram_thathewas    1.8611403582969273
+    Attrib c3gram_thathehad    3.4731587442969416
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    1.8313155722583572
+    Attrib c2gram_ofthe    -1.0852990949741967
+    Attrib c2gram_inthe    -6.908810268124817
+    Attrib c2gram_tothe    -0.7696902727702306
+    Attrib c2gram_itwas    1.8746513789990447
+    Attrib c2gram_tobe    -6.833194810080349
+    Attrib c2gram_andthe    4.497783274736473
+    Attrib c2gram_onthe    0.8438061039957141
+    Attrib c2gram_itis    -1.1371070717184462
+    Attrib c2gram_atthe    -1.3580139027018554
+    Attrib c2gram_ofhis    1.0638007117849144
+    Attrib c3gram_therewasa    5.3627956048056395
+    Attrib c3gram_outofthe    0.7716508680473333
+    Attrib c3gram_itwasa    -3.0365162931228453
+    Attrib c3gram_oneofthe    0.03529748000017368
+    Attrib c3gram_thatitwas    3.205384920532905
+    Attrib c3gram_icannot    -1.927480291586972
+    Attrib c3gram_therewasno    6.687651851390874
+    Attrib c3gram_idonot    3.3805485211434436
+    Attrib c3gram_thathewas    2.555652494873653
+    Attrib c3gram_thathehad    -4.976325081800839
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.21611758562378924
+    Attrib c2gram_ofthe    -8.306150339690936
+    Attrib c2gram_inthe    4.474001366409563
+    Attrib c2gram_tothe    -3.7521583005428116
+    Attrib c2gram_itwas    -6.142822530079875
+    Attrib c2gram_tobe    4.610756672045954
+    Attrib c2gram_andthe    -6.756214530650019
+    Attrib c2gram_onthe    -1.1837528720259642
+    Attrib c2gram_itis    1.3213430595136562
+    Attrib c2gram_atthe    0.5637434996240649
+    Attrib c2gram_ofhis    2.0352419119509078
+    Attrib c3gram_therewasa    3.600966950960632
+    Attrib c3gram_outofthe    -1.4255652759038917
+    Attrib c3gram_itwasa    -0.2797890006384287
+    Attrib c3gram_oneofthe    4.61300817450006
+    Attrib c3gram_thatitwas    -0.2846560889692696
+    Attrib c3gram_icannot    1.9100490215133656
+    Attrib c3gram_therewasno    -0.7323240783315819
+    Attrib c3gram_idonot    7.547014197357524
+    Attrib c3gram_thathewas    -5.045753658628835
+    Attrib c3gram_thathehad    2.485048523636443
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    -1.6755966558019713
+    Attrib c2gram_ofthe    -2.3495183933351407
+    Attrib c2gram_inthe    -5.533702174776409
+    Attrib c2gram_tothe    -1.2741297569649863
+    Attrib c2gram_itwas    -3.884467308657515
+    Attrib c2gram_tobe    7.561170182936224
+    Attrib c2gram_andthe    4.422952159756321
+    Attrib c2gram_onthe    1.9048748641843634
+    Attrib c2gram_itis    -11.112470715585069
+    Attrib c2gram_atthe    -5.884751069968488
+    Attrib c2gram_ofhis    1.7169546911677724
+    Attrib c3gram_therewasa    3.699068187587245
+    Attrib c3gram_outofthe    -2.2490751656907797
+    Attrib c3gram_itwasa    6.273014624052196
+    Attrib c3gram_oneofthe    1.0869955293002402
+    Attrib c3gram_thatitwas    -1.4200361319269714
+    Attrib c3gram_icannot    -0.11713077247733536
+    Attrib c3gram_therewasno    -4.80972602770603
+    Attrib c3gram_idonot    0.8021649095032598
+    Attrib c3gram_thathewas    0.13893917167033892
+    Attrib c3gram_thathehad    1.2330378814899283
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    3.9743291578141693
+    Attrib c2gram_ofthe    -9.213830042391612
+    Attrib c2gram_inthe    8.312816098633384
+    Attrib c2gram_tothe    -0.42304044465004204
+    Attrib c2gram_itwas    -1.1690123946210944
+    Attrib c2gram_tobe    0.6506642976499315
+    Attrib c2gram_andthe    4.299695602027649
+    Attrib c2gram_onthe    -5.4892976243309075
+    Attrib c2gram_itis    -6.103152104710119
+    Attrib c2gram_atthe    8.878953002537559
+    Attrib c2gram_ofhis    -4.015347554302013
+    Attrib c3gram_therewasa    2.972934206470844
+    Attrib c3gram_outofthe    -2.4010349607753785
+    Attrib c3gram_itwasa    1.9504010577834154
+    Attrib c3gram_oneofthe    1.7083376224416724
+    Attrib c3gram_thatitwas    1.7100493512669688
+    Attrib c3gram_icannot    0.3754226351145634
+    Attrib c3gram_therewasno    1.0905787142757917
+    Attrib c3gram_idonot    -5.2743516496749745
+    Attrib c3gram_thathewas    3.296863901675854
+    Attrib c3gram_thathehad    4.968058294759458
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -8.951230002998287
+    Attrib c2gram_ofthe    -8.757693145761216
+    Attrib c2gram_inthe    -3.7451771388577004
+    Attrib c2gram_tothe    -1.031464896935118
+    Attrib c2gram_itwas    2.5293239635651674
+    Attrib c2gram_tobe    5.1332230114969555
+    Attrib c2gram_andthe    3.5353630587540588
+    Attrib c2gram_onthe    0.6787321929622391
+    Attrib c2gram_itis    -12.338430269529717
+    Attrib c2gram_atthe    -0.41435069413198916
+    Attrib c2gram_ofhis    -2.366322627598859
+    Attrib c3gram_therewasa    -0.053806954072571495
+    Attrib c3gram_outofthe    -2.2223446509204052
+    Attrib c3gram_itwasa    -1.8629793322488273
+    Attrib c3gram_oneofthe    3.116121432538463
+    Attrib c3gram_thatitwas    -1.5088051212735125
+    Attrib c3gram_icannot    3.3594228015033747
+    Attrib c3gram_therewasno    3.5504069146763855
+    Attrib c3gram_idonot    1.324575159547544
+    Attrib c3gram_thathewas    -2.306679123193492
+    Attrib c3gram_thathehad    -2.1005246886003346
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    3.7909162004536343
+    Attrib c2gram_ofthe    1.9790245081253606
+    Attrib c2gram_inthe    -0.5295876248873694
+    Attrib c2gram_tothe    -0.4784559273625092
+    Attrib c2gram_itwas    1.644336369171029
+    Attrib c2gram_tobe    -0.7476660147889992
+    Attrib c2gram_andthe    10.06143317383956
+    Attrib c2gram_onthe    3.3175869957600783
+    Attrib c2gram_itis    -2.1117208797048956
+    Attrib c2gram_atthe    -3.594611097390764
+    Attrib c2gram_ofhis    -4.2939364646017335
+    Attrib c3gram_therewasa    -2.412348131661265
+    Attrib c3gram_outofthe    -6.485494702563555
+    Attrib c3gram_itwasa    -2.894716591598197
+    Attrib c3gram_oneofthe    2.520690969841546
+    Attrib c3gram_thatitwas    3.4427155040994166
+    Attrib c3gram_icannot    2.9614297124326177
+    Attrib c3gram_therewasno    2.819208872962923
+    Attrib c3gram_idonot    3.091974943241806
+    Attrib c3gram_thathewas    2.550789746896854
+    Attrib c3gram_thathehad    -1.2820647106344536
+Sigmoid Node 17
+    Inputs    Weights
+    Threshold    3.0421992921719885
+    Attrib c2gram_ofthe    -5.450470165392353
+    Attrib c2gram_inthe    0.6746790054243598
+    Attrib c2gram_tothe    1.0245717731516362
+    Attrib c2gram_itwas    0.405136817013862
+    Attrib c2gram_tobe    -3.3416347184686113
+    Attrib c2gram_andthe    6.650180114845871
+    Attrib c2gram_onthe    6.910805734436852
+    Attrib c2gram_itis    0.5169331452785803
+    Attrib c2gram_atthe    6.391583048501291
+    Attrib c2gram_ofhis    4.186844550971785
+    Attrib c3gram_therewasa    3.9912316489912865
+    Attrib c3gram_outofthe    0.7684024856837665
+    Attrib c3gram_itwasa    2.5240694949962688
+    Attrib c3gram_oneofthe    -1.7856311344922862
+    Attrib c3gram_thatitwas    2.608119251741999
+    Attrib c3gram_icannot    -7.835450936491599
+    Attrib c3gram_therewasno    0.3383905603206628
+    Attrib c3gram_idonot    1.3611202329744476
+    Attrib c3gram_thathewas    -3.449964236049995
+    Attrib c3gram_thathehad    1.1637471322272865
+Sigmoid Node 18
+    Inputs    Weights
+    Threshold    3.806552599664221
+    Attrib c2gram_ofthe    1.241999199952818
+    Attrib c2gram_inthe    1.3676659722253255
+    Attrib c2gram_tothe    -2.2658493838121876
+    Attrib c2gram_itwas    1.7560801924291847
+    Attrib c2gram_tobe    -4.716777947242972
+    Attrib c2gram_andthe    8.662992697355591
+    Attrib c2gram_onthe    -5.961926694928663
+    Attrib c2gram_itis    3.7346655310896444
+    Attrib c2gram_atthe    1.897530151874584
+    Attrib c2gram_ofhis    0.3633706721134363
+    Attrib c3gram_therewasa    -6.761591706712691
+    Attrib c3gram_outofthe    1.9270253139319586
+    Attrib c3gram_itwasa    4.841301980553177
+    Attrib c3gram_oneofthe    4.424271138598857
+    Attrib c3gram_thatitwas    0.5761176654081875
+    Attrib c3gram_icannot    0.4645288423266751
+    Attrib c3gram_therewasno    2.539352693430938
+    Attrib c3gram_idonot    -4.775448852224646
+    Attrib c3gram_thathewas    3.172096399003387
+    Attrib c3gram_thathehad    2.3245923761632263
+Sigmoid Node 19
+    Inputs    Weights
+    Threshold    -8.059267639286833
+    Attrib c2gram_ofthe    1.0162696536700737
+    Attrib c2gram_inthe    2.6389310367638905
+    Attrib c2gram_tothe    1.5996240156356114
+    Attrib c2gram_itwas    -6.746180414139433
+    Attrib c2gram_tobe    -4.1271194993014575
+    Attrib c2gram_andthe    5.7153057979616895
+    Attrib c2gram_onthe    -4.1576252944430925
+    Attrib c2gram_itis    -0.8916262764280474
+    Attrib c2gram_atthe    -0.8388871197990821
+    Attrib c2gram_ofhis    1.0440847849414485
+    Attrib c3gram_therewasa    -10.089262692233698
+    Attrib c3gram_outofthe    -0.885540361482763
+    Attrib c3gram_itwasa    0.2511960882493399
+    Attrib c3gram_oneofthe    1.8789153607511464
+    Attrib c3gram_thatitwas    0.3890808277129623
+    Attrib c3gram_icannot    0.724792747931009
+    Attrib c3gram_therewasno    -9.125412764722574
+    Attrib c3gram_idonot    14.214029231919126
+    Attrib c3gram_thathewas    -1.5637362002128594
+    Attrib c3gram_thathehad    -0.5125536775452472
+Sigmoid Node 20
+    Inputs    Weights
+    Threshold    3.6918657714159364
+    Attrib c2gram_ofthe    1.4726832108657546
+    Attrib c2gram_inthe    0.5307815193328637
+    Attrib c2gram_tothe    0.14285660840974193
+    Attrib c2gram_itwas    1.3428823407045696
+    Attrib c2gram_tobe    -5.0569851747214845
+    Attrib c2gram_andthe    1.7756195571023665
+    Attrib c2gram_onthe    3.535696566763324
+    Attrib c2gram_itis    0.18375691971366764
+    Attrib c2gram_atthe    6.503659492475982
+    Attrib c2gram_ofhis    1.1168859657278036
+    Attrib c3gram_therewasa    -1.3689941363512732
+    Attrib c3gram_outofthe    -3.0368837553017207
+    Attrib c3gram_itwasa    1.4206841517407816
+    Attrib c3gram_oneofthe    1.0716906831161384
+    Attrib c3gram_thatitwas    0.4138972635385605
+    Attrib c3gram_icannot    6.907828049478245
+    Attrib c3gram_therewasno    -2.6114378619684566
+    Attrib c3gram_idonot    -2.203387210754372
+    Attrib c3gram_thathewas    -0.07008541348931012
+    Attrib c3gram_thathehad    -1.849913934893864
+Sigmoid Node 21
+    Inputs    Weights
+    Threshold    0.19585969105105344
+    Attrib c2gram_ofthe    -0.37678211336389916
+    Attrib c2gram_inthe    0.5913910153858004
+    Attrib c2gram_tothe    -2.9132292056201474
+    Attrib c2gram_itwas    1.8434560663820643
+    Attrib c2gram_tobe    -1.1392349815592466
+    Attrib c2gram_andthe    1.6379255342926093
+    Attrib c2gram_onthe    0.9326295995291558
+    Attrib c2gram_itis    -0.4531176062015472
+    Attrib c2gram_atthe    0.072280889143177
+    Attrib c2gram_ofhis    -0.49331873431862316
+    Attrib c3gram_therewasa    2.8735750063098724
+    Attrib c3gram_outofthe    -9.415594709887893
+    Attrib c3gram_itwasa    -0.764098349081911
+    Attrib c3gram_oneofthe    0.09622075061960683
+    Attrib c3gram_thatitwas    0.96375555076039
+    Attrib c3gram_icannot    7.112360619606952
+    Attrib c3gram_therewasno    -4.091128955715147
+    Attrib c3gram_idonot    -1.0508167648402749
+    Attrib c3gram_thathewas    2.570314162433051
+    Attrib c3gram_thathehad    5.045839328186347
+Class Stoker
+    Input
+    Node 0
+Class Hawthorne
+    Input
+    Node 1
+Class Twain
+    Input
+    Node 2
+Class Doyle
+    Input
+    Node 3
+Class Dickens
+    Input
+    Node 4
+Class Austen
+    Input
+    Node 5
+Class Shelley
+    Input
+    Node 6
+Class Melville
+    Input
+    Node 7
+
+
+Time taken to build model: 1.68 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         144               45.7143 %
+Incorrectly Classified Instances       171               54.2857 %
+Kappa statistic                          0.3751
+Mean absolute error                      0.1449
+Root mean squared error                  0.3379
+Relative absolute error                 66.7034 %
+Root relative squared error            102.5294 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.44      0.094      0.468     0.44      0.454      0.751    Stoker
+                 0.389     0.097      0.341     0.389     0.364      0.738    Hawthorne
+                 0.406     0.071      0.394     0.406     0.4        0.851    Twain
+                 0.51      0.106      0.481     0.51      0.495      0.802    Doyle
+                 0.231     0.094      0.257     0.231     0.243      0.615    Dickens
+                 0.69      0.059      0.644     0.69      0.667      0.909    Austen
+                 0.545     0.031      0.571     0.545     0.558      0.788    Shelley
+                 0.442     0.074      0.487     0.442     0.463      0.792    Melville
+Weighted Avg.    0.457     0.082      0.455     0.457     0.456      0.78 
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 22  5  6  4  4  3  3  3 |  a = Stoker
+  1 14  3  1  6  3  1  7 |  b = Hawthorne
+  5  4 13  3  2  2  0  3 |  c = Twain
+  6  2  3 26  9  2  2  1 |  d = Doyle
+  4  7  1 13  9  3  0  2 |  e = Dickens
+  6  1  1  2  2 29  0  1 |  f = Austen
+  2  1  1  2  0  1 12  3 |  g = Shelley
+  1  7  5  3  3  2  3 19 |  h = Melville
+

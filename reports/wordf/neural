@@ -1,0 +1,299 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     wordf
+Instances:    315
+Attributes:   11
+              author
+              wfreq_the
+              wfreq_i
+              wfreq_he
+              wfreq_it
+              wfreq_was
+              wfreq_a
+              wfreq_to
+              wfreq_but
+              wfreq_and
+              wfreq_in
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    0.09424148236734035
+    Node 8    -3.4617769526280777
+    Node 9    -3.0568110078192565
+    Node 10    7.9037041951042015
+    Node 11    -2.267338168384253
+    Node 12    -11.729774354876932
+    Node 13    5.583960271292867
+    Node 14    -4.575281180216307
+    Node 15    -7.6188830628834525
+    Node 16    7.498677649667541
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    1.821863491694768
+    Node 8    3.396726488064652
+    Node 9    -10.544014269641691
+    Node 10    -0.31658072280318866
+    Node 11    6.232363422614135
+    Node 12    -10.613005172954388
+    Node 13    -5.924682760605869
+    Node 14    -2.7829821503743704
+    Node 15    -0.7590054613312913
+    Node 16    -4.691403834491644
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -6.068751326246336
+    Node 8    1.9896730857268374
+    Node 9    5.547256489732092
+    Node 10    -3.2718416488597324
+    Node 11    0.1433747946465742
+    Node 12    -7.576211380798707
+    Node 13    -0.829159072518354
+    Node 14    3.837634960563505
+    Node 15    -1.802458383665979
+    Node 16    -1.3559790057052485
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -3.185677374915533
+    Node 8    -10.305257850794694
+    Node 9    3.3131883838751737
+    Node 10    2.1275264357884667
+    Node 11    -2.5338431215542836
+    Node 12    -4.081773996333228
+    Node 13    -8.700163634425225
+    Node 14    -4.550843618865763
+    Node 15    2.635536517079295
+    Node 16    -5.856211799576095
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -4.1808618379071705
+    Node 8    -1.8402313448427432
+    Node 9    4.7315890493473205
+    Node 10    -3.6829935157431892
+    Node 11    3.144670025120514
+    Node 12    -4.8920580538180305
+    Node 13    -0.0990595867909217
+    Node 14    -8.334566918724166
+    Node 15    -1.518135516981495
+    Node 16    -7.867796890478251
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -2.666440382424283
+    Node 8    -6.919516756962324
+    Node 9    -1.880556401685257
+    Node 10    -14.867331248525753
+    Node 11    -4.703838066644162
+    Node 12    3.0275507216059054
+    Node 13    -8.850031151394576
+    Node 14    0.4703792059939509
+    Node 15    5.432161035740969
+    Node 16    6.38966696559792
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -12.153653434255503
+    Node 8    -4.576527289339965
+    Node 9    5.232245379568415
+    Node 10    2.6335779781454116
+    Node 11    -3.412131552532013
+    Node 12    6.617794970521476
+    Node 13    5.954925776975292
+    Node 14    4.548760277859062
+    Node 15    -3.355819739801749
+    Node 16    -7.738189221244217
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -2.941841768940471
+    Node 8    4.141747272596671
+    Node 9    -4.240554139496376
+    Node 10    -4.488518871871673
+    Node 11    0.7924124429992632
+    Node 12    8.48945023561234
+    Node 13    0.07016808145106611
+    Node 14    3.729670031484434
+    Node 15    -8.44336284660581
+    Node 16    -6.730247115762403
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -9.227729082245357
+    Attrib wfreq_the    -0.2486763009010247
+    Attrib wfreq_i    -12.67092725907613
+    Attrib wfreq_he    -0.1196965549956884
+    Attrib wfreq_it    0.8995515768779467
+    Attrib wfreq_was    -0.39200749098853754
+    Attrib wfreq_a    4.898574447793938
+    Attrib wfreq_to    -2.5655755787131325
+    Attrib wfreq_but    6.2548643187342625
+    Attrib wfreq_and    4.672143914240092
+    Attrib wfreq_in    -8.935692474071887
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -1.1472342431854479
+    Attrib wfreq_the    -2.358446821233248
+    Attrib wfreq_i    4.941831377182796
+    Attrib wfreq_he    2.443183465089541
+    Attrib wfreq_it    -5.161324289297342
+    Attrib wfreq_was    0.6978083195481558
+    Attrib wfreq_a    5.085765102111632
+    Attrib wfreq_to    -6.447113168646095
+    Attrib wfreq_but    -15.070619751906886
+    Attrib wfreq_and    0.07233902195840977
+    Attrib wfreq_in    -0.8723356595208642
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    5.9053823080377095
+    Attrib wfreq_the    3.5504623933574613
+    Attrib wfreq_i    12.96083380844429
+    Attrib wfreq_he    5.26379094733282
+    Attrib wfreq_it    3.875130504741328
+    Attrib wfreq_was    4.086819374301081
+    Attrib wfreq_a    -2.616706145316063
+    Attrib wfreq_to    -2.4623760039423686
+    Attrib wfreq_but    -5.301260257034341
+    Attrib wfreq_and    -4.201232302439866
+    Attrib wfreq_in    2.652640944441346
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -4.029415123168686
+    Attrib wfreq_the    4.073443992043427
+    Attrib wfreq_i    -9.98969700633995
+    Attrib wfreq_he    -0.22342870021636693
+    Attrib wfreq_it    3.8792262864129774
+    Attrib wfreq_was    -4.630407159539351
+    Attrib wfreq_a    -0.03649269011442746
+    Attrib wfreq_to    -1.7657212883350215
+    Attrib wfreq_but    -3.4397606024507534
+    Attrib wfreq_and    3.827919938878563
+    Attrib wfreq_in    2.9505221283117575
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -5.322144491598609
+    Attrib wfreq_the    -11.36296274699702
+    Attrib wfreq_i    -1.6515425644157018
+    Attrib wfreq_he    -9.641196418263792
+    Attrib wfreq_it    -4.207838946346648
+    Attrib wfreq_was    -7.123918389562584
+    Attrib wfreq_a    0.7256491801097756
+    Attrib wfreq_to    3.8534517913571538
+    Attrib wfreq_but    11.607864713691326
+    Attrib wfreq_and    0.5773385908223995
+    Attrib wfreq_in    8.495091280999613
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    8.999486902030249
+    Attrib wfreq_the    13.379220665003063
+    Attrib wfreq_i    9.263526347135848
+    Attrib wfreq_he    1.2580846030780037
+    Attrib wfreq_it    -4.042371071988394
+    Attrib wfreq_was    -2.6893431723338526
+    Attrib wfreq_a    1.5231713930015685
+    Attrib wfreq_to    8.005473609011085
+    Attrib wfreq_but    3.142911243422693
+    Attrib wfreq_and    0.11581927307817261
+    Attrib wfreq_in    0.24540244909387485
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    3.2129804435139317
+    Attrib wfreq_the    -3.094684043408187
+    Attrib wfreq_i    7.209379844052709
+    Attrib wfreq_he    7.382579652860801
+    Attrib wfreq_it    -10.153426324209637
+    Attrib wfreq_was    11.482464453494135
+    Attrib wfreq_a    -0.11475965398416636
+    Attrib wfreq_to    -2.471865862080377
+    Attrib wfreq_but    7.750762885457337
+    Attrib wfreq_and    2.2500416157618046
+    Attrib wfreq_in    -6.136497730072397
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    3.6584387703220536
+    Attrib wfreq_the    8.862738048469096
+    Attrib wfreq_i    2.7712071264230516
+    Attrib wfreq_he    -6.951357704021107
+    Attrib wfreq_it    5.5523908711567405
+    Attrib wfreq_was    12.121522727340023
+    Attrib wfreq_a    0.19318989361664088
+    Attrib wfreq_to    -6.27862580999718
+    Attrib wfreq_but    0.06555667244265975
+    Attrib wfreq_and    -7.345297522662504
+    Attrib wfreq_in    -4.352615991942819
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    -6.756453382915898
+    Attrib wfreq_the    -10.27325892574045
+    Attrib wfreq_i    3.645384937483461
+    Attrib wfreq_he    8.524313551229934
+    Attrib wfreq_it    1.073571646431138
+    Attrib wfreq_was    0.2803272027112274
+    Attrib wfreq_a    -11.012566668662808
+    Attrib wfreq_to    5.927604951161805
+    Attrib wfreq_but    0.2708094404939497
+    Attrib wfreq_and    2.2977580531953525
+    Attrib wfreq_in    -5.985126574819629
+Class Stoker
+    Input
+    Node 0
+Class Hawthorne
+    Input
+    Node 1
+Class Twain
+    Input
+    Node 2
+Class Doyle
+    Input
+    Node 3
+Class Dickens
+    Input
+    Node 4
+Class Austen
+    Input
+    Node 5
+Class Shelley
+    Input
+    Node 6
+Class Melville
+    Input
+    Node 7
+
+
+Time taken to build model: 0.88 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         163               51.746  %
+Incorrectly Classified Instances       152               48.254  %
+Kappa statistic                          0.445 
+Mean absolute error                      0.1271
+Root mean squared error                  0.3106
+Relative absolute error                 58.5162 %
+Root relative squared error             94.2336 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.58      0.068      0.617     0.58      0.598      0.852    Stoker
+                 0.5       0.079      0.45      0.5       0.474      0.869    Hawthorne
+                 0.406     0.046      0.5       0.406     0.448      0.824    Twain
+                 0.588     0.102      0.526     0.588     0.556      0.829    Doyle
+                 0.308     0.072      0.375     0.308     0.338      0.696    Dickens
+                 0.595     0.073      0.556     0.595     0.575      0.92     Austen
+                 0.773     0.044      0.567     0.773     0.654      0.911    Shelley
+                 0.442     0.07       0.5       0.442     0.469      0.827    Melville
+Weighted Avg.    0.517     0.072      0.514     0.517     0.513      0.838
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 29  0  4  4  3  3  6  1 |  a = Stoker
+  0 18  2  3  5  0  0  8 |  b = Hawthorne
+  2  4 13  6  2  4  0  1 |  c = Twain
+  5  2  2 30  4  2  5  1 |  d = Doyle
+  4  5  2 10 12  3  1  2 |  e = Dickens
+  3  2  2  2  3 25  0  5 |  f = Austen
+  2  0  0  1  1  0 17  1 |  g = Shelley
+  2  9  1  1  2  8  1 19 |  h = Melville
+

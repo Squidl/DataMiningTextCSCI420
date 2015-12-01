@@ -1,0 +1,153 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.BFTree -S 1 -M 2 -N 5 -C 1.0 -P POSTPRUNED
+Relation:     charngram
+Instances:    315
+Attributes:   31
+              author
+              c2gram_s*
+              c2gram_e*
+              c2gram_t*
+              c2gram_d*
+              c2gram_^w
+              c2gram_re
+              c2gram_er
+              c2gram_as
+              c2gram_ed
+              c2gram_^t
+              c3gram_ed*
+              c3gram_re*
+              c3gram_^th
+              c3gram_ere
+              c3gram_her
+              c3gram_the
+              c3gram_ly*
+              c3gram_ing
+              c3gram_ng*
+              c3gram_er*
+              c4gram_ther
+              c4gram_here
+              c4gram_^the
+              c4gram_ere*
+              c4gram_ing*
+              c4gram_ked*
+              c4gram_ght*
+              c4gram_red*
+              c4gram_thin
+              c4gram_ied*
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Best-First Decision Tree
+
+c2gram_^t < 0.02148
+|  c4gram_ked* < 0.00368
+|  |  c2gram_d* < 0.03285
+|  |  |  c3gram_ng* < 0.01174
+|  |  |  |  c4gram_here < 0.00836
+|  |  |  |  |  c2gram_d* < 0.02522
+|  |  |  |  |  |  c2gram_e* < 0.03339
+|  |  |  |  |  |  |  c2gram_d* < 0.0092: Melville(2.0/0.0)
+|  |  |  |  |  |  |  c2gram_d* >= 0.0092
+|  |  |  |  |  |  |  |  c3gram_re* < 0.00506
+|  |  |  |  |  |  |  |  |  c2gram_^w < 0.02068
+|  |  |  |  |  |  |  |  |  |  c2gram_e* < 0.01755: Melville(2.0/1.0)
+|  |  |  |  |  |  |  |  |  |  c2gram_e* >= 0.01755: Austen(5.0/0.0)
+|  |  |  |  |  |  |  |  |  c2gram_^w >= 0.02068: Melville(2.0/1.0)
+|  |  |  |  |  |  |  |  c3gram_re* >= 0.00506: Austen(14.0/1.0)
+|  |  |  |  |  |  c2gram_e* >= 0.03339
+|  |  |  |  |  |  |  c2gram_t* < 0.02975: Dickens(3.0/0.0)
+|  |  |  |  |  |  |  c2gram_t* >= 0.02975: Austen(1.0/1.0)
+|  |  |  |  |  c2gram_d* >= 0.02522
+|  |  |  |  |  |  c2gram_d* < 0.02974: Shelley(5.0/0.0)
+|  |  |  |  |  |  c2gram_d* >= 0.02974: Stoker(1.0/1.0)
+|  |  |  |  c4gram_here >= 0.00836: Hawthorne(16.0/39.0)
+|  |  |  c3gram_ng* >= 0.01174
+|  |  |  |  c2gram_ed < 0.02345
+|  |  |  |  |  c3gram_^th < 0.00442: Doyle(1.0/1.0)
+|  |  |  |  |  c3gram_^th >= 0.00442: Melville(19.0/2.0)
+|  |  |  |  c2gram_ed >= 0.02345: Dickens(2.0/0.0)
+|  |  c2gram_d* >= 0.03285
+|  |  |  c2gram_^t < 0.01718: Shelley(12.0/0.0)
+|  |  |  c2gram_^t >= 0.01718
+|  |  |  |  c2gram_t* < 0.02541: Stoker(1.0/1.0)
+|  |  |  |  c2gram_t* >= 0.02541: Hawthorne(2.0/0.0)
+|  c4gram_ked* >= 0.00368
+|  |  c2gram_s* < 0.02403
+|  |  |  c2gram_^t < 0.01001
+|  |  |  |  c2gram_ed < 0.01876: Austen(6.0/1.0)
+|  |  |  |  c2gram_ed >= 0.01876: Dickens(3.0/1.0)
+|  |  |  c2gram_^t >= 0.01001
+|  |  |  |  c2gram_as < 0.01376
+|  |  |  |  |  c2gram_t* < 0.02391
+|  |  |  |  |  |  c2gram_e* < 0.03847: Dickens(4.0/0.0)
+|  |  |  |  |  |  c2gram_e* >= 0.03847: Stoker(2.0/1.0)
+|  |  |  |  |  c2gram_t* >= 0.02391
+|  |  |  |  |  |  c2gram_s* < 0.01843: Hawthorne(5.0/0.0)
+|  |  |  |  |  |  c2gram_s* >= 0.01843: Stoker(1.0/1.0)
+|  |  |  |  c2gram_as >= 0.01376
+|  |  |  |  |  c3gram_ing < 0.01461: Stoker(11.0/2.0)
+|  |  |  |  |  c3gram_ing >= 0.01461: Doyle(1.0/1.0)
+|  |  c2gram_s* >= 0.02403: Doyle(40.0/40.0)
+c2gram_^t >= 0.02148
+|  c3gram_^th < 0.01995
+|  |  c3gram_er* < 0.00471: Stoker(4.0/1.0)
+|  |  c3gram_er* >= 0.00471: Twain(25.0/0.0)
+|  c3gram_^th >= 0.01995
+|  |  c2gram_as < 0.00711: Melville(5.0/0.0)
+|  |  c2gram_as >= 0.00711
+|  |  |  c2gram_er < 0.02555
+|  |  |  |  c4gram_ght* < 0.00144
+|  |  |  |  |  c2gram_s* < 0.02647: Austen(2.0/0.0)
+|  |  |  |  |  c2gram_s* >= 0.02647: Stoker(1.0/1.0)
+|  |  |  |  c4gram_ght* >= 0.00144: Stoker(13.0/1.0)
+|  |  |  c2gram_er >= 0.02555
+|  |  |  |  c2gram_d* < 0.03218
+|  |  |  |  |  c2gram_t* < 0.01958: Doyle(1.0/1.0)
+|  |  |  |  |  c2gram_t* >= 0.01958: Twain(2.0/0.0)
+|  |  |  |  c2gram_d* >= 0.03218: Hawthorne(2.0/0.0)
+
+Size of the Tree: 67
+
+Number of Leaf Nodes: 34
+
+Time taken to build model: 0.31 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         114               36.1905 %
+Incorrectly Classified Instances       201               63.8095 %
+Kappa statistic                          0.2633
+Mean absolute error                      0.1659
+Root mean squared error                  0.353 
+Relative absolute error                 76.3724 %
+Root relative squared error            107.1051 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.32      0.109      0.356     0.32      0.337      0.628    Stoker
+                 0.333     0.129      0.25      0.333     0.286      0.677    Hawthorne
+                 0.688     0.032      0.71      0.688     0.698      0.873    Twain
+                 0.529     0.193      0.346     0.529     0.419      0.698    Doyle
+                 0.128     0.087      0.172     0.128     0.147      0.581    Dickens
+                 0.31      0.066      0.419     0.31      0.356      0.621    Austen
+                 0.409     0.031      0.5       0.409     0.45       0.782    Shelley
+                 0.233     0.092      0.286     0.233     0.256      0.618    Melville
+Weighted Avg.    0.362     0.101      0.364     0.362     0.357      0.672
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 16  5  5  8  5  5  3  3 |  a = Stoker
+  5 12  2  6  4  1  0  6 |  b = Hawthorne
+  4  4 22  1  0  0  0  1 |  c = Twain
+  9  6  1 27  3  2  2  1 |  d = Doyle
+  2  6  1 16  5  3  2  4 |  e = Dickens
+  4  4  0  2  8 13  2  9 |  f = Austen
+  1  1  0  9  0  1  9  1 |  g = Shelley
+  4 10  0  9  4  6  0 10 |  h = Melville
+

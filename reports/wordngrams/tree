@@ -1,0 +1,189 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.BFTree -S 1 -M 2 -N 5 -C 1.0 -P POSTPRUNED
+Relation:     wordngram
+Instances:    315
+Attributes:   21
+              author
+              c2gram_ofthe
+              c2gram_inthe
+              c2gram_tothe
+              c2gram_itwas
+              c2gram_tobe
+              c2gram_andthe
+              c2gram_onthe
+              c2gram_itis
+              c2gram_atthe
+              c2gram_ofhis
+              c3gram_therewasa
+              c3gram_outofthe
+              c3gram_itwasa
+              c3gram_oneofthe
+              c3gram_thatitwas
+              c3gram_icannot
+              c3gram_therewasno
+              c3gram_idonot
+              c3gram_thathewas
+              c3gram_thathehad
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Best-First Decision Tree
+
+c2gram_tobe < 0.00321
+|  c2gram_itis < 0.00117
+|  |  c2gram_andthe < 0.00174
+|  |  |  c3gram_therewasa < 1.7E-4: Melville(24.0/26.0)
+|  |  |  c3gram_therewasa >= 1.7E-4
+|  |  |  |  c2gram_ofthe < 0.00426
+|  |  |  |  |  c2gram_inthe < 0.00301: Twain(4.0/0.0)
+|  |  |  |  |  c2gram_inthe >= 0.00301
+|  |  |  |  |  |  c2gram_tothe < 0.00205: Austen(3.0/0.0)
+|  |  |  |  |  |  c2gram_tothe >= 0.00205: Stoker(1.0/1.0)
+|  |  |  |  c2gram_ofthe >= 0.00426
+|  |  |  |  |  c3gram_thathewas < 1.4E-4: Hawthorne(10.0/2.0)
+|  |  |  |  |  c3gram_thathewas >= 1.4E-4
+|  |  |  |  |  |  c2gram_tothe < 0.00212: Hawthorne(3.0/3.0)
+|  |  |  |  |  |  c2gram_tothe >= 0.00212: Dickens(4.0/0.0)
+|  |  c2gram_andthe >= 0.00174
+|  |  |  c3gram_idonot < 3.1E-4
+|  |  |  |  c3gram_oneofthe < 9.0E-5
+|  |  |  |  |  c2gram_onthe < 0.00178: Twain(15.0/5.0)
+|  |  |  |  |  c2gram_onthe >= 0.00178
+|  |  |  |  |  |  c2gram_inthe < 0.00363
+|  |  |  |  |  |  |  c2gram_tothe < 0.00265: Shelley(3.0/0.0)
+|  |  |  |  |  |  |  c2gram_tothe >= 0.00265: Stoker(2.0/0.0)
+|  |  |  |  |  |  c2gram_inthe >= 0.00363
+|  |  |  |  |  |  |  c2gram_ofthe < 0.00901
+|  |  |  |  |  |  |  |  c2gram_ofthe < 0.00502: Twain(1.0/1.0)
+|  |  |  |  |  |  |  |  c2gram_ofthe >= 0.00502: Dickens(2.0/0.0)
+|  |  |  |  |  |  |  c2gram_ofthe >= 0.00901: Hawthorne(2.0/0.0)
+|  |  |  |  c3gram_oneofthe >= 9.0E-5
+|  |  |  |  |  c2gram_tobe < 0.00126
+|  |  |  |  |  |  c2gram_itwas < 0.00317
+|  |  |  |  |  |  |  c2gram_ofhis < 3.5E-4: Stoker(4.0/1.0)
+|  |  |  |  |  |  |  c2gram_ofhis >= 3.5E-4: Hawthorne(2.0/1.0)
+|  |  |  |  |  |  c2gram_itwas >= 0.00317: Shelley(3.0/0.0)
+|  |  |  |  |  c2gram_tobe >= 0.00126
+|  |  |  |  |  |  c3gram_outofthe < 3.2E-4: Doyle(6.0/1.0)
+|  |  |  |  |  |  c3gram_outofthe >= 3.2E-4
+|  |  |  |  |  |  |  c2gram_inthe < 0.00448: Hawthorne(1.0/1.0)
+|  |  |  |  |  |  |  c2gram_inthe >= 0.00448: Dickens(5.0/1.0)
+|  |  |  c3gram_idonot >= 3.1E-4
+|  |  |  |  c3gram_therewasa < 4.5E-4: Shelley(9.0/0.0)
+|  |  |  |  c3gram_therewasa >= 4.5E-4: Stoker(2.0/0.0)
+|  c2gram_itis >= 0.00117
+|  |  c3gram_thathewas < 7.0E-5
+|  |  |  c2gram_ofthe < 0.00533
+|  |  |  |  c2gram_tothe < 0.00274
+|  |  |  |  |  c3gram_icannot < 4.5E-4
+|  |  |  |  |  |  c2gram_tothe < 0.00169
+|  |  |  |  |  |  |  c3gram_therewasa < 1.2E-4
+|  |  |  |  |  |  |  |  c2gram_tothe < 0.00113: Austen(2.0/1.0)
+|  |  |  |  |  |  |  |  c2gram_tothe >= 0.00113
+|  |  |  |  |  |  |  |  |  c2gram_tobe < 0.00147: Shelley(1.0/1.0)
+|  |  |  |  |  |  |  |  |  c2gram_tobe >= 0.00147: Stoker(4.0/0.0)
+|  |  |  |  |  |  |  c3gram_therewasa >= 1.2E-4: Stoker(7.0/0.0)
+|  |  |  |  |  |  c2gram_tothe >= 0.00169
+|  |  |  |  |  |  |  c2gram_ofhis < 7.5E-4: Stoker(4.0/1.0)
+|  |  |  |  |  |  |  c2gram_ofhis >= 7.5E-4
+|  |  |  |  |  |  |  |  c2gram_ofthe < 0.00422: Dickens(7.0/2.0)
+|  |  |  |  |  |  |  |  c2gram_ofthe >= 0.00422
+|  |  |  |  |  |  |  |  |  c2gram_inthe < 0.00362: Stoker(2.0/0.0)
+|  |  |  |  |  |  |  |  |  c2gram_inthe >= 0.00362: Hawthorne(1.0/1.0)
+|  |  |  |  |  c3gram_icannot >= 4.5E-4
+|  |  |  |  |  |  c2gram_ofthe < 0.00187: Stoker(3.0/0.0)
+|  |  |  |  |  |  c2gram_ofthe >= 0.00187
+|  |  |  |  |  |  |  c3gram_therewasno < 2.6E-4: Austen(7.0/1.0)
+|  |  |  |  |  |  |  c3gram_therewasno >= 2.6E-4: Stoker(1.0/1.0)
+|  |  |  |  c2gram_tothe >= 0.00274
+|  |  |  |  |  c2gram_itwas < 0.0023: Doyle(3.0/0.0)
+|  |  |  |  |  c2gram_itwas >= 0.0023: Hawthorne(1.0/1.0)
+|  |  |  c2gram_ofthe >= 0.00533
+|  |  |  |  c2gram_itwas < 0.00144
+|  |  |  |  |  c2gram_inthe < 0.00347: Stoker(2.0/1.0)
+|  |  |  |  |  c2gram_inthe >= 0.00347: Melville(11.0/3.0)
+|  |  |  |  c2gram_itwas >= 0.00144
+|  |  |  |  |  c2gram_itis < 0.00257
+|  |  |  |  |  |  c3gram_thatitwas < 2.7E-4
+|  |  |  |  |  |  |  c2gram_andthe < 0.00179: Hawthorne(3.0/1.0)
+|  |  |  |  |  |  |  c2gram_andthe >= 0.00179
+|  |  |  |  |  |  |  |  c2gram_tothe < 0.00228: Twain(1.0/1.0)
+|  |  |  |  |  |  |  |  c2gram_tothe >= 0.00228: Dickens(2.0/0.0)
+|  |  |  |  |  |  c3gram_thatitwas >= 2.7E-4: Stoker(4.0/0.0)
+|  |  |  |  |  c2gram_itis >= 0.00257: Doyle(5.0/0.0)
+|  |  c3gram_thathewas >= 7.0E-5
+|  |  |  c2gram_itwas < 0.00125
+|  |  |  |  c2gram_ofthe < 0.00565
+|  |  |  |  |  c2gram_atthe < 4.8E-4: Austen(3.0/0.0)
+|  |  |  |  |  c2gram_atthe >= 4.8E-4
+|  |  |  |  |  |  c2gram_itwas < 7.5E-4
+|  |  |  |  |  |  |  c2gram_ofthe < 0.00519: Stoker(2.0/0.0)
+|  |  |  |  |  |  |  c2gram_ofthe >= 0.00519: Dickens(1.0/1.0)
+|  |  |  |  |  |  c2gram_itwas >= 7.5E-4: Doyle(2.0/0.0)
+|  |  |  |  c2gram_ofthe >= 0.00565: Hawthorne(3.0/0.0)
+|  |  |  c2gram_itwas >= 0.00125
+|  |  |  |  c2gram_onthe < 0.00333
+|  |  |  |  |  c2gram_atthe < 3.7E-4
+|  |  |  |  |  |  c2gram_itwas < 0.00224: Shelley(1.0/1.0)
+|  |  |  |  |  |  c2gram_itwas >= 0.00224: Stoker(2.0/0.0)
+|  |  |  |  |  c2gram_atthe >= 3.7E-4
+|  |  |  |  |  |  c2gram_onthe < 0.00143: Doyle(18.0/0.0)
+|  |  |  |  |  |  c2gram_onthe >= 0.00143
+|  |  |  |  |  |  |  c2gram_itwas < 0.0027
+|  |  |  |  |  |  |  |  c2gram_ofthe < 0.00489: Dickens(3.0/0.0)
+|  |  |  |  |  |  |  |  c2gram_ofthe >= 0.00489
+|  |  |  |  |  |  |  |  |  c2gram_inthe < 0.00405: Stoker(1.0/1.0)
+|  |  |  |  |  |  |  |  |  c2gram_inthe >= 0.00405: Doyle(2.0/0.0)
+|  |  |  |  |  |  |  c2gram_itwas >= 0.0027: Doyle(7.0/0.0)
+|  |  |  |  c2gram_onthe >= 0.00333: Dickens(3.0/1.0)
+c2gram_tobe >= 0.00321
+|  c2gram_atthe < 0.00153: Austen(22.0/2.0)
+|  c2gram_atthe >= 0.00153
+|  |  c2gram_tothe < 0.00209: Melville(2.0/0.0)
+|  |  c2gram_tothe >= 0.00209: Dickens(1.0/1.0)
+
+Size of the Tree: 113
+
+Number of Leaf Nodes: 57
+
+Time taken to build model: 0.29 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         112               35.5556 %
+Incorrectly Classified Instances       203               64.4444 %
+Kappa statistic                          0.2573
+Mean absolute error                      0.1698
+Root mean squared error                  0.3636
+Relative absolute error                 78.1736 %
+Root relative squared error            110.339  %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.36      0.181      0.273     0.36      0.31       0.55     Stoker
+                 0.25      0.14       0.188     0.25      0.214      0.558    Hawthorne
+                 0.219     0.081      0.233     0.219     0.226      0.603    Twain
+                 0.392     0.08       0.488     0.392     0.435      0.698    Doyle
+                 0.103     0.094      0.133     0.103     0.116      0.507    Dickens
+                 0.548     0.062      0.575     0.548     0.561      0.749    Austen
+                 0.318     0.038      0.389     0.318     0.35       0.631    Shelley
+                 0.558     0.066      0.571     0.558     0.565      0.82     Melville
+Weighted Avg.    0.356     0.097      0.366     0.356     0.358      0.644
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 18  9  5  3  3  7  4  1 |  a = Stoker
+  3  9  4  6  6  3  2  3 |  b = Hawthorne
+ 10  6  7  1  1  2  2  3 |  c = Twain
+  9  6  2 20 10  0  0  4 |  d = Doyle
+ 10  6  6  5  4  3  1  4 |  e = Dickens
+ 10  1  3  2  0 23  1  2 |  f = Austen
+  2  8  1  1  2  0  7  1 |  g = Shelley
+  4  3  2  3  4  2  1 24 |  h = Melville
+

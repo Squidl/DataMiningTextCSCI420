@@ -1,0 +1,909 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     charngram
+Instances:    315
+Attributes:   31
+              author
+              c2gram_s*
+              c2gram_e*
+              c2gram_t*
+              c2gram_d*
+              c2gram_^w
+              c2gram_re
+              c2gram_er
+              c2gram_as
+              c2gram_ed
+              c2gram_^t
+              c3gram_ed*
+              c3gram_re*
+              c3gram_^th
+              c3gram_ere
+              c3gram_her
+              c3gram_the
+              c3gram_ly*
+              c3gram_ing
+              c3gram_ng*
+              c3gram_er*
+              c4gram_ther
+              c4gram_here
+              c4gram_^the
+              c4gram_ere*
+              c4gram_ing*
+              c4gram_ked*
+              c4gram_ght*
+              c4gram_red*
+              c4gram_thin
+              c4gram_ied*
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -3.2823120316270593
+    Node 8    -6.008952344804509
+    Node 9    5.689200716262976
+    Node 10    -3.504233972284552
+    Node 11    -5.628554256997595
+    Node 12    2.6451869482166614
+    Node 13    -6.3509269514894315
+    Node 14    -4.5535769805311075
+    Node 15    3.798317006595626
+    Node 16    0.2368383794062267
+    Node 17    -1.4821927092660603
+    Node 18    6.3169387726030815
+    Node 19    -4.027036751910655
+    Node 20    -7.325956515272029
+    Node 21    1.5700978084532673
+    Node 22    6.453188099339341
+    Node 23    3.668114580507244
+    Node 24    -5.74261796776939
+    Node 25    2.9586139441805797
+    Node 26    -2.9903294941172454
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -2.886052082655119
+    Node 8    0.447267428070742
+    Node 9    1.601475580072736
+    Node 10    4.029424049954063
+    Node 11    -4.656988327312496
+    Node 12    -8.6857721700869
+    Node 13    5.9258241561088045
+    Node 14    -5.5026839704132495
+    Node 15    -1.1328063277130258
+    Node 16    -2.4507114367090925
+    Node 17    4.303689586054851
+    Node 18    1.6859067435759287
+    Node 19    1.5473826422337165
+    Node 20    3.1635800332984636
+    Node 21    -5.391179875453567
+    Node 22    -7.190143465267181
+    Node 23    -1.155939880447064
+    Node 24    -8.067942919744228
+    Node 25    -1.8248455752853994
+    Node 26    1.7213641034968752
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -4.12287137226043
+    Node 8    -2.6180249749790176
+    Node 9    2.563930113332625
+    Node 10    4.392418825778364
+    Node 11    -1.5309045819986091
+    Node 12    5.803501784848356
+    Node 13    -3.5941641258611243
+    Node 14    -1.2939464525273487
+    Node 15    -2.013459217035866
+    Node 16    -3.127011409715774
+    Node 17    -0.40935630789932065
+    Node 18    -3.6137669384367412
+    Node 19    -4.816538388411791
+    Node 20    3.070464690794094
+    Node 21    -1.738450490600242
+    Node 22    -5.069655591197514
+    Node 23    -2.7152350327893555
+    Node 24    3.8765421749275237
+    Node 25    -0.37437073657057507
+    Node 26    1.1254047505002382
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -1.7983948843045483
+    Node 8    -4.86047774643063
+    Node 9    -9.372712615489997
+    Node 10    5.580824070073782
+    Node 11    -4.67315358628815
+    Node 12    -4.136988832604297
+    Node 13    2.309599053757035
+    Node 14    3.5363336686350406
+    Node 15    -7.828402761637271
+    Node 16    2.015582139681034
+    Node 17    -6.528854488578661
+    Node 18    -0.9633365944138869
+    Node 19    2.948756760225517
+    Node 20    4.086360979506942
+    Node 21    4.587352397300922
+    Node 22    0.7952703287072398
+    Node 23    0.3685219286406859
+    Node 24    -2.138518963052969
+    Node 25    4.725875103055922
+    Node 26    -7.54523466032861
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -1.1432992963457873
+    Node 8    -2.1157784008931833
+    Node 9    -0.45521100467802866
+    Node 10    -2.734164724923217
+    Node 11    -9.24372074617737
+    Node 12    -4.238133686375632
+    Node 13    1.9619389278460269
+    Node 14    -4.468269766743446
+    Node 15    6.897799061797222
+    Node 16    6.521966176762036
+    Node 17    5.737984550016672
+    Node 18    -8.098037913826868
+    Node 19    -7.919483020502932
+    Node 20    0.7215131465000166
+    Node 21    -0.02233374966382691
+    Node 22    3.364101611551073
+    Node 23    -3.751411028140936
+    Node 24    3.22728351170787
+    Node 25    -9.419637495912701
+    Node 26    -1.3200837762875317
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -1.8120568099249248
+    Node 8    2.549496994796773
+    Node 9    -1.9066239202352526
+    Node 10    4.768058926156761
+    Node 11    1.7052238353811728
+    Node 12    1.1469067061277165
+    Node 13    -9.058632465800033
+    Node 14    3.3987945203936816
+    Node 15    -4.357619045620243
+    Node 16    5.083085079010239
+    Node 17    -8.351968306904388
+    Node 18    -2.565288347993379
+    Node 19    2.5664371638161985
+    Node 20    1.2365702757611237
+    Node 21    -7.156330722021525
+    Node 22    -6.066398385257397
+    Node 23    -0.152264883971416
+    Node 24    -5.375523561011113
+    Node 25    -6.587265166910429
+    Node 26    1.988014122263618
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -0.23754602237636363
+    Node 8    -0.20134405315420514
+    Node 9    -3.9050442415534925
+    Node 10    -5.465269525498096
+    Node 11    -1.4743277258095537
+    Node 12    -4.111930020536819
+    Node 13    -1.340820310114539
+    Node 14    -3.7568545844437784
+    Node 15    -0.45520882074968605
+    Node 16    -6.559742049479986
+    Node 17    -1.6527409660903785
+    Node 18    2.218603871415453
+    Node 19    2.602886312606414
+    Node 20    -4.911289012383855
+    Node 21    -3.831352682194546
+    Node 22    -5.420011554884243
+    Node 23    -1.9195996866156562
+    Node 24    4.8750300439726
+    Node 25    0.1465121961965554
+    Node 26    4.000753871923049
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -2.636601581273826
+    Node 8    1.4764078231621112
+    Node 9    0.41971195330364175
+    Node 10    -6.450318005200952
+    Node 11    7.107275756142166
+    Node 12    -3.2898032908376105
+    Node 13    2.4016830511697784
+    Node 14    1.7705111658991857
+    Node 15    -0.28780618426426674
+    Node 16    -7.193740914817567
+    Node 17    5.468229183600715
+    Node 18    -0.7585181485662734
+    Node 19    -3.16085653409799
+    Node 20    -6.88542560568648
+    Node 21    2.0359564271692325
+    Node 22    4.866339048624688
+    Node 23    -2.388999544367645
+    Node 24    -1.4131595758378954
+    Node 25    -2.342586292296227
+    Node 26    -4.603928633208327
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.9312534309285803
+    Attrib c2gram_s*    -1.0221312480546614
+    Attrib c2gram_e*    -1.3828748374561606
+    Attrib c2gram_t*    1.6335569074737288
+    Attrib c2gram_d*    -2.8754678003794614
+    Attrib c2gram_^w    -3.397316152721228
+    Attrib c2gram_re    -0.7056725821516147
+    Attrib c2gram_er    -0.7498354964752603
+    Attrib c2gram_as    -0.41760757395073217
+    Attrib c2gram_ed    0.04405917901287367
+    Attrib c2gram_^t    -2.9110167980331902
+    Attrib c3gram_ed*    0.2655650178682845
+    Attrib c3gram_re*    1.3128748954086038
+    Attrib c3gram_^th    3.5834803665425516
+    Attrib c3gram_ere    -2.0329932734748666
+    Attrib c3gram_her    1.7220014849660232
+    Attrib c3gram_the    2.9966831746041755
+    Attrib c3gram_ly*    -0.05370141449960919
+    Attrib c3gram_ing    0.597994384592969
+    Attrib c3gram_ng*    0.2823279941849808
+    Attrib c3gram_er*    -0.8675295850721166
+    Attrib c4gram_ther    0.9091886271177847
+    Attrib c4gram_here    0.18532356002100933
+    Attrib c4gram_^the    -1.2447739113356355
+    Attrib c4gram_ere*    -1.306105774929425
+    Attrib c4gram_ing*    0.03291126609492557
+    Attrib c4gram_ked*    0.32863982178798906
+    Attrib c4gram_ght*    -1.1110312871935633
+    Attrib c4gram_red*    1.5764067873149494
+    Attrib c4gram_thin    -1.6705086645963196
+    Attrib c4gram_ied*    0.5496595982897052
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    1.3004163593196347
+    Attrib c2gram_s*    -0.6343215198007134
+    Attrib c2gram_e*    -3.367910399780908
+    Attrib c2gram_t*    3.3563337212501634
+    Attrib c2gram_d*    -0.5675901694667133
+    Attrib c2gram_^w    2.5759595656116074
+    Attrib c2gram_re    -2.409561233348462
+    Attrib c2gram_er    -2.361737386232616
+    Attrib c2gram_as    -2.868764006593276
+    Attrib c2gram_ed    -1.6314358078443194
+    Attrib c2gram_^t    4.722107650189405
+    Attrib c3gram_ed*    -0.4083053124611673
+    Attrib c3gram_re*    -2.0615759359364842
+    Attrib c3gram_^th    1.7346437690280017
+    Attrib c3gram_ere    -2.875194192371052
+    Attrib c3gram_her    1.52861314830428
+    Attrib c3gram_the    -0.9416768735584751
+    Attrib c3gram_ly*    1.6572842475751923
+    Attrib c3gram_ing    4.08813060609578
+    Attrib c3gram_ng*    -3.705042729936996
+    Attrib c3gram_er*    -2.8394506409826428
+    Attrib c4gram_ther    1.450060822529886
+    Attrib c4gram_here    1.9012456438445866
+    Attrib c4gram_^the    -0.7056982873104395
+    Attrib c4gram_ere*    5.521951299364535
+    Attrib c4gram_ing*    4.112802989817458
+    Attrib c4gram_ked*    0.17936848240934203
+    Attrib c4gram_ght*    -1.9119688151315886
+    Attrib c4gram_red*    1.0606122415533417
+    Attrib c4gram_thin    -1.340328473527983
+    Attrib c4gram_ied*    -1.1426894098052356
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    2.263983477862965
+    Attrib c2gram_s*    -1.7469922293109326
+    Attrib c2gram_e*    -2.1497228840135527
+    Attrib c2gram_t*    -4.126944293233154
+    Attrib c2gram_d*    1.07043798976361
+    Attrib c2gram_^w    -1.2316321827763472
+    Attrib c2gram_re    -1.418447883311062
+    Attrib c2gram_er    -0.4413172724231939
+    Attrib c2gram_as    1.43557874226867
+    Attrib c2gram_ed    3.26982758957765
+    Attrib c2gram_^t    6.90828553807906
+    Attrib c3gram_ed*    -0.30690293701286675
+    Attrib c3gram_re*    0.03838297655306259
+    Attrib c3gram_^th    2.8443452166960137
+    Attrib c3gram_ere    -0.17576228159781623
+    Attrib c3gram_her    5.003506246369624
+    Attrib c3gram_the    -0.8905642778532923
+    Attrib c3gram_ly*    -1.9874834941171802
+    Attrib c3gram_ing    -1.0331992138093147
+    Attrib c3gram_ng*    0.19936186151337804
+    Attrib c3gram_er*    -1.5284706253226512
+    Attrib c4gram_ther    -0.03926692494394273
+    Attrib c4gram_here    2.168692622598595
+    Attrib c4gram_^the    1.1959118283961363
+    Attrib c4gram_ere*    1.3785037383462884
+    Attrib c4gram_ing*    -3.328807268060724
+    Attrib c4gram_ked*    -0.34441525914845805
+    Attrib c4gram_ght*    1.0886170662109285
+    Attrib c4gram_red*    1.0360725104068842
+    Attrib c4gram_thin    0.5217661708005515
+    Attrib c4gram_ied*    1.4813028386008718
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -2.0479245872167184
+    Attrib c2gram_s*    0.2515820341729739
+    Attrib c2gram_e*    -3.176301787649699
+    Attrib c2gram_t*    2.71868175487374
+    Attrib c2gram_d*    -2.980350983973578
+    Attrib c2gram_^w    -2.067451428407792
+    Attrib c2gram_re    -0.3330586877510563
+    Attrib c2gram_er    3.75335236141561
+    Attrib c2gram_as    -4.60699182506799
+    Attrib c2gram_ed    -1.5970183178973303
+    Attrib c2gram_^t    1.597949976939562
+    Attrib c3gram_ed*    2.6787254046472055
+    Attrib c3gram_re*    0.9457965277842365
+    Attrib c3gram_^th    1.7148648087469678
+    Attrib c3gram_ere    -4.121799769452357
+    Attrib c3gram_her    -0.23275580685810895
+    Attrib c3gram_the    1.836382448212907
+    Attrib c3gram_ly*    -0.34184027246545395
+    Attrib c3gram_ing    0.13475173752071812
+    Attrib c3gram_ng*    1.975249421114082
+    Attrib c3gram_er*    5.608145267383753
+    Attrib c4gram_ther    -2.027327240097972
+    Attrib c4gram_here    1.187231512191754
+    Attrib c4gram_^the    -0.38122590911212473
+    Attrib c4gram_ere*    1.075799302710028
+    Attrib c4gram_ing*    0.8611083793398936
+    Attrib c4gram_ked*    -4.798251085990194
+    Attrib c4gram_ght*    -4.095268175384361
+    Attrib c4gram_red*    0.06101159249497935
+    Attrib c4gram_thin    -1.592990099697452
+    Attrib c4gram_ied*    0.4310382013093278
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    1.1534796893696961
+    Attrib c2gram_s*    -1.6364519262927386
+    Attrib c2gram_e*    1.1326720450473888
+    Attrib c2gram_t*    -0.1573438037701567
+    Attrib c2gram_d*    2.660254027547806
+    Attrib c2gram_^w    0.9212186149153159
+    Attrib c2gram_re    1.2858395384522996
+    Attrib c2gram_er    0.29854193268527307
+    Attrib c2gram_as    1.1538057855783803
+    Attrib c2gram_ed    0.07508300346677163
+    Attrib c2gram_^t    7.715390205515721
+    Attrib c3gram_ed*    -0.2262525899969552
+    Attrib c3gram_re*    1.8968800209978152
+    Attrib c3gram_^th    -3.511824667133794
+    Attrib c3gram_ere    -2.0068547101119134
+    Attrib c3gram_her    2.25864401503148
+    Attrib c3gram_the    -1.1802376332835702
+    Attrib c3gram_ly*    -0.07526407492244874
+    Attrib c3gram_ing    -0.07069978820981344
+    Attrib c3gram_ng*    2.0421729116718965
+    Attrib c3gram_er*    4.538292950123326
+    Attrib c4gram_ther    0.6678474565571584
+    Attrib c4gram_here    -1.3871062281181321
+    Attrib c4gram_^the    0.43219082549784554
+    Attrib c4gram_ere*    2.021937568872527
+    Attrib c4gram_ing*    -1.5422521839937966
+    Attrib c4gram_ked*    -0.7341523334244938
+    Attrib c4gram_ght*    -2.5484971781129846
+    Attrib c4gram_red*    0.43921486967040824
+    Attrib c4gram_thin    -0.21136574621413154
+    Attrib c4gram_ied*    -1.9470427190046944
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    2.188687087667947
+    Attrib c2gram_s*    0.2507333013670849
+    Attrib c2gram_e*    -0.35170063238572324
+    Attrib c2gram_t*    -0.6816084647719127
+    Attrib c2gram_d*    2.9984230209184473
+    Attrib c2gram_^w    -0.06390537106670056
+    Attrib c2gram_re    2.335590499870456
+    Attrib c2gram_er    2.626587666060127
+    Attrib c2gram_as    3.1316064437086037
+    Attrib c2gram_ed    3.18061382395631
+    Attrib c2gram_^t    -1.7721660312539589
+    Attrib c3gram_ed*    -0.17731997984925194
+    Attrib c3gram_re*    -0.9192082528075637
+    Attrib c3gram_^th    2.4465090485470906
+    Attrib c3gram_ere    4.875396996861938
+    Attrib c3gram_her    1.6394009647875318
+    Attrib c3gram_the    5.885582255182556
+    Attrib c3gram_ly*    -1.082580573141508
+    Attrib c3gram_ing    -0.25694722961566
+    Attrib c3gram_ng*    2.6335784614470397
+    Attrib c3gram_er*    -2.5563022262508417
+    Attrib c4gram_ther    -4.47123693858194
+    Attrib c4gram_here    -1.542892673927741
+    Attrib c4gram_^the    -1.6410974170663883
+    Attrib c4gram_ere*    -4.213340351254716
+    Attrib c4gram_ing*    -0.6281449666826592
+    Attrib c4gram_ked*    2.624572890558233
+    Attrib c4gram_ght*    1.400418902551804
+    Attrib c4gram_red*    -1.9375095496512693
+    Attrib c4gram_thin    -1.015123965289812
+    Attrib c4gram_ied*    2.391649104366671
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    0.6055658422808248
+    Attrib c2gram_s*    2.1027760318513136
+    Attrib c2gram_e*    -0.8857005350318907
+    Attrib c2gram_t*    2.20088020919287
+    Attrib c2gram_d*    -1.1523610804815798
+    Attrib c2gram_^w    -1.5361566261144117
+    Attrib c2gram_re    -5.001144048087661
+    Attrib c2gram_er    -0.7010239910449423
+    Attrib c2gram_as    1.4399924586243391
+    Attrib c2gram_ed    -0.4029752430324641
+    Attrib c2gram_^t    -0.5605645666865902
+    Attrib c3gram_ed*    -0.42518338546676376
+    Attrib c3gram_re*    4.0569965813795195
+    Attrib c3gram_^th    1.6491095177198436
+    Attrib c3gram_ere    -2.877178456570165
+    Attrib c3gram_her    1.7934781149385843
+    Attrib c3gram_the    -2.1760413282541755
+    Attrib c3gram_ly*    0.8343861108060168
+    Attrib c3gram_ing    0.41062503620355206
+    Attrib c3gram_ng*    2.137683955395846
+    Attrib c3gram_er*    1.1089897765291872
+    Attrib c4gram_ther    -1.8975162831637784
+    Attrib c4gram_here    1.3821970407644582
+    Attrib c4gram_^the    0.7124708252694566
+    Attrib c4gram_ere*    -0.02684755402677261
+    Attrib c4gram_ing*    0.15766252254441332
+    Attrib c4gram_ked*    -0.09867858992047937
+    Attrib c4gram_ght*    -0.6451285450792539
+    Attrib c4gram_red*    -4.466952128686083
+    Attrib c4gram_thin    3.8146968221836515
+    Attrib c4gram_ied*    1.3365028677976498
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -3.2198249692066305
+    Attrib c2gram_s*    -1.0354134067146656
+    Attrib c2gram_e*    1.4496063134472628
+    Attrib c2gram_t*    -0.3525167629579469
+    Attrib c2gram_d*    3.268173458018612
+    Attrib c2gram_^w    -2.9676087212334123
+    Attrib c2gram_re    -0.4401138767220451
+    Attrib c2gram_er    1.0061239415771581
+    Attrib c2gram_as    -2.4325745837113755
+    Attrib c2gram_ed    0.8733796445815126
+    Attrib c2gram_^t    0.8648660337226788
+    Attrib c3gram_ed*    4.420318050907845
+    Attrib c3gram_re*    2.5825918233171987
+    Attrib c3gram_^th    -2.736360236737512
+    Attrib c3gram_ere    -0.6162659335097914
+    Attrib c3gram_her    -5.4462371686130275
+    Attrib c3gram_the    0.33923513382498505
+    Attrib c3gram_ly*    0.8518655259188022
+    Attrib c3gram_ing    0.14938538057715572
+    Attrib c3gram_ng*    1.0397507037986435
+    Attrib c3gram_er*    0.5063849094037463
+    Attrib c4gram_ther    1.209146397877643
+    Attrib c4gram_here    -2.4287615751835356
+    Attrib c4gram_^the    -1.2601962326325045
+    Attrib c4gram_ere*    -1.5458116047074815
+    Attrib c4gram_ing*    1.5774179374729596
+    Attrib c4gram_ked*    0.028051865868081394
+    Attrib c4gram_ght*    1.0695226659174055
+    Attrib c4gram_red*    -0.09440356814698861
+    Attrib c4gram_thin    1.421463256153399
+    Attrib c4gram_ied*    -0.18526626593557186
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    2.5117898873198397
+    Attrib c2gram_s*    0.326409678364504
+    Attrib c2gram_e*    -3.001741458283545
+    Attrib c2gram_t*    -2.414508049997118
+    Attrib c2gram_d*    1.0291902972748799
+    Attrib c2gram_^w    0.3095308853534107
+    Attrib c2gram_re    -3.3502110438594386
+    Attrib c2gram_er    -0.8880277826849238
+    Attrib c2gram_as    0.4995486750850867
+    Attrib c2gram_ed    -1.397066227316305
+    Attrib c2gram_^t    -4.163224676259716
+    Attrib c3gram_ed*    -1.8084565350637636
+    Attrib c3gram_re*    1.9493642817376657
+    Attrib c3gram_^th    -3.787693250311932
+    Attrib c3gram_ere    3.12938651612961
+    Attrib c3gram_her    -2.281462442544111
+    Attrib c3gram_the    -0.6049528837377587
+    Attrib c3gram_ly*    2.0658066263819044
+    Attrib c3gram_ing    0.19995488957939297
+    Attrib c3gram_ng*    -0.6522808790853223
+    Attrib c3gram_er*    -1.5913294084752394
+    Attrib c4gram_ther    5.643626068024189
+    Attrib c4gram_here    -0.5503230803703436
+    Attrib c4gram_^the    0.3430789153571954
+    Attrib c4gram_ere*    0.3854588712115406
+    Attrib c4gram_ing*    0.28094101403025146
+    Attrib c4gram_ked*    3.257324671741792
+    Attrib c4gram_ght*    -1.6037108087004877
+    Attrib c4gram_red*    -4.013365834963678
+    Attrib c4gram_thin    7.982207360392005
+    Attrib c4gram_ied*    -0.3687180068812914
+Sigmoid Node 17
+    Inputs    Weights
+    Threshold    -2.8565613310153704
+    Attrib c2gram_s*    2.6322255870726026
+    Attrib c2gram_e*    1.7758196702902345
+    Attrib c2gram_t*    4.551962594282723
+    Attrib c2gram_d*    -4.40605317972631
+    Attrib c2gram_^w    -0.6177981523779748
+    Attrib c2gram_re    -2.436295822774418
+    Attrib c2gram_er    -1.1610523071874068
+    Attrib c2gram_as    0.23046727686267549
+    Attrib c2gram_ed    -1.5749427954339923
+    Attrib c2gram_^t    0.9612313575403799
+    Attrib c3gram_ed*    1.0469961309188067
+    Attrib c3gram_re*    -2.3186621020244607
+    Attrib c3gram_^th    4.356952203729694
+    Attrib c3gram_ere    -0.798140833258356
+    Attrib c3gram_her    -0.29997003180669146
+    Attrib c3gram_the    2.6212290328108447
+    Attrib c3gram_ly*    -2.6389718169467895
+    Attrib c3gram_ing    1.7814199042960974
+    Attrib c3gram_ng*    0.4450663024450992
+    Attrib c3gram_er*    -1.794091947724607
+    Attrib c4gram_ther    -2.3832879296977665
+    Attrib c4gram_here    1.4522240429798627
+    Attrib c4gram_^the    -0.018543069520260965
+    Attrib c4gram_ere*    6.565000187977566
+    Attrib c4gram_ing*    1.6985599372044617
+    Attrib c4gram_ked*    -2.6596556016187707
+    Attrib c4gram_ght*    -2.509043676292532
+    Attrib c4gram_red*    2.639833842081594
+    Attrib c4gram_thin    -3.8411560640994202
+    Attrib c4gram_ied*    0.8089133600510314
+Sigmoid Node 18
+    Inputs    Weights
+    Threshold    0.9161561171030053
+    Attrib c2gram_s*    -5.6572654947731165
+    Attrib c2gram_e*    2.6243138900072527
+    Attrib c2gram_t*    3.1987190674524615
+    Attrib c2gram_d*    1.1317053899601086
+    Attrib c2gram_^w    2.1160847040497264
+    Attrib c2gram_re    -0.043039282427767105
+    Attrib c2gram_er    -0.9218627775879874
+    Attrib c2gram_as    0.9184383563275126
+    Attrib c2gram_ed    -4.889537966936956
+    Attrib c2gram_^t    0.011752067015901148
+    Attrib c3gram_ed*    -2.275892832926516
+    Attrib c3gram_re*    -0.7372086945084425
+    Attrib c3gram_^th    0.81184938623138
+    Attrib c3gram_ere    4.241263639401597
+    Attrib c3gram_her    -1.7710008457698772
+    Attrib c3gram_the    -1.7714451944475504
+    Attrib c3gram_ly*    1.8285326093040997
+    Attrib c3gram_ing    3.586200171899674
+    Attrib c3gram_ng*    -2.8631445564952607
+    Attrib c3gram_er*    -4.413667783249239
+    Attrib c4gram_ther    1.0379919361144478
+    Attrib c4gram_here    1.240781128500947
+    Attrib c4gram_^the    -0.9545665928280066
+    Attrib c4gram_ere*    0.015556014366651263
+    Attrib c4gram_ing*    2.4932055018172443
+    Attrib c4gram_ked*    3.024070345111063
+    Attrib c4gram_ght*    1.3162267798008371
+    Attrib c4gram_red*    1.6810589308886341
+    Attrib c4gram_thin    -0.29462278160842564
+    Attrib c4gram_ied*    0.7159480650442138
+Sigmoid Node 19
+    Inputs    Weights
+    Threshold    -0.2540266604463956
+    Attrib c2gram_s*    3.567310210768251
+    Attrib c2gram_e*    -5.038997723887295
+    Attrib c2gram_t*    3.5533590374262793
+    Attrib c2gram_d*    1.501969020907112
+    Attrib c2gram_^w    0.8520549800246067
+    Attrib c2gram_re    1.5273077385379557
+    Attrib c2gram_er    0.5345205184442624
+    Attrib c2gram_as    -0.6840741213838741
+    Attrib c2gram_ed    3.6409211834367814
+    Attrib c2gram_^t    -6.473403198505059
+    Attrib c3gram_ed*    -0.5539782127668275
+    Attrib c3gram_re*    0.502878206890384
+    Attrib c3gram_^th    1.8308010416882567
+    Attrib c3gram_ere    1.1615349813147564
+    Attrib c3gram_her    1.2521359379455446
+    Attrib c3gram_the    4.307758458450716
+    Attrib c3gram_ly*    1.4694375716133918
+    Attrib c3gram_ing    0.24986455679856673
+    Attrib c3gram_ng*    -0.3814118082139191
+    Attrib c3gram_er*    -0.07898098180748304
+    Attrib c4gram_ther    0.24569458226582952
+    Attrib c4gram_here    -2.0133336475361374
+    Attrib c4gram_^the    1.1484224931188074
+    Attrib c4gram_ere*    -5.88305482434352
+    Attrib c4gram_ing*    -3.9919479289940005
+    Attrib c4gram_ked*    1.686562659958989
+    Attrib c4gram_ght*    -1.405200121145139
+    Attrib c4gram_red*    -2.250374473687462
+    Attrib c4gram_thin    3.2070849984906573
+    Attrib c4gram_ied*    1.0980258285930977
+Sigmoid Node 20
+    Inputs    Weights
+    Threshold    2.002926797490014
+    Attrib c2gram_s*    2.442686775564027
+    Attrib c2gram_e*    0.02820868773688561
+    Attrib c2gram_t*    -3.172435936332306
+    Attrib c2gram_d*    -4.240383436304913
+    Attrib c2gram_^w    -1.5873062633323314
+    Attrib c2gram_re    3.0475135750588582
+    Attrib c2gram_er    4.189502597711777
+    Attrib c2gram_as    0.5596101638659144
+    Attrib c2gram_ed    2.028298810828648
+    Attrib c2gram_^t    3.444958186896607
+    Attrib c3gram_ed*    -0.7411161647343293
+    Attrib c3gram_re*    2.11341172810668
+    Attrib c3gram_^th    -3.530305288599671
+    Attrib c3gram_ere    1.9941286353385375
+    Attrib c3gram_her    -0.26109078272835684
+    Attrib c3gram_the    -1.9403679285255528
+    Attrib c3gram_ly*    0.8212092805866327
+    Attrib c3gram_ing    1.6559170365199378
+    Attrib c3gram_ng*    0.9107010345681679
+    Attrib c3gram_er*    2.9698348151015965
+    Attrib c4gram_ther    -0.8191102393924053
+    Attrib c4gram_here    -1.7172810095045978
+    Attrib c4gram_^the    1.026836849853232
+    Attrib c4gram_ere*    -0.6384493569296187
+    Attrib c4gram_ing*    -3.1698949366983173
+    Attrib c4gram_ked*    2.9645530818643415
+    Attrib c4gram_ght*    -1.7927830022384985
+    Attrib c4gram_red*    -0.6479073626510811
+    Attrib c4gram_thin    -2.2236866145689276
+    Attrib c4gram_ied*    -0.5017256783255142
+Sigmoid Node 21
+    Inputs    Weights
+    Threshold    -0.2509216115926255
+    Attrib c2gram_s*    2.6984145147665037
+    Attrib c2gram_e*    4.828064791989369
+    Attrib c2gram_t*    -1.9355658357016818
+    Attrib c2gram_d*    1.5896591954223032
+    Attrib c2gram_^w    -1.2717221243518124
+    Attrib c2gram_re    -1.5335652763789316
+    Attrib c2gram_er    -2.051896154538127
+    Attrib c2gram_as    0.09434127012151788
+    Attrib c2gram_ed    -0.30201802030822944
+    Attrib c2gram_^t    -0.5163357552791568
+    Attrib c3gram_ed*    0.7466620032824652
+    Attrib c3gram_re*    -1.5877008755689344
+    Attrib c3gram_^th    0.6385053945606146
+    Attrib c3gram_ere    1.3652817181534178
+    Attrib c3gram_her    -1.6635142081553365
+    Attrib c3gram_the    -0.8574996639098803
+    Attrib c3gram_ly*    -3.3965369993867247
+    Attrib c3gram_ing    -2.1370523880651575
+    Attrib c3gram_ng*    -0.18014272903815157
+    Attrib c3gram_er*    1.1067782751915787
+    Attrib c4gram_ther    -2.0199717538246813
+    Attrib c4gram_here    1.550476552268851
+    Attrib c4gram_^the    3.2476840267825122
+    Attrib c4gram_ere*    2.3206297753716134
+    Attrib c4gram_ing*    -1.302476366646488
+    Attrib c4gram_ked*    4.481145888423577
+    Attrib c4gram_ght*    -1.9538912700346425
+    Attrib c4gram_red*    -1.6287106863008505
+    Attrib c4gram_thin    0.8401355547981995
+    Attrib c4gram_ied*    2.8715489189202406
+Sigmoid Node 22
+    Inputs    Weights
+    Threshold    0.1298603054078741
+    Attrib c2gram_s*    2.0821313292509487
+    Attrib c2gram_e*    3.8656768127084717
+    Attrib c2gram_t*    -8.135661545460845
+    Attrib c2gram_d*    2.5764184766388714
+    Attrib c2gram_^w    -1.246687631625817
+    Attrib c2gram_re    -2.1403757675658537
+    Attrib c2gram_er    -1.0134744869829038
+    Attrib c2gram_as    -0.09141862678577482
+    Attrib c2gram_ed    -2.0849382536005194
+    Attrib c2gram_^t    -1.2143619913130084
+    Attrib c3gram_ed*    -1.2177434757437506
+    Attrib c3gram_re*    -2.6765405530453883
+    Attrib c3gram_^th    -2.5246299140034965
+    Attrib c3gram_ere    3.3323252270913257
+    Attrib c3gram_her    -1.775043458370326
+    Attrib c3gram_the    -2.144217753126811
+    Attrib c3gram_ly*    2.1934757067291812
+    Attrib c3gram_ing    -2.974236568470008
+    Attrib c3gram_ng*    -3.0476800965137754
+    Attrib c3gram_er*    -0.07843140466615701
+    Attrib c4gram_ther    1.308875350326664
+    Attrib c4gram_here    0.07887056596034377
+    Attrib c4gram_^the    2.0548193928850167
+    Attrib c4gram_ere*    2.2604588308060154
+    Attrib c4gram_ing*    -0.09603100859562648
+    Attrib c4gram_ked*    6.167185576896155
+    Attrib c4gram_ght*    1.2739991092478897
+    Attrib c4gram_red*    -2.4486803275829283
+    Attrib c4gram_thin    3.7159350271149787
+    Attrib c4gram_ied*    -0.45757226152202946
+Sigmoid Node 23
+    Inputs    Weights
+    Threshold    -0.45805355675656045
+    Attrib c2gram_s*    -1.097762092106308
+    Attrib c2gram_e*    3.281635464913625
+    Attrib c2gram_t*    -0.8063062834850399
+    Attrib c2gram_d*    2.0934463793476863
+    Attrib c2gram_^w    1.524889329754248
+    Attrib c2gram_re    -1.4738869605796612
+    Attrib c2gram_er    -0.9360753544122339
+    Attrib c2gram_as    1.128956076039885
+    Attrib c2gram_ed    -0.260386314697725
+    Attrib c2gram_^t    0.8398183007344464
+    Attrib c3gram_ed*    -0.622452283236104
+    Attrib c3gram_re*    -0.45468316724709196
+    Attrib c3gram_^th    -3.9298774486376904
+    Attrib c3gram_ere    0.33874919339628135
+    Attrib c3gram_her    0.6749288906308868
+    Attrib c3gram_the    0.09867187365521665
+    Attrib c3gram_ly*    -0.09140343497568981
+    Attrib c3gram_ing    -0.4262769407465021
+    Attrib c3gram_ng*    0.14942355177961744
+    Attrib c3gram_er*    0.303909930669014
+    Attrib c4gram_ther    1.5420832765514207
+    Attrib c4gram_here    0.569330551543957
+    Attrib c4gram_^the    1.4089099601261703
+    Attrib c4gram_ere*    1.2240334424739954
+    Attrib c4gram_ing*    0.6134662156522712
+    Attrib c4gram_ked*    1.7111254828376512
+    Attrib c4gram_ght*    -0.12804348754649508
+    Attrib c4gram_red*    -2.2778616983380493
+    Attrib c4gram_thin    0.5362099055992408
+    Attrib c4gram_ied*    1.2961523002181183
+Sigmoid Node 24
+    Inputs    Weights
+    Threshold    -2.161587500282325
+    Attrib c2gram_s*    1.0759222013515983
+    Attrib c2gram_e*    -5.0480233442599864
+    Attrib c2gram_t*    0.870833167134794
+    Attrib c2gram_d*    0.5633526321687551
+    Attrib c2gram_^w    3.7201542875048803
+    Attrib c2gram_re    2.7296728109385695
+    Attrib c2gram_er    0.5588847335191576
+    Attrib c2gram_as    -0.7910756823912495
+    Attrib c2gram_ed    1.8447406728510343
+    Attrib c2gram_^t    5.1186661132240205
+    Attrib c3gram_ed*    0.8376752924987794
+    Attrib c3gram_re*    0.79051884656702
+    Attrib c3gram_^th    -4.451235066693762
+    Attrib c3gram_ere    -0.5434056959974777
+    Attrib c3gram_her    2.3103643337003166
+    Attrib c3gram_the    -2.190993605894399
+    Attrib c3gram_ly*    0.5287314648929837
+    Attrib c3gram_ing    1.182382850602469
+    Attrib c3gram_ng*    1.745040112810085
+    Attrib c3gram_er*    3.5659650860278074
+    Attrib c4gram_ther    -1.5472812805586598
+    Attrib c4gram_here    -0.24884363441450186
+    Attrib c4gram_^the    -0.5065453231315764
+    Attrib c4gram_ere*    0.44338247699314687
+    Attrib c4gram_ing*    -1.2020164803801532
+    Attrib c4gram_ked*    -4.944110154062614
+    Attrib c4gram_ght*    2.800969768175122
+    Attrib c4gram_red*    -0.33737791811077966
+    Attrib c4gram_thin    -2.8492699543358815
+    Attrib c4gram_ied*    0.09159361802632096
+Sigmoid Node 25
+    Inputs    Weights
+    Threshold    1.8010661036367006
+    Attrib c2gram_s*    0.7984776517522955
+    Attrib c2gram_e*    1.9897433747241233
+    Attrib c2gram_t*    -0.9750985979709828
+    Attrib c2gram_d*    1.0742067433991975
+    Attrib c2gram_^w    3.2350205672588612
+    Attrib c2gram_re    -0.015601796449695714
+    Attrib c2gram_er    -3.2500459277817426
+    Attrib c2gram_as    3.275989318447926
+    Attrib c2gram_ed    2.826030212811839
+    Attrib c2gram_^t    4.533270547324376
+    Attrib c3gram_ed*    1.3209043082982634
+    Attrib c3gram_re*    -4.282512724485288
+    Attrib c3gram_^th    0.43636008248852776
+    Attrib c3gram_ere    -2.229341005893146
+    Attrib c3gram_her    5.058051566916132
+    Attrib c3gram_the    -3.516035989847966
+    Attrib c3gram_ly*    1.1684790924765207
+    Attrib c3gram_ing    -1.5988065582275073
+    Attrib c3gram_ng*    3.6514063234794207
+    Attrib c3gram_er*    0.9673719147541516
+    Attrib c4gram_ther    -1.3381641956062764
+    Attrib c4gram_here    1.1233227250559759
+    Attrib c4gram_^the    1.737245025316557
+    Attrib c4gram_ere*    -1.9593451330203941
+    Attrib c4gram_ing*    -0.920179836024496
+    Attrib c4gram_ked*    -3.0821189579104464
+    Attrib c4gram_ght*    4.212114497176639
+    Attrib c4gram_red*    1.5235545568407538
+    Attrib c4gram_thin    -0.42708515404873826
+    Attrib c4gram_ied*    0.7401242204670552
+Sigmoid Node 26
+    Inputs    Weights
+    Threshold    0.4122795934908986
+    Attrib c2gram_s*    -2.7289107972343842
+    Attrib c2gram_e*    -0.9999347735345663
+    Attrib c2gram_t*    0.3659108117069446
+    Attrib c2gram_d*    -1.5756385847599728
+    Attrib c2gram_^w    1.631804358618874
+    Attrib c2gram_re    1.6048335476879252
+    Attrib c2gram_er    -0.8820622637720626
+    Attrib c2gram_as    2.1351832754862694
+    Attrib c2gram_ed    -0.1604665737501461
+    Attrib c2gram_^t    2.786824462389967
+    Attrib c3gram_ed*    0.5527892890495747
+    Attrib c3gram_re*    -0.6246168837575774
+    Attrib c3gram_^th    -1.3539456091644422
+    Attrib c3gram_ere    -0.9319811244740682
+    Attrib c3gram_her    -1.5339716470658422
+    Attrib c3gram_the    -0.7367997705412878
+    Attrib c3gram_ly*    -2.248759651279253
+    Attrib c3gram_ing    -1.862578289691046
+    Attrib c3gram_ng*    -3.511295834759911
+    Attrib c3gram_er*    -0.39385749900476436
+    Attrib c4gram_ther    2.0133766982545893
+    Attrib c4gram_here    -1.8551366430622724
+    Attrib c4gram_^the    -2.3552019591897593
+    Attrib c4gram_ere*    -1.9637114539830358
+    Attrib c4gram_ing*    -3.7198606713719418
+    Attrib c4gram_ked*    2.9527602160034814
+    Attrib c4gram_ght*    1.8727792427237366
+    Attrib c4gram_red*    2.671928937993776
+    Attrib c4gram_thin    0.725646970440385
+    Attrib c4gram_ied*    0.2670611848395231
+Class Stoker
+    Input
+    Node 0
+Class Hawthorne
+    Input
+    Node 1
+Class Twain
+    Input
+    Node 2
+Class Doyle
+    Input
+    Node 3
+Class Dickens
+    Input
+    Node 4
+Class Austen
+    Input
+    Node 5
+Class Shelley
+    Input
+    Node 6
+Class Melville
+    Input
+    Node 7
+
+
+Time taken to build model: 2.06 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         174               55.2381 %
+Incorrectly Classified Instances       141               44.7619 %
+Kappa statistic                          0.4845
+Mean absolute error                      0.1205
+Root mean squared error                  0.2973
+Relative absolute error                 55.4736 %
+Root relative squared error             90.2076 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.62      0.068      0.633     0.62      0.626      0.887    Stoker
+                 0.444     0.068      0.457     0.444     0.451      0.842    Hawthorne
+                 0.813     0.032      0.743     0.813     0.776      0.974    Twain
+                 0.608     0.102      0.534     0.608     0.569      0.849    Doyle
+                 0.256     0.08       0.313     0.256     0.282      0.723    Dickens
+                 0.667     0.077      0.571     0.667     0.615      0.929    Austen
+                 0.682     0.027      0.652     0.682     0.667      0.949    Shelley
+                 0.395     0.063      0.5       0.395     0.442      0.828    Melville
+Weighted Avg.    0.552     0.069      0.543     0.552     0.546      0.866
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 31  2  1  5  8  0  2  1 |  a = Stoker
+  3 16  4  3  1  4  2  3 |  b = Hawthorne
+  1  2 26  1  1  0  1  0 |  c = Twain
+  6  1  0 31 10  3  0  0 |  d = Doyle
+  5  2  1 14 10  3  1  3 |  e = Dickens
+  0  1  1  2  2 28  0  8 |  f = Austen
+  1  2  1  0  0  1 15  2 |  g = Shelley
+  2  9  1  2  0 10  2 17 |  h = Melville
+

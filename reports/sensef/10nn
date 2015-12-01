@@ -1,0 +1,57 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.IBk -K 10 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     sensef
+Instances:    315
+Attributes:   4
+              author
+              sfreq_pos
+              sfreq_neg
+              sfreq_obj
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 10 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          71               22.5397 %
+Incorrectly Classified Instances       244               77.4603 %
+Kappa statistic                          0.0999
+Mean absolute error                      0.2067
+Root mean squared error                  0.3358
+Relative absolute error                 95.1567 %
+Root relative squared error            101.8894 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.28      0.204      0.206     0.28      0.237      0.53     Stoker
+                 0.222     0.147      0.163     0.222     0.188      0.553    Hawthorne
+                 0.156     0.071      0.2       0.156     0.175      0.565    Twain
+                 0.392     0.205      0.27      0.392     0.32       0.661    Doyle
+                 0         0.076      0         0         0          0.497    Dickens
+                 0.405     0.125      0.333     0.405     0.366      0.704    Austen
+                 0         0.003      0         0         0          0.598    Shelley
+                 0.163     0.07       0.269     0.163     0.203      0.675    Melville
+Weighted Avg.    0.225     0.125      0.197     0.225     0.205      0.601
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 14  8  2 10  3  9  1  3 |  a = Stoker
+ 10  8  2  5  3  6  0  2 |  b = Hawthorne
+  5  4  5 14  2  1  0  1 |  c = Twain
+ 12  2  5 20  5  2  0  5 |  d = Doyle
+  7  7  4 13  0  4  0  4 |  e = Dickens
+  6 11  0  1  4 17  0  3 |  f = Austen
+  8  6  0  0  1  6  0  1 |  g = Shelley
+  6  3  7 11  3  6  0  7 |  h = Melville
+

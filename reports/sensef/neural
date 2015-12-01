@@ -1,0 +1,173 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     sensef
+Instances:    315
+Attributes:   4
+              author
+              sfreq_pos
+              sfreq_neg
+              sfreq_obj
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.569931924608123
+    Node 8    0.9377094387203784
+    Node 9    -1.9919929409436725
+    Node 10    -2.5199045251008885
+    Node 11    1.2427759106098415
+    Node 12    0.632539641898317
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -1.044484690465543
+    Node 8    -3.721632356969785
+    Node 9    -1.6478606540233363
+    Node 10    -5.437633124388346
+    Node 11    -0.9436618132216495
+    Node 12    1.7158865110955372
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -0.7803837709005713
+    Node 8    -4.707589847235503
+    Node 9    -1.1371143214948376
+    Node 10    0.17797379137755856
+    Node 11    -2.7230116823990818
+    Node 12    -1.5408830539003597
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -1.040679081535817
+    Node 8    -0.4114608519092726
+    Node 9    -6.800207269679861
+    Node 10    0.6922763358793931
+    Node 11    -0.781142370042525
+    Node 12    -0.20485866834419011
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -1.6238998942867982
+    Node 8    0.6107084949042336
+    Node 9    0.4729366206543448
+    Node 10    -0.2299284286679868
+    Node 11    0.5092728440729632
+    Node 12    -2.6873548777653453
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -2.334669154071888
+    Node 8    1.453830578428195
+    Node 9    4.597804452707893
+    Node 10    -3.2674207248407163
+    Node 11    -1.260693148917684
+    Node 12    -1.8025314072807532
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -3.0625788786163692
+    Node 8    -0.3069118546907034
+    Node 9    -3.09525443061182
+    Node 10    -4.08729958873956
+    Node 11    0.680211229860364
+    Node 12    3.9400591819188886
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -2.4436138426440617
+    Node 8    -0.7925908762427466
+    Node 9    1.7019944070724269
+    Node 10    1.9053987490677877
+    Node 11    3.230673625259305
+    Node 12    -3.366702928195569
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -1.7914264806625875
+    Attrib sfreq_pos    3.8212197247090725
+    Attrib sfreq_neg    -1.8282528911137985
+    Attrib sfreq_obj    0.21793460043434232
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -1.0960199352047024
+    Attrib sfreq_pos    -3.429733481855471
+    Attrib sfreq_neg    6.297424080028099
+    Attrib sfreq_obj    -3.721764413270952
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -4.853213391551748
+    Attrib sfreq_pos    -3.7965657972563776
+    Attrib sfreq_neg    -1.1630976410315532
+    Attrib sfreq_obj    2.91571420514733
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    -2.4339705104734057
+    Attrib sfreq_pos    -5.772810411780771
+    Attrib sfreq_neg    4.569610351054649
+    Attrib sfreq_obj    -1.3022475435338432
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -0.16608542931032627
+    Attrib sfreq_pos    0.6137774057633724
+    Attrib sfreq_neg    4.355974660869516
+    Attrib sfreq_obj    -3.72577553349051
+Class Stoker
+    Input
+    Node 0
+Class Hawthorne
+    Input
+    Node 1
+Class Twain
+    Input
+    Node 2
+Class Doyle
+    Input
+    Node 3
+Class Dickens
+    Input
+    Node 4
+Class Austen
+    Input
+    Node 5
+Class Shelley
+    Input
+    Node 6
+Class Melville
+    Input
+    Node 7
+
+
+Time taken to build model: 0.48 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          75               23.8095 %
+Incorrectly Classified Instances       240               76.1905 %
+Kappa statistic                          0.1114
+Mean absolute error                      0.2066
+Root mean squared error                  0.3273
+Relative absolute error                 95.092  %
+Root relative squared error             99.3127 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.12      0.128      0.15      0.12      0.133      0.523    Stoker
+                 0.139     0.118      0.132     0.139     0.135      0.61     Hawthorne
+                 0.063     0.046      0.133     0.063     0.085      0.707    Twain
+                 0.569     0.345      0.242     0.569     0.339      0.655    Doyle
+                 0         0.004      0         0         0          0.483    Dickens
+                 0.476     0.143      0.339     0.476     0.396      0.751    Austen
+                 0.045     0.02       0.143     0.045     0.069      0.729    Shelley
+                 0.279     0.085      0.343     0.279     0.308      0.658    Melville
+Weighted Avg.    0.238     0.127      0.193     0.238     0.2        0.631
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+  6  9  1 20  0  6  2  6 |  a = Stoker
+  7  5  2  9  0 10  2  1 |  b = Hawthorne
+  4  3  2 21  0  1  0  1 |  c = Twain
+  6  3  4 29  0  4  0  5 |  d = Doyle
+  6  3  2 20  0  4  0  4 |  e = Dickens
+  6  5  1  4  1 20  0  5 |  f = Austen
+  2  7  0  3  0  8  1  1 |  g = Shelley
+  3  3  3 14  0  6  2 12 |  h = Melville
+

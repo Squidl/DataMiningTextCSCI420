@@ -1,0 +1,299 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     usef
+Instances:    315
+Attributes:   11
+              author
+              ufreq_colloquialism_n_01
+              ufreq_intensifier_n_01
+              ufreq_slang_n_02
+              ufreq_plural_n_01
+              ufreq_archaism_n_01
+              ufreq_combining_form_n_01
+              ufreq_comparative_n_01
+              ufreq_disparagement_n_01
+              ufreq_ethnic_slur_n_01
+              ufreq_irony_n_03
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -1.8011278507053343
+    Node 8    -0.8181440054324806
+    Node 9    0.9817655014527065
+    Node 10    1.5600217156518383
+    Node 11    1.6683930141620484
+    Node 12    0.032839926714997435
+    Node 13    0.1400468584941881
+    Node 14    -1.89028401405864
+    Node 15    -4.2313501906995565
+    Node 16    0.2504230825167047
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -0.8748793619781954
+    Node 8    1.849609911116921
+    Node 9    -2.184994467663535
+    Node 10    -3.9077861298531156
+    Node 11    -4.306891052785448
+    Node 12    -4.280945352949837
+    Node 13    1.2785965587239878
+    Node 14    1.0431866383547996
+    Node 15    -1.40528790617962
+    Node 16    0.9774204599685561
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -7.199248832327038
+    Node 8    -2.3540027265754078
+    Node 9    3.4686858669383973
+    Node 10    -6.364802051878459
+    Node 11    6.308224714217643
+    Node 12    -2.644795913592014
+    Node 13    -1.406024665969974
+    Node 14    5.544263169218164
+    Node 15    0.001761307485702758
+    Node 16    -2.293980310651011
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    1.7525410452299612
+    Node 8    -1.4813897201715818
+    Node 9    -3.0155659280625406
+    Node 10    -0.9397064979734773
+    Node 11    -3.402654368398449
+    Node 12    -3.256147443610581
+    Node 13    -2.8434675954726343
+    Node 14    -8.259970842190441
+    Node 15    2.5474437027867323
+    Node 16    -6.593706952686361
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    -1.2943423006887944
+    Node 8    0.7651051099061389
+    Node 9    2.5618717128593262
+    Node 10    -1.5063742826981141
+    Node 11    0.10604422069205309
+    Node 12    -1.2350508325447926
+    Node 13    -6.017510209398204
+    Node 14    -3.606827453271059
+    Node 15    -2.7427966240335504
+    Node 16    0.4953783542824908
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -7.871672950701924
+    Node 8    2.4285911419015855
+    Node 9    -4.234960104140984
+    Node 10    3.9882155184757284
+    Node 11    -2.783912023246181
+    Node 12    5.86294279405826
+    Node 13    -4.797364129687464
+    Node 14    5.783408218641309
+    Node 15    1.2539248716909033
+    Node 16    7.39405810521267
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -8.083667629461829
+    Node 8    4.87847285267695
+    Node 9    3.6504461966005555
+    Node 10    1.707432661781868
+    Node 11    0.5431476194176912
+    Node 12    -0.4796694462388951
+    Node 13    3.6123774888838502
+    Node 14    -4.938674425387246
+    Node 15    -0.16424517005803443
+    Node 16    -3.8062853743172544
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    1.3026525120059331
+    Node 8    -3.631528494580613
+    Node 9    -11.565383752800997
+    Node 10    -1.8076774395409325
+    Node 11    0.18255922768063815
+    Node 12    -4.119217579795776
+    Node 13    0.11473218904319145
+    Node 14    2.302214476909059
+    Node 15    1.6364981458997174
+    Node 16    -1.4501288893997757
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    -0.034349111580103224
+    Attrib ufreq_colloquialism_n_01    6.011231490973872
+    Attrib ufreq_intensifier_n_01    -3.091869076434569
+    Attrib ufreq_slang_n_02    -1.4158341281408509
+    Attrib ufreq_plural_n_01    -5.704810871605579
+    Attrib ufreq_archaism_n_01    -4.36375310583802
+    Attrib ufreq_combining_form_n_01    5.873806681482581
+    Attrib ufreq_comparative_n_01    3.022214324031168
+    Attrib ufreq_disparagement_n_01    2.453302863267255
+    Attrib ufreq_ethnic_slur_n_01    -1.9475636878782323
+    Attrib ufreq_irony_n_03    1.4836857750190804
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    2.7598885548386973
+    Attrib ufreq_colloquialism_n_01    -1.0114438937047217
+    Attrib ufreq_intensifier_n_01    -3.2550529614752564
+    Attrib ufreq_slang_n_02    0.719107890579417
+    Attrib ufreq_plural_n_01    1.840836086746582
+    Attrib ufreq_archaism_n_01    1.3920334462370123
+    Attrib ufreq_combining_form_n_01    -5.975322625886432
+    Attrib ufreq_comparative_n_01    -6.0727887079446745
+    Attrib ufreq_disparagement_n_01    6.341281308015893
+    Attrib ufreq_ethnic_slur_n_01    11.080557707335435
+    Attrib ufreq_irony_n_03    -3.175742464986573
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -2.7640832632856105
+    Attrib ufreq_colloquialism_n_01    3.7355556583770144
+    Attrib ufreq_intensifier_n_01    3.0817078544462246
+    Attrib ufreq_slang_n_02    1.8370902556731055
+    Attrib ufreq_plural_n_01    6.1324805220417336
+    Attrib ufreq_archaism_n_01    6.0971963139005405
+    Attrib ufreq_combining_form_n_01    -1.9435062353319663
+    Attrib ufreq_comparative_n_01    -5.096038661075844
+    Attrib ufreq_disparagement_n_01    -7.332274385941716
+    Attrib ufreq_ethnic_slur_n_01    -1.339405507486114
+    Attrib ufreq_irony_n_03    0.5846360223235771
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    4.913838198969258
+    Attrib ufreq_colloquialism_n_01    -0.1471436956617328
+    Attrib ufreq_intensifier_n_01    -1.3751407913535643
+    Attrib ufreq_slang_n_02    1.2681662497748052
+    Attrib ufreq_plural_n_01    -1.0906432812370015
+    Attrib ufreq_archaism_n_01    -6.924044574720437
+    Attrib ufreq_combining_form_n_01    4.022602475132034
+    Attrib ufreq_comparative_n_01    3.727439688559608
+    Attrib ufreq_disparagement_n_01    2.5020715512828926
+    Attrib ufreq_ethnic_slur_n_01    5.229245186059627
+    Attrib ufreq_irony_n_03    -0.581051800256856
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    -2.872777038125647
+    Attrib ufreq_colloquialism_n_01    5.4012926024942844
+    Attrib ufreq_intensifier_n_01    4.912356154094783
+    Attrib ufreq_slang_n_02    -2.821990537074988
+    Attrib ufreq_plural_n_01    7.002662459211092
+    Attrib ufreq_archaism_n_01    -8.59409965156176
+    Attrib ufreq_combining_form_n_01    6.574371865096453
+    Attrib ufreq_comparative_n_01    0.6130481888639479
+    Attrib ufreq_disparagement_n_01    -1.546589222411352
+    Attrib ufreq_ethnic_slur_n_01    0.9237487238081319
+    Attrib ufreq_irony_n_03    0.8388601765008081
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    -1.8915130090063683
+    Attrib ufreq_colloquialism_n_01    -1.7181468941030926
+    Attrib ufreq_intensifier_n_01    5.964709156559757
+    Attrib ufreq_slang_n_02    5.435578417433131
+    Attrib ufreq_plural_n_01    -3.9443708874526804
+    Attrib ufreq_archaism_n_01    5.5112229388145675
+    Attrib ufreq_combining_form_n_01    -4.3572921543459895
+    Attrib ufreq_comparative_n_01    1.2348876388155416
+    Attrib ufreq_disparagement_n_01    -3.8364987814862728
+    Attrib ufreq_ethnic_slur_n_01    3.5955738470144256
+    Attrib ufreq_irony_n_03    -2.286063081110671
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    3.2936572123223113
+    Attrib ufreq_colloquialism_n_01    -8.544563875980439
+    Attrib ufreq_intensifier_n_01    0.7871150358049421
+    Attrib ufreq_slang_n_02    -3.049467527720311
+    Attrib ufreq_plural_n_01    0.04859503741159109
+    Attrib ufreq_archaism_n_01    4.514571779909075
+    Attrib ufreq_combining_form_n_01    -3.586749428769449
+    Attrib ufreq_comparative_n_01    -0.9710283329328706
+    Attrib ufreq_disparagement_n_01    4.286495963503564
+    Attrib ufreq_ethnic_slur_n_01    7.576838154809428
+    Attrib ufreq_irony_n_03    -4.6190235232391155
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -3.8854416194846575
+    Attrib ufreq_colloquialism_n_01    0.3359935717099678
+    Attrib ufreq_intensifier_n_01    -8.573467268501805
+    Attrib ufreq_slang_n_02    -4.435351329897712
+    Attrib ufreq_plural_n_01    2.905335118655612
+    Attrib ufreq_archaism_n_01    0.5466238351470907
+    Attrib ufreq_combining_form_n_01    -1.3425416756588255
+    Attrib ufreq_comparative_n_01    0.37809681279720214
+    Attrib ufreq_disparagement_n_01    1.347486235487854
+    Attrib ufreq_ethnic_slur_n_01    7.140688358446284
+    Attrib ufreq_irony_n_03    -6.780309738917554
+Sigmoid Node 16
+    Inputs    Weights
+    Threshold    -3.083380809456452
+    Attrib ufreq_colloquialism_n_01    7.613408860393773
+    Attrib ufreq_intensifier_n_01    6.7011597258503475
+    Attrib ufreq_slang_n_02    -0.3853605639022433
+    Attrib ufreq_plural_n_01    -7.605491968762279
+    Attrib ufreq_archaism_n_01    -0.01251067870333207
+    Attrib ufreq_combining_form_n_01    0.5996510549134421
+    Attrib ufreq_comparative_n_01    5.852084495205133
+    Attrib ufreq_disparagement_n_01    0.21123488541722973
+    Attrib ufreq_ethnic_slur_n_01    0.6913040921585916
+    Attrib ufreq_irony_n_03    2.4733146695754837
+Class Stoker
+    Input
+    Node 0
+Class Hawthorne
+    Input
+    Node 1
+Class Twain
+    Input
+    Node 2
+Class Doyle
+    Input
+    Node 3
+Class Dickens
+    Input
+    Node 4
+Class Austen
+    Input
+    Node 5
+Class Shelley
+    Input
+    Node 6
+Class Melville
+    Input
+    Node 7
+
+
+Time taken to build model: 0.89 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         102               32.381  %
+Incorrectly Classified Instances       213               67.619  %
+Kappa statistic                          0.2184
+Mean absolute error                      0.1792
+Root mean squared error                  0.334 
+Relative absolute error                 82.5003 %
+Root relative squared error            101.3464 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.14      0.106      0.2       0.14      0.165      0.6      Stoker
+                 0.167     0.108      0.167     0.167     0.167      0.678    Hawthorne
+                 0.906     0.014      0.879     0.906     0.892      0.977    Twain
+                 0.608     0.242      0.326     0.608     0.425      0.721    Doyle
+                 0.128     0.087      0.172     0.128     0.147      0.574    Dickens
+                 0.262     0.095      0.297     0.262     0.278      0.638    Austen
+                 0.136     0.055      0.158     0.136     0.146      0.626    Shelley
+                 0.233     0.077      0.323     0.233     0.27       0.606    Melville
+Weighted Avg.    0.324     0.108      0.309     0.324     0.307      0.671
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+  7  7  1 15  5  7  4  4 |  a = Stoker
+  4  6  0 10  3  7  2  4 |  b = Hawthorne
+  1  0 29  2  0  0  0  0 |  c = Twain
+  4  2  0 31  4  5  4  1 |  d = Doyle
+  6  7  2 10  5  2  4  3 |  e = Dickens
+  5  4  0 11  5 11  0  6 |  f = Austen
+  4  2  1  4  3  2  3  3 |  g = Shelley
+  4  8  0 12  4  3  2 10 |  h = Melville
+

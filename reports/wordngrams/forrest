@@ -1,0 +1,75 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.RandomForest -I 10 -K 0 -S 1
+Relation:     wordngram
+Instances:    315
+Attributes:   21
+              author
+              c2gram_ofthe
+              c2gram_inthe
+              c2gram_tothe
+              c2gram_itwas
+              c2gram_tobe
+              c2gram_andthe
+              c2gram_onthe
+              c2gram_itis
+              c2gram_atthe
+              c2gram_ofhis
+              c3gram_therewasa
+              c3gram_outofthe
+              c3gram_itwasa
+              c3gram_oneofthe
+              c3gram_thatitwas
+              c3gram_icannot
+              c3gram_therewasno
+              c3gram_idonot
+              c3gram_thathewas
+              c3gram_thathehad
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Random forest of 10 trees, each constructed while considering 5 random features.
+Out of bag error: 0.673
+
+
+
+Time taken to build model: 0.11 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         129               40.9524 %
+Incorrectly Classified Instances       186               59.0476 %
+Kappa statistic                          0.3154
+Mean absolute error                      0.1779
+Root mean squared error                  0.3023
+Relative absolute error                 81.8783 %
+Root relative squared error             91.7239 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.4       0.223      0.253     0.4       0.31       0.673    Stoker
+                 0.25      0.1        0.243     0.25      0.247      0.677    Hawthorne
+                 0.344     0.053      0.423     0.344     0.379      0.75     Twain
+                 0.529     0.106      0.491     0.529     0.509      0.817    Doyle
+                 0.282     0.062      0.393     0.282     0.328      0.698    Dickens
+                 0.69      0.059      0.644     0.69      0.667      0.911    Austen
+                 0.227     0.014      0.556     0.227     0.323      0.789    Shelley
+                 0.395     0.07       0.472     0.395     0.43       0.786    Melville
+Weighted Avg.    0.41      0.095      0.428     0.41      0.409      0.763
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 20  5  4  9  1  7  1  3 |  a = Stoker
+ 11  9  0  4  7  1  0  4 |  b = Hawthorne
+ 10  1 11  3  2  0  0  5 |  c = Twain
+  9  5  3 27  5  0  0  2 |  d = Doyle
+  9  4  2  6 11  4  1  2 |  e = Dickens
+  8  1  1  2  0 29  0  1 |  f = Austen
+  8  3  0  1  1  2  5  2 |  g = Shelley
+  4  9  5  3  1  2  2 17 |  h = Melville
+

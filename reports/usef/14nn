@@ -1,0 +1,64 @@
+=== Run information ===
+
+Scheme:weka.classifiers.lazy.IBk -K 14 -W 0 -A "weka.core.neighboursearch.LinearNNSearch -A \"weka.core.EuclideanDistance -R first-last\""
+Relation:     usef
+Instances:    315
+Attributes:   11
+              author
+              ufreq_colloquialism_n_01
+              ufreq_intensifier_n_01
+              ufreq_slang_n_02
+              ufreq_plural_n_01
+              ufreq_archaism_n_01
+              ufreq_combining_form_n_01
+              ufreq_comparative_n_01
+              ufreq_disparagement_n_01
+              ufreq_ethnic_slur_n_01
+              ufreq_irony_n_03
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+IB1 instance-based classifier
+using 14 nearest neighbour(s) for classification
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          96               30.4762 %
+Incorrectly Classified Instances       219               69.5238 %
+Kappa statistic                          0.1905
+Mean absolute error                      0.1897
+Root mean squared error                  0.3167
+Relative absolute error                 87.3231 %
+Root relative squared error             96.0991 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.3       0.192      0.227     0.3       0.259      0.549    Stoker
+                 0.167     0.143      0.13      0.167     0.146      0.613    Hawthorne
+                 0.875     0.004      0.966     0.875     0.918      0.984    Twain
+                 0.627     0.295      0.291     0.627     0.398      0.707    Doyle
+                 0.051     0.087      0.077     0.051     0.062      0.483    Dickens
+                 0.095     0.022      0.4       0.095     0.154      0.57     Austen
+                 0.091     0.014      0.333     0.091     0.143      0.748    Shelley
+                 0.163     0.055      0.318     0.163     0.215      0.6      Melville
+Weighted Avg.    0.305     0.117      0.326     0.305     0.283      0.642
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 15  8  0 14  9  1  2  1 |  a = Stoker
+ 10  6  0 10  6  0  0  4 |  b = Hawthorne
+  2  0 28  2  0  0  0  0 |  c = Twain
+ 11  3  0 32  0  1  0  4 |  d = Doyle
+  5  7  1 17  2  3  1  3 |  e = Dickens
+  9 11  0 12  3  4  0  3 |  f = Austen
+  9  2  0  5  4  0  2  0 |  g = Shelley
+  5  9  0 18  2  1  1  7 |  h = Melville
+

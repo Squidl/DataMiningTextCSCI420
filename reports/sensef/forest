@@ -1,0 +1,58 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.RandomForest -I 10 -K 0 -S 1
+Relation:     sensef
+Instances:    315
+Attributes:   4
+              author
+              sfreq_pos
+              sfreq_neg
+              sfreq_obj
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Random forest of 10 trees, each constructed while considering 3 random features.
+Out of bag error: 0.8286
+
+
+
+Time taken to build model: 0.09 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          56               17.7778 %
+Incorrectly Classified Instances       259               82.2222 %
+Kappa statistic                          0.0525
+Mean absolute error                      0.2037
+Root mean squared error                  0.3596
+Relative absolute error                 93.7527 %
+Root relative squared error            109.1161 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.22      0.158      0.208     0.22      0.214      0.553    Stoker
+                 0.25      0.125      0.205     0.25      0.225      0.632    Hawthorne
+                 0.188     0.12       0.15      0.188     0.167      0.599    Twain
+                 0.157     0.159      0.16      0.157     0.158      0.564    Doyle
+                 0.077     0.123      0.081     0.077     0.079      0.514    Dickens
+                 0.286     0.117      0.273     0.286     0.279      0.692    Austen
+                 0.091     0.034      0.167     0.091     0.118      0.605    Shelley
+                 0.116     0.11       0.143     0.116     0.128      0.608    Melville
+Weighted Avg.    0.178     0.126      0.175     0.178     0.175      0.593
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 11  8  2  9  7  5  4  4 |  a = Stoker
+  7  9  3  3  2  6  3  3 |  b = Hawthorne
+  2  1  6  8  6  2  0  7 |  c = Twain
+  9  5 12  8  5  3  1  8 |  d = Doyle
+  8  5  4  9  3  5  0  5 |  e = Dickens
+  9  8  1  2  6 12  2  2 |  f = Austen
+  2  5  1  3  2  6  2  1 |  g = Shelley
+  5  3 11  8  6  5  0  5 |  h = Melville
+

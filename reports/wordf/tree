@@ -1,0 +1,153 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.BFTree -S 1 -M 2 -N 5 -C 1.0 -P POSTPRUNED
+Relation:     wordf
+Instances:    315
+Attributes:   11
+              author
+              wfreq_the
+              wfreq_i
+              wfreq_he
+              wfreq_it
+              wfreq_was
+              wfreq_a
+              wfreq_to
+              wfreq_but
+              wfreq_and
+              wfreq_in
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Best-First Decision Tree
+
+wfreq_but < 0.01967
+|  wfreq_i < 0.03313
+|  |  wfreq_in < 0.00839
+|  |  |  wfreq_was < 0.00816
+|  |  |  |  wfreq_the < 0.03262: Melville(2.0/1.0)
+|  |  |  |  wfreq_the >= 0.03262: Stoker(1.0/2.0)
+|  |  |  wfreq_was >= 0.00816
+|  |  |  |  wfreq_he < 0.01343
+|  |  |  |  |  wfreq_it < 0.02092: Dickens(2.0/0.0)
+|  |  |  |  |  wfreq_it >= 0.02092: Stoker(1.0/1.0)
+|  |  |  |  wfreq_he >= 0.01343
+|  |  |  |  |  wfreq_and < 0.01808
+|  |  |  |  |  |  wfreq_it < 0.02462: Doyle(2.0/1.0)
+|  |  |  |  |  |  wfreq_it >= 0.02462: Twain(2.0/0.0)
+|  |  |  |  |  wfreq_and >= 0.01808: Twain(11.0/1.0)
+|  |  wfreq_in >= 0.00839
+|  |  |  wfreq_it < 0.03498
+|  |  |  |  wfreq_but < 0.00977
+|  |  |  |  |  wfreq_but < 0.00459
+|  |  |  |  |  |  wfreq_to < 0.01093
+|  |  |  |  |  |  |  wfreq_but < 0.00106: Twain(1.0/1.0)
+|  |  |  |  |  |  |  wfreq_but >= 0.00106: Dickens(4.0/0.0)
+|  |  |  |  |  |  wfreq_to >= 0.01093: Doyle(6.0/1.0)
+|  |  |  |  |  wfreq_but >= 0.00459
+|  |  |  |  |  |  wfreq_it < 0.00381: Twain(1.0/1.0)
+|  |  |  |  |  |  wfreq_it >= 0.00381: Dickens(11.0/2.0)
+|  |  |  |  wfreq_but >= 0.00977: Twain(8.0/28.0)
+|  |  |  wfreq_it >= 0.03498
+|  |  |  |  wfreq_was < 0.01771: Dickens(2.0/1.0)
+|  |  |  |  wfreq_was >= 0.01771: Hawthorne(7.0/0.0)
+|  wfreq_i >= 0.03313
+|  |  wfreq_i < 0.0741
+|  |  |  wfreq_the < 0.02658
+|  |  |  |  wfreq_he < 0.01907: Austen(10.0/1.0)
+|  |  |  |  wfreq_he >= 0.01907
+|  |  |  |  |  wfreq_and < 0.00474: Austen(2.0/0.0)
+|  |  |  |  |  wfreq_and >= 0.00474: Stoker(5.0/1.0)
+|  |  |  wfreq_the >= 0.02658
+|  |  |  |  wfreq_a < 0.01991
+|  |  |  |  |  wfreq_it < 0.02503
+|  |  |  |  |  |  wfreq_he < 0.02636
+|  |  |  |  |  |  |  wfreq_he < 0.02401
+|  |  |  |  |  |  |  |  wfreq_the < 0.0499: Austen(3.0/2.0)
+|  |  |  |  |  |  |  |  wfreq_the >= 0.0499: Stoker(1.0/1.0)
+|  |  |  |  |  |  |  wfreq_he >= 0.02401: Dickens(2.0/0.0)
+|  |  |  |  |  |  wfreq_he >= 0.02636
+|  |  |  |  |  |  |  wfreq_to < 0.00862: Twain(1.0/1.0)
+|  |  |  |  |  |  |  wfreq_to >= 0.00862: Stoker(12.0/4.0)
+|  |  |  |  |  wfreq_it >= 0.02503
+|  |  |  |  |  |  wfreq_he < 0.02938: Doyle(6.0/0.0)
+|  |  |  |  |  |  wfreq_he >= 0.02938
+|  |  |  |  |  |  |  wfreq_i < 0.04944
+|  |  |  |  |  |  |  |  wfreq_a < 0.01351: Stoker(1.0/3.0)
+|  |  |  |  |  |  |  |  wfreq_a >= 0.01351: Doyle(3.0/0.0)
+|  |  |  |  |  |  |  wfreq_i >= 0.04944: Stoker(2.0/0.0)
+|  |  |  |  wfreq_a >= 0.01991
+|  |  |  |  |  wfreq_in < 0.00819: Stoker(1.0/2.0)
+|  |  |  |  |  wfreq_in >= 0.00819: Doyle(24.0/4.0)
+|  |  wfreq_i >= 0.0741
+|  |  |  wfreq_but < 0.0105
+|  |  |  |  wfreq_in < 0.02096: Stoker(20.0/4.0)
+|  |  |  |  wfreq_in >= 0.02096: Shelley(2.0/0.0)
+|  |  |  wfreq_but >= 0.0105
+|  |  |  |  wfreq_it < 0.02066: Shelley(10.0/0.0)
+|  |  |  |  wfreq_it >= 0.02066: Stoker(1.0/2.0)
+wfreq_but >= 0.01967
+|  wfreq_but < 0.03523
+|  |  wfreq_the < 0.06672
+|  |  |  wfreq_and < 0.01741
+|  |  |  |  wfreq_i < 0.07669
+|  |  |  |  |  wfreq_a < 0.01792: Austen(14.0/1.0)
+|  |  |  |  |  wfreq_a >= 0.01792
+|  |  |  |  |  |  wfreq_in < 0.01501: Austen(2.0/1.0)
+|  |  |  |  |  |  wfreq_in >= 0.01501: Melville(5.0/1.0)
+|  |  |  |  wfreq_i >= 0.07669: Shelley(4.0/1.0)
+|  |  |  wfreq_and >= 0.01741
+|  |  |  |  wfreq_it < 0.02: Melville(8.0/1.0)
+|  |  |  |  wfreq_it >= 0.02
+|  |  |  |  |  wfreq_to < 0.01365: Hawthorne(3.0/0.0)
+|  |  |  |  |  wfreq_to >= 0.01365
+|  |  |  |  |  |  wfreq_he < 0.01806: Stoker(1.0/1.0)
+|  |  |  |  |  |  wfreq_he >= 0.01806: Austen(2.0/0.0)
+|  |  wfreq_the >= 0.06672
+|  |  |  wfreq_it < 0.01561: Twain(2.0/1.0)
+|  |  |  wfreq_it >= 0.01561: Hawthorne(12.0/3.0)
+|  wfreq_but >= 0.03523: Melville(17.0/3.0)
+
+Size of the Tree: 87
+
+Number of Leaf Nodes: 44
+
+Time taken to build model: 0.19 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         127               40.3175 %
+Incorrectly Classified Instances       188               59.6825 %
+Kappa statistic                          0.3137
+Mean absolute error                      0.1607
+Root mean squared error                  0.3454
+Relative absolute error                 73.9959 %
+Root relative squared error            104.7985 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.44      0.121      0.407     0.44      0.423      0.626    Stoker
+                 0.417     0.09       0.375     0.417     0.395      0.773    Hawthorne
+                 0.313     0.085      0.294     0.313     0.303      0.692    Twain
+                 0.431     0.087      0.489     0.431     0.458      0.716    Doyle
+                 0.436     0.156      0.283     0.436     0.343      0.691    Dickens
+                 0.429     0.059      0.529     0.429     0.474      0.657    Austen
+                 0.5       0.031      0.55      0.5       0.524      0.781    Shelley
+                 0.279     0.059      0.429     0.279     0.338      0.576    Melville
+Weighted Avg.    0.403     0.089      0.419     0.403     0.406      0.68 
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 22  1  3  6  6  3  8  1 |  a = Stoker
+  0 15  3  1 11  0  0  6 |  b = Hawthorne
+  1  5 10  6  8  1  0  1 |  c = Twain
+ 13  0  3 22 11  0  1  1 |  d = Doyle
+  5  3  7  5 17  2  0  0 |  e = Dickens
+  4  3  6  3  3 18  0  5 |  f = Austen
+  8  0  1  0  0  0 11  2 |  g = Shelley
+  1 13  1  2  4 10  0 12 |  h = Melville
+

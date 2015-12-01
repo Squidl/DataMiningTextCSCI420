@@ -1,0 +1,113 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.BFTree -S 1 -M 2 -N 5 -C 1.0 -P POSTPRUNED
+Relation:     usef
+Instances:    315
+Attributes:   11
+              author
+              ufreq_colloquialism_n_01
+              ufreq_intensifier_n_01
+              ufreq_slang_n_02
+              ufreq_plural_n_01
+              ufreq_archaism_n_01
+              ufreq_combining_form_n_01
+              ufreq_comparative_n_01
+              ufreq_disparagement_n_01
+              ufreq_ethnic_slur_n_01
+              ufreq_irony_n_03
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Best-First Decision Tree
+
+ufreq_ethnic_slur_n_01 < 0.03992
+|  ufreq_archaism_n_01 < 0.0098: Austen(32.0/98.0)
+|  ufreq_archaism_n_01 >= 0.0098
+|  |  ufreq_intensifier_n_01 < 0.13504
+|  |  |  ufreq_disparagement_n_01 < 0.00781
+|  |  |  |  ufreq_archaism_n_01 < 0.13753
+|  |  |  |  |  ufreq_plural_n_01 < 0.08052
+|  |  |  |  |  |  ufreq_slang_n_02 < 0.0655
+|  |  |  |  |  |  |  ufreq_irony_n_03 < 0.04861
+|  |  |  |  |  |  |  |  ufreq_combining_form_n_01 < 0.01872
+|  |  |  |  |  |  |  |  |  ufreq_combining_form_n_01 < 0.00814: Doyle(1.0/1.0)
+|  |  |  |  |  |  |  |  |  ufreq_combining_form_n_01 >= 0.00814: Stoker(2.0/0.0)
+|  |  |  |  |  |  |  |  ufreq_combining_form_n_01 >= 0.01872: Doyle(7.0/0.0)
+|  |  |  |  |  |  |  ufreq_irony_n_03 >= 0.04861: Austen(2.0/0.0)
+|  |  |  |  |  |  ufreq_slang_n_02 >= 0.0655
+|  |  |  |  |  |  |  ufreq_archaism_n_01 < 0.05132: Dickens(3.0/0.0)
+|  |  |  |  |  |  |  ufreq_archaism_n_01 >= 0.05132
+|  |  |  |  |  |  |  |  ufreq_irony_n_03 < 0.07177
+|  |  |  |  |  |  |  |  |  ufreq_intensifier_n_01 < 0.07177: Shelley(3.0/0.0)
+|  |  |  |  |  |  |  |  |  ufreq_intensifier_n_01 >= 0.07177
+|  |  |  |  |  |  |  |  |  |  ufreq_intensifier_n_01 < 0.0962: Hawthorne(2.0/0.0)
+|  |  |  |  |  |  |  |  |  |  ufreq_intensifier_n_01 >= 0.0962: Stoker(2.0/1.0)
+|  |  |  |  |  |  |  |  ufreq_irony_n_03 >= 0.07177: Doyle(2.0/0.0)
+|  |  |  |  |  ufreq_plural_n_01 >= 0.08052: Doyle(15.0/3.0)
+|  |  |  |  ufreq_archaism_n_01 >= 0.13753
+|  |  |  |  |  ufreq_colloquialism_n_01 < 0.32051: Melville(2.0/0.0)
+|  |  |  |  |  ufreq_colloquialism_n_01 >= 0.32051
+|  |  |  |  |  |  ufreq_colloquialism_n_01 < 0.40972: Stoker(1.0/1.0)
+|  |  |  |  |  |  ufreq_colloquialism_n_01 >= 0.40972: Austen(2.0/0.0)
+|  |  |  ufreq_disparagement_n_01 >= 0.00781
+|  |  |  |  ufreq_slang_n_02 < 0.00781: Doyle(1.0/1.0)
+|  |  |  |  ufreq_slang_n_02 >= 0.00781: Dickens(4.0/1.0)
+|  |  ufreq_intensifier_n_01 >= 0.13504
+|  |  |  ufreq_plural_n_01 < 0.0197
+|  |  |  |  ufreq_intensifier_n_01 < 0.22071
+|  |  |  |  |  ufreq_combining_form_n_01 < 0.03845: Hawthorne(8.0/2.0)
+|  |  |  |  |  ufreq_combining_form_n_01 >= 0.03845
+|  |  |  |  |  |  ufreq_slang_n_02 < 0.02471: Hawthorne(2.0/0.0)
+|  |  |  |  |  |  ufreq_slang_n_02 >= 0.02471
+|  |  |  |  |  |  |  ufreq_colloquialism_n_01 < 0.57487: Dickens(3.0/0.0)
+|  |  |  |  |  |  |  ufreq_colloquialism_n_01 >= 0.57487: Doyle(2.0/1.0)
+|  |  |  |  ufreq_intensifier_n_01 >= 0.22071
+|  |  |  |  |  ufreq_intensifier_n_01 < 0.28462: Stoker(4.0/3.0)
+|  |  |  |  |  ufreq_intensifier_n_01 >= 0.28462: Hawthorne(5.0/5.0)
+|  |  |  ufreq_plural_n_01 >= 0.0197: Stoker(16.0/45.0)
+ufreq_ethnic_slur_n_01 >= 0.03992: Twain(31.0/1.0)
+
+Size of the Tree: 47
+
+Number of Leaf Nodes: 24
+
+Time taken to build model: 0.22 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          77               24.4444 %
+Incorrectly Classified Instances       238               75.5556 %
+Kappa statistic                          0.126 
+Mean absolute error                      0.192 
+Root mean squared error                  0.3718
+Relative absolute error                 88.3704 %
+Root relative squared error            112.8263 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.1       0.192      0.089     0.1       0.094      0.517    Stoker
+                 0.139     0.122      0.128     0.139     0.133      0.526    Hawthorne
+                 0.938     0.011      0.909     0.938     0.923      0.961    Twain
+                 0.255     0.167      0.228     0.255     0.241      0.531    Doyle
+                 0.103     0.094      0.133     0.103     0.116      0.508    Dickens
+                 0.333     0.183      0.219     0.333     0.264      0.59     Austen
+                 0         0.02       0         0         0          0.51     Shelley
+                 0.14      0.088      0.2       0.14      0.164      0.564    Melville
+Weighted Avg.    0.244     0.122      0.231     0.244     0.235      0.58 
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+  5  9  1  8  5 15  1  6 |  a = Stoker
+  9  5  0  7  3  7  1  4 |  b = Hawthorne
+  2  0 30  0  0  0  0  0 |  c = Twain
+ 14  7  0 13  6  6  1  4 |  d = Doyle
+  4  6  0 12  4 10  1  2 |  e = Dickens
+  8  4  0  4  6 14  1  5 |  f = Austen
+  1  3  1  5  2  7  0  3 |  g = Shelley
+ 13  5  1  8  4  5  1  6 |  h = Melville
+

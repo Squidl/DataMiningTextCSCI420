@@ -1,0 +1,72 @@
+=== Run information ===
+
+Scheme:weka.classifiers.rules.ZeroR 
+Relation:     wordngram
+Instances:    315
+Attributes:   21
+              author
+              c2gram_ofthe
+              c2gram_inthe
+              c2gram_tothe
+              c2gram_itwas
+              c2gram_tobe
+              c2gram_andthe
+              c2gram_onthe
+              c2gram_itis
+              c2gram_atthe
+              c2gram_ofhis
+              c3gram_therewasa
+              c3gram_outofthe
+              c3gram_itwasa
+              c3gram_oneofthe
+              c3gram_thatitwas
+              c3gram_icannot
+              c3gram_therewasno
+              c3gram_idonot
+              c3gram_thathewas
+              c3gram_thathehad
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+ZeroR predicts class value: Doyle
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances          50               15.873  %
+Incorrectly Classified Instances       265               84.127  %
+Kappa statistic                         -0.0034
+Mean absolute error                      0.2172
+Root mean squared error                  0.3296
+Relative absolute error                100      %
+Root relative squared error            100      %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.1       0.102      0.156     0.1       0.122      0.495    Stoker
+                 0         0          0         0         0          0.458    Hawthorne
+                 0         0          0         0         0          0.471    Twain
+                 0.882     0.902      0.159     0.882     0.269      0.487    Doyle
+                 0         0          0         0         0          0.484    Dickens
+                 0         0          0         0         0          0.475    Austen
+                 0         0          0         0         0          0.46     Shelley
+                 0         0          0         0         0          0.473    Melville
+Weighted Avg.    0.159     0.162      0.051     0.159     0.063      0.478
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+  5  0  0 45  0  0  0  0 |  a = Stoker
+  4  0  0 32  0  0  0  0 |  b = Hawthorne
+  3  0  0 29  0  0  0  0 |  c = Twain
+  6  0  0 45  0  0  0  0 |  d = Doyle
+  4  0  0 35  0  0  0  0 |  e = Dickens
+  4  0  0 38  0  0  0  0 |  f = Austen
+  2  0  0 20  0  0  0  0 |  g = Shelley
+  4  0  0 39  0  0  0  0 |  h = Melville
+
