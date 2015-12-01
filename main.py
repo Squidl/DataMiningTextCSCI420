@@ -32,7 +32,8 @@ def stat_record(name,sample):
                      "usage":chap.chapter_register["usage_freq_dict"],
                      "topic":chap.chapter_register["topic_freq_dict"],
                      "region":chap.chapter_register["region_freq_dict"],
-                     "sense":chap.chapter_register["sense_dist_dict"]
+                     "sense":chap.chapter_register["sense_dist_dict"],
+                     "character_ngrams":chap.chapter_register["character_ngrams"]
                      }
                           for chap
                           in sample.chapters
@@ -41,33 +42,29 @@ def stat_record(name,sample):
     return record
 
 header_dict = OrderedDict([
-    ("author","{%s}"%(", ".join(text_format.getauthors())) ),
-    ("chapter_number","numeric"),
-    ("lex_rich","numeric"),
-    ("sents_pp_mean","numeric"),
-    ("sents_pp_std","numeric"),
-    ("words_sent_mean","numeric"),
-    ("words_sent_std","numeric"),
-    ("commas_sent_mean","numeric"),
-    ("semis_sent_mean","numeric"),
-    ("commas_word_mean","numeric"),
-    ("semis_word_mean","numeric")
+    ("author",{"type":"{%s}"%(", ".join(text_format.getauthors())),"set":"id","use":True}),
+    ("chapter_number",{"type":"numeric","set":"id","use":False}),
+    ("lex_rich",{"type":"numeric","set":"stat","use":True}),
+    ("sents_pp_mean",{"type":"numeric","set":"stat","use":True}),
+    ("sents_pp_std",{"type":"numeric","set":"stat","use":True}),
+    ("words_sent_mean",{"type":"numeric","set":"stat","use":True}),
+    ("words_sent_std",{"type":"numeric","set":"stat","use":True}),
+    ("commas_sent_mean",{"type":"numeric","set":"stat","use":True}),
+    ("semis_sent_mean",{"type":"numeric","set":"stat","use":True}),
+    ("commas_word_mean",{"type":"numeric","set":"stat","use":True}),
+    ("semis_word_mean",{"type":"numeric","set":"stat","use":True})
 ])
 
-wordfreq=False
-usagefreq=False
-regionfreq=False
-topicfreq=False
-sensefreq=True
 
 def print_csv_files(records, filename):
     #print(text_format.getauthors())
     if filename.endswith('.txt'):
         filename = filename[:-4]
+    header=[x for x in header_dict.keys() if header_dict[x]["use"]]
     with open(filename + '.arff', 'wb') as f:
         f.write("@relation %s\n\n"%filename.split("/")[-1].split(".")[0])
-        for k in header_dict.keys():
-            f.write("@attribute %s %s\n"%(k,header_dict[k]))
+        for k in header:
+            f.write("@attribute %s %s\n"%(k,header_dict[k]["type"]))
         if wordfreq:
             most_words=findbest([chapter["words"]
                                  for record in records
@@ -99,6 +96,15 @@ def print_csv_files(records, filename):
         if sensefreq:
             for k in ["pos","neg","obj"]:
                 f.write("@attribute sfreq_%s numeric\n"%k)
+        most_ngrams={}
+        if charngrams:
+            for n in text_proccessing.character_ngrams:
+                most_ngrams[n]=findbest([chap["character_ngrams"][n]
+                                         for record in records
+                                         for chap in record["chapters"]],
+                                        t=True)
+                for k in most_ngrams[n]:
+                    f.write("@attribute c%sgram_%s numeric\n"%(str(n),"".join(k)))
         f.write("\n\n@data\n")
         writer = csv.writer(f)
         for record in records:
@@ -106,7 +112,7 @@ def print_csv_files(records, filename):
                 chapter=record["chapters"][i]
                 if chapter != None:
                     chapter["stats"]["chapter_number"]=i
-                    data = [chapter["stats"][key] for key in header_dict.keys()]
+                    data = [chapter["stats"][key] for key in header]
                     if wordfreq:
                         data += [chapter["words"][key] for key in most_words]
                     if usagefreq:
@@ -117,6 +123,9 @@ def print_csv_files(records, filename):
                         data += [chapter["region"][key] for key in most_region]
                     if sensefreq:
                         data += [chapter["sense"][key] for key in ["pos","neg","obj"]]
+                    if charngrams:
+                        for n in chapter["character_ngrams"]:
+                            data += [chapter["character_ngrams"][n][key] for key in most_ngrams[n]]
                     writer.writerow(data)
 
 def paraiter(x,resultplace,force=False):
@@ -197,5 +206,16 @@ parser.add_argument('-w','--weka',
                     dest='weka',
                     action='store_true',
                     help='Chain opening combined output in weka. Must we used with -o.')
+for x in ["wordfreq","usagefreq","regionfreq","topicfreq","sensefreq","charngrams"]:
+    parser.add_argument("--"+x,
+                        dest=x,
+                        action="store_true",
+                        help="calculate %s attributes"%x)
 args = parser.parse_args()
+wordfreq=args.wordfreq
+usagefreq=args.usagefreq
+regionfreq=args.regionfreq
+topicfreq=args.topicfreq
+sensefreq=args.sensefreq
+charngrams=args.charngrams
 main(args)
