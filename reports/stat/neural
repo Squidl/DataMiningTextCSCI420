@@ -1,0 +1,269 @@
+=== Run information ===
+
+Scheme:weka.classifiers.functions.MultilayerPerceptron -L 0.3 -M 0.2 -N 500 -V 0 -S 0 -E 20 -H a
+Relation:     stat
+Instances:    315
+Attributes:   10
+              author
+              lex_rich
+              sents_pp_mean
+              sents_pp_std
+              words_sent_mean
+              words_sent_std
+              commas_sent_mean
+              semis_sent_mean
+              commas_word_mean
+              semis_word_mean
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Sigmoid Node 0
+    Inputs    Weights
+    Threshold    -4.118667669695724
+    Node 8    -0.7295915835661781
+    Node 9    -8.95445080626001
+    Node 10    -9.958963573402157
+    Node 11    -9.574416027707862
+    Node 12    7.784478244308064
+    Node 13    -12.753010040938953
+    Node 14    4.811614772121547
+    Node 15    -1.3890706582636978
+Sigmoid Node 1
+    Inputs    Weights
+    Threshold    -4.589562580200587
+    Node 8    -8.807387425769651
+    Node 9    0.5835685474988108
+    Node 10    0.8454749648063987
+    Node 11    -1.3892829591364115
+    Node 12    9.83906126126179
+    Node 13    -0.9186601998752778
+    Node 14    -7.933762882503957
+    Node 15    -2.7108887984385093
+Sigmoid Node 2
+    Inputs    Weights
+    Threshold    -9.419816642831073
+    Node 8    0.41065672148522825
+    Node 9    5.351336954156295
+    Node 10    -2.0877351540927434
+    Node 11    -5.371682650412532
+    Node 12    -9.15147476634444
+    Node 13    7.7103681705582385
+    Node 14    3.552317845959984
+    Node 15    7.723590310747947
+Sigmoid Node 3
+    Inputs    Weights
+    Threshold    -13.241516632889965
+    Node 8    4.412852337877809
+    Node 9    7.028762582620035
+    Node 10    -8.68557820822839
+    Node 11    -0.20162122459863357
+    Node 12    7.887262168756493
+    Node 13    -2.7176343322831658
+    Node 14    -6.624081970577614
+    Node 15    2.1312178708586123
+Sigmoid Node 4
+    Inputs    Weights
+    Threshold    0.4324844496623852
+    Node 8    -5.715410151502288
+    Node 9    -1.088330715996236
+    Node 10    5.614479836866132
+    Node 11    1.3081686874540182
+    Node 12    -11.440246046391618
+    Node 13    0.10010128351057193
+    Node 14    -11.408126574340958
+    Node 15    1.128166052669065
+Sigmoid Node 5
+    Inputs    Weights
+    Threshold    -7.843430121157986
+    Node 8    -11.09815146166219
+    Node 9    -5.242670451382351
+    Node 10    1.69838250956617
+    Node 11    -3.57442876582302
+    Node 12    -1.6366307017141262
+    Node 13    -6.261731807895984
+    Node 14    7.578669411472514
+    Node 15    6.971481138561072
+Sigmoid Node 6
+    Inputs    Weights
+    Threshold    -8.797119451643491
+    Node 8    3.6476588689407854
+    Node 9    -2.6038953514440615
+    Node 10    -7.167041365602695
+    Node 11    14.334984757387192
+    Node 12    1.642588240984952
+    Node 13    -7.520035112913907
+    Node 14    1.6040338734868624
+    Node 15    -4.823695557508388
+Sigmoid Node 7
+    Inputs    Weights
+    Threshold    -10.646610095442373
+    Node 8    -4.437534148289804
+    Node 9    -4.285284079835239
+    Node 10    8.005885471209172
+    Node 11    -3.603106477211907
+    Node 12    -2.250157559538296
+    Node 13    5.120502175715729
+    Node 14    7.474490901211291
+    Node 15    -8.102445088351363
+Sigmoid Node 8
+    Inputs    Weights
+    Threshold    0.14105426535238302
+    Attrib lex_rich    0.21199127068739132
+    Attrib sents_pp_mean    -0.49672183872614445
+    Attrib sents_pp_std    3.4716303734578546
+    Attrib words_sent_mean    5.324054710592077
+    Attrib words_sent_std    -6.049101497955916
+    Attrib commas_sent_mean    -7.257964104483598
+    Attrib semis_sent_mean    -0.5177083622152133
+    Attrib commas_word_mean    -18.248633679614272
+    Attrib semis_word_mean    -4.860772659839194
+Sigmoid Node 9
+    Inputs    Weights
+    Threshold    -12.394495303806918
+    Attrib lex_rich    -1.3390246563033998
+    Attrib sents_pp_mean    -4.7314629887073805
+    Attrib sents_pp_std    1.1413229837140937
+    Attrib words_sent_mean    -2.061682234836249
+    Attrib words_sent_std    -0.3025969744772306
+    Attrib commas_sent_mean    -0.583285040745915
+    Attrib semis_sent_mean    -5.0368170841997815
+    Attrib commas_word_mean    -4.639297182592673
+    Attrib semis_word_mean    -10.109618375619378
+Sigmoid Node 10
+    Inputs    Weights
+    Threshold    -1.0544356919931521
+    Attrib lex_rich    1.1290141120300083
+    Attrib sents_pp_mean    -0.5065729936678103
+    Attrib sents_pp_std    -6.734993570705077
+    Attrib words_sent_mean    -2.678558965554504
+    Attrib words_sent_std    8.109653106622485
+    Attrib commas_sent_mean    4.546188848033555
+    Attrib semis_sent_mean    1.5334302389638064
+    Attrib commas_word_mean    7.589163249029192
+    Attrib semis_word_mean    3.3533477270233503
+Sigmoid Node 11
+    Inputs    Weights
+    Threshold    2.4530822182165597
+    Attrib lex_rich    -4.50133537664356
+    Attrib sents_pp_mean    4.46736698424601
+    Attrib sents_pp_std    -11.557559426967181
+    Attrib words_sent_mean    7.433137567511659
+    Attrib words_sent_std    -1.537997413041022
+    Attrib commas_sent_mean    1.3005768313876587
+    Attrib semis_sent_mean    6.7123379047528084
+    Attrib commas_word_mean    1.9952334010266668
+    Attrib semis_word_mean    7.5311927686888
+Sigmoid Node 12
+    Inputs    Weights
+    Threshold    5.587822113322477
+    Attrib lex_rich    2.763173129296573
+    Attrib sents_pp_mean    15.070888997913348
+    Attrib sents_pp_std    1.4953397326210123
+    Attrib words_sent_mean    9.230312407186759
+    Attrib words_sent_std    -14.54187679898392
+    Attrib commas_sent_mean    6.612802514229597
+    Attrib semis_sent_mean    -1.8653074522355084
+    Attrib commas_word_mean    -4.471054256505895
+    Attrib semis_word_mean    -7.369040629887778
+Sigmoid Node 13
+    Inputs    Weights
+    Threshold    -2.210408566083499
+    Attrib lex_rich    -10.378241671013134
+    Attrib sents_pp_mean    5.453662068201345
+    Attrib sents_pp_std    -2.8867518211960004
+    Attrib words_sent_mean    -2.8074270196832436
+    Attrib words_sent_std    11.880170722341802
+    Attrib commas_sent_mean    3.077377471493955
+    Attrib semis_sent_mean    3.3615184139316114
+    Attrib commas_word_mean    6.802670197081125
+    Attrib semis_word_mean    3.840025474907004
+Sigmoid Node 14
+    Inputs    Weights
+    Threshold    15.784173779024922
+    Attrib lex_rich    -4.274260589265442
+    Attrib sents_pp_mean    -1.4207613685365117
+    Attrib sents_pp_std    10.419140391392142
+    Attrib words_sent_mean    3.2330182627159614
+    Attrib words_sent_std    2.5715588081543372
+    Attrib commas_sent_mean    -6.767489802237074
+    Attrib semis_sent_mean    2.489614169440001
+    Attrib commas_word_mean    -10.804344908408975
+    Attrib semis_word_mean    10.895937707274841
+Sigmoid Node 15
+    Inputs    Weights
+    Threshold    -0.2293874922638898
+    Attrib lex_rich    -1.700507450352196
+    Attrib sents_pp_mean    -7.575304925578055
+    Attrib sents_pp_std    -2.6295535217531962
+    Attrib words_sent_mean    4.326912240090871
+    Attrib words_sent_std    -1.3333420960053919
+    Attrib commas_sent_mean    -5.237395671949139
+    Attrib semis_sent_mean    3.142580014275992
+    Attrib commas_word_mean    -12.099045390897205
+    Attrib semis_word_mean    -2.9387133039743873
+Class Stoker
+    Input
+    Node 0
+Class Hawthorne
+    Input
+    Node 1
+Class Twain
+    Input
+    Node 2
+Class Doyle
+    Input
+    Node 3
+Class Dickens
+    Input
+    Node 4
+Class Austen
+    Input
+    Node 5
+Class Shelley
+    Input
+    Node 6
+Class Melville
+    Input
+    Node 7
+
+
+Time taken to build model: 0.72 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         242               76.8254 %
+Incorrectly Classified Instances        73               23.1746 %
+Kappa statistic                          0.7332
+Mean absolute error                      0.0684
+Root mean squared error                  0.2168
+Relative absolute error                 31.5086 %
+Root relative squared error             65.7997 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.7       0.057      0.7       0.7       0.7        0.907    Stoker
+                 0.861     0.029      0.795     0.861     0.827      0.976    Hawthorne
+                 0.625     0.028      0.714     0.625     0.667      0.909    Twain
+                 0.922     0.011      0.94      0.922     0.931      0.997    Doyle
+                 0.897     0.011      0.921     0.897     0.909      0.986    Dickens
+                 0.667     0.073      0.583     0.667     0.622      0.905    Austen
+                 0.591     0.031      0.591     0.591     0.591      0.938    Shelley
+                 0.767     0.026      0.825     0.767     0.795      0.939    Melville
+Weighted Avg.    0.768     0.034      0.772     0.768     0.769      0.946
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 35  2  4  0  0  5  4  0 |  a = Stoker
+  0 31  0  2  0  1  0  2 |  b = Hawthorne
+  3  1 20  1  1  5  1  0 |  c = Twain
+  3  0  1 47  0  0  0  0 |  d = Doyle
+  0  1  0  0 35  3  0  0 |  e = Dickens
+  5  0  2  0  1 28  3  3 |  f = Austen
+  2  1  1  0  0  3 13  2 |  g = Shelley
+  2  3  0  0  1  3  1 33 |  h = Melville
+

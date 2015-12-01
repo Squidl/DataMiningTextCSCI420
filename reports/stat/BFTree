@@ -1,0 +1,124 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.BFTree -S 1 -M 2 -N 5 -A -C 1.0 -P PREPRUNED
+Relation:     stat
+Instances:    315
+Attributes:   10
+              author
+              lex_rich
+              sents_pp_mean
+              sents_pp_std
+              words_sent_mean
+              words_sent_std
+              commas_sent_mean
+              semis_sent_mean
+              commas_word_mean
+              semis_word_mean
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Best-First Decision Tree
+
+semis_sent_mean < 0.0626
+|  words_sent_mean < 14.2216
+|  |  sents_pp_mean < 3.07108: Twain(5.0/0.0)
+|  |  sents_pp_mean >= 3.07108: Doyle(1.0/1.0)
+|  words_sent_mean >= 14.2216
+|  |  commas_word_mean < 0.06715: Doyle(50.0/0.0)
+|  |  commas_word_mean >= 0.06715: Hawthorne(3.0/0.0)
+semis_sent_mean >= 0.0626
+|  commas_word_mean < 0.07005
+|  |  sents_pp_mean < 3.74217
+|  |  |  commas_sent_mean < 1.20557
+|  |  |  |  semis_word_mean < 0.00997
+|  |  |  |  |  sents_pp_mean < 3.23705: Twain(18.0/1.0)
+|  |  |  |  |  sents_pp_mean >= 3.23705
+|  |  |  |  |  |  lex_rich < 3.3502: Twain(2.0/0.0)
+|  |  |  |  |  |  lex_rich >= 3.3502: Stoker(3.0/0.0)
+|  |  |  |  semis_word_mean >= 0.00997
+|  |  |  |  |  sents_pp_mean < 3.67007: Stoker(4.0/1.0)
+|  |  |  |  |  sents_pp_mean >= 3.67007: Austen(2.0/0.0)
+|  |  |  commas_sent_mean >= 1.20557
+|  |  |  |  sents_pp_std < 2.60155: Austen(25.0/1.0)
+|  |  |  |  sents_pp_std >= 2.60155: Austen(5.0/7.0)
+|  |  sents_pp_mean >= 3.74217
+|  |  |  words_sent_mean < 21.91607: Stoker(28.0/6.0)
+|  |  |  words_sent_mean >= 21.91607
+|  |  |  |  commas_word_mean < 0.05836
+|  |  |  |  |  words_sent_mean < 24.19923: Stoker(3.0/1.0)
+|  |  |  |  |  words_sent_mean >= 24.19923: Shelley(13.0/1.0)
+|  |  |  |  commas_word_mean >= 0.05836
+|  |  |  |  |  lex_rich < 2.70764: Melville(4.0/0.0)
+|  |  |  |  |  lex_rich >= 2.70764
+|  |  |  |  |  |  commas_word_mean < 0.06357
+|  |  |  |  |  |  |  commas_sent_mean < 1.44159: Austen(2.0/0.0)
+|  |  |  |  |  |  |  commas_sent_mean >= 1.44159: Stoker(5.0/0.0)
+|  |  |  |  |  |  commas_word_mean >= 0.06357
+|  |  |  |  |  |  |  words_sent_std < 19.24657
+|  |  |  |  |  |  |  |  sents_pp_mean < 4.54167: Hawthorne(5.0/0.0)
+|  |  |  |  |  |  |  |  sents_pp_mean >= 4.54167
+|  |  |  |  |  |  |  |  |  sents_pp_std < 3.71844: Shelley(3.0/0.0)
+|  |  |  |  |  |  |  |  |  sents_pp_std >= 3.71844
+|  |  |  |  |  |  |  |  |  |  sents_pp_mean < 7.08929: Stoker(3.0/0.0)
+|  |  |  |  |  |  |  |  |  |  sents_pp_mean >= 7.08929: Hawthorne(2.0/1.0)
+|  |  |  |  |  |  |  words_sent_std >= 19.24657: Austen(3.0/0.0)
+|  commas_word_mean >= 0.07005
+|  |  sents_pp_std < 2.05556
+|  |  |  semis_sent_mean < 0.29175: Dickens(35.0/1.0)
+|  |  |  semis_sent_mean >= 0.29175: Melville(2.0/0.0)
+|  |  sents_pp_std >= 2.05556
+|  |  |  semis_word_mean < 0.00997
+|  |  |  |  semis_word_mean < 0.00599: Hawthorne(21.0/2.0)
+|  |  |  |  semis_word_mean >= 0.00599
+|  |  |  |  |  commas_word_mean < 0.07911
+|  |  |  |  |  |  words_sent_mean < 25.20431
+|  |  |  |  |  |  |  sents_pp_mean < 3.1625: Dickens(1.0/1.0)
+|  |  |  |  |  |  |  sents_pp_mean >= 3.1625: Stoker(2.0/0.0)
+|  |  |  |  |  |  words_sent_mean >= 25.20431: Melville(4.0/1.0)
+|  |  |  |  |  commas_word_mean >= 0.07911: Hawthorne(4.0/1.0)
+|  |  |  semis_word_mean >= 0.00997: Melville(29.0/2.0)
+
+Size of the Tree: 59
+
+Number of Leaf Nodes: 30
+
+Time taken to build model: 0.14 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         210               66.6667 %
+Incorrectly Classified Instances       105               33.3333 %
+Kappa statistic                          0.6145
+Mean absolute error                      0.0973
+Root mean squared error                  0.2579
+Relative absolute error                 44.7881 %
+Root relative squared error             78.2659 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.58      0.128      0.46      0.58      0.513      0.802    Stoker
+                 0.667     0.029      0.75      0.667     0.706      0.891    Hawthorne
+                 0.375     0.053      0.444     0.375     0.407      0.824    Twain
+                 0.902     0.027      0.868     0.902     0.885      0.96     Doyle
+                 0.872     0.018      0.872     0.872     0.872      0.918    Dickens
+                 0.619     0.095      0.5       0.619     0.553      0.808    Austen
+                 0.364     0.014      0.667     0.364     0.471      0.806    Shelley
+                 0.721     0.022      0.838     0.721     0.775      0.843    Melville
+Weighted Avg.    0.667     0.052      0.68      0.667     0.667      0.861
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 29  3  6  0  0  9  2  1 |  a = Stoker
+  3 24  0  3  2  2  0  2 |  b = Hawthorne
+  6  0 12  4  0  8  2  0 |  c = Twain
+  1  0  4 46  0  0  0  0 |  d = Doyle
+  0  3  0  0 34  2  0  0 |  e = Dickens
+ 10  0  4  0  1 26  0  1 |  f = Austen
+  9  0  0  0  0  3  8  2 |  g = Shelley
+  5  2  1  0  2  2  0 31 |  h = Melville
+

@@ -1,0 +1,64 @@
+=== Run information ===
+
+Scheme:weka.classifiers.trees.RandomForest -I 10 -K 0 -S 1
+Relation:     stat
+Instances:    315
+Attributes:   10
+              author
+              lex_rich
+              sents_pp_mean
+              sents_pp_std
+              words_sent_mean
+              words_sent_std
+              commas_sent_mean
+              semis_sent_mean
+              commas_word_mean
+              semis_word_mean
+Test mode:10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+Random forest of 10 trees, each constructed while considering 4 random features.
+Out of bag error: 0.3333
+
+
+
+Time taken to build model: 0.08 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         244               77.4603 %
+Incorrectly Classified Instances        71               22.5397 %
+Kappa statistic                          0.7402
+Mean absolute error                      0.0831
+Root mean squared error                  0.203 
+Relative absolute error                 38.2537 %
+Root relative squared error             61.5905 %
+Total Number of Instances              315     
+
+=== Detailed Accuracy By Class ===
+
+               TP Rate   FP Rate   Precision   Recall  F-Measure   ROC Area  Class
+                 0.72      0.064      0.679     0.72      0.699      0.916    Stoker
+                 0.833     0.043      0.714     0.833     0.769      0.964    Hawthorne
+                 0.625     0.018      0.8       0.625     0.702      0.919    Twain
+                 0.98      0.008      0.962     0.98      0.971      0.998    Doyle
+                 0.872     0.011      0.919     0.872     0.895      0.994    Dickens
+                 0.714     0.066      0.625     0.714     0.667      0.937    Austen
+                 0.545     0.027      0.6       0.545     0.571      0.905    Shelley
+                 0.744     0.022      0.842     0.744     0.79       0.916    Melville
+Weighted Avg.    0.775     0.033      0.78      0.775     0.775      0.947
+
+=== Confusion Matrix ===
+
+  a  b  c  d  e  f  g  h   <-- classified as
+ 36  4  2  0  0  7  1  0 |  a = Stoker
+  0 30  0  1  1  1  2  1 |  b = Hawthorne
+  3  1 20  1  0  5  1  1 |  c = Twain
+  0  0  1 50  0  0  0  0 |  d = Doyle
+  0  3  1  0 34  1  0  0 |  e = Dickens
+  8  0  1  0  1 30  0  2 |  f = Austen
+  3  2  0  0  0  3 12  2 |  g = Shelley
+  3  2  0  0  1  1  4 32 |  h = Melville
+

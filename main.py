@@ -249,5 +249,6 @@ if(args.allfreq):
     topicfreq = True
     sensefreq = True
     charngrams = True
+    wordngrams = True
     usestat = True
 main(args)
