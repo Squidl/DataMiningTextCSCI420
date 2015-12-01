@@ -4,7 +4,7 @@ from nltk.corpus import sentiwordnet as swn
 
 from frequency_vector import freqdict, normalize
 
-character_ngrams=[2,3]
+character_ngrams=[2,3,4]
 words_ngrams=[]
 
 test=None

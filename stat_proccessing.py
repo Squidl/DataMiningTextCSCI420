@@ -3,8 +3,6 @@ import nltk
 
 def proccess_book(book):
     for chapter in book.chapters:
-        if chapter.chapter_register["validwords"]<100:
-            continue
         proccess_chapter(chapter, book.author)    
 
 def truncate(f, n):
@@ -16,34 +14,35 @@ def truncate(f, n):
 
 def proccess_chapter(chapter, author):
     words = chapter.get_words()
-    if len(words) > 500:
-        #Get the lexical richness, and the average length per paragraph
-        lex_rich = float(len(words)) / len(set(words))
-        sents_per_pp = np.array([len(x.sentences) for x in chapter.paragraphs])
-        #Get the average length per sentence, comma per sentence, and semicolon per sentence
-        (ls, cs, ss) = get_frequencies(chapter)
-        words_per_sent = np.array(ls)
-        commas_per_sent = np.array(cs)
-        semis_per_sent = np.array(ss)
-        
-        top_ten = nltk.FreqDist(words).most_common(10)
-        top_ten_frequencies = [float(freq * 100) / len(words) for (word,freq) in top_ten]
-        
-        chapter.stat_features = {
-            "author" : author,
-            "valid_words" : chapter.chapter_register["validwords"],
-            "lex_rich": lex_rich,
-            "sents_pp_mean": sents_per_pp.mean(),
-            "sents_pp_std" : sents_per_pp.std(),
-            "words_sent_mean" : words_per_sent.mean(),
-            "words_sent_std" : words_per_sent.std(),
-            "commas_sent_mean" : commas_per_sent.mean(),
-            "semis_sent_mean" : semis_per_sent.mean(),
-            "commas_word_mean" : float(commas_per_sent.sum())/words_per_sent.sum(),
-            "semis_word_mean" : float(semis_per_sent.sum())/words_per_sent.sum(),
-            "word_sparsity" : top_ten_frequencies
+    if len(words)<2:
+        return
+    #Get the lexical richness, and the average length per paragraph
+    lex_rich = float(len(words)) / len(set(words))
+    sents_per_pp = np.array([len(x.sentences) for x in chapter.paragraphs])
+    #Get the average length per sentence, comma per sentence, and semicolon per sentence
+    (ls, cs, ss) = get_frequencies(chapter)
+    words_per_sent = np.array(ls)
+    commas_per_sent = np.array(cs)
+    semis_per_sent = np.array(ss)
+    
+    top_ten = nltk.FreqDist(words).most_common(10)
+    top_ten_frequencies = [float(freq * 100) / len(words) for (word,freq) in top_ten]
+    
+    chapter.stat_features = {
+        "author" : author,
+        "valid_words" : chapter.chapter_register["validwords"],
+        "lex_rich": lex_rich,
+        "sents_pp_mean": sents_per_pp.mean(),
+        "sents_pp_std" : sents_per_pp.std(),
+        "words_sent_mean" : words_per_sent.mean(),
+        "words_sent_std" : words_per_sent.std(),
+        "commas_sent_mean" : commas_per_sent.mean(),
+        "semis_sent_mean" : semis_per_sent.mean(),
+        "commas_word_mean" : float(commas_per_sent.sum())/words_per_sent.sum(),
+        "semis_word_mean" : float(semis_per_sent.sum())/words_per_sent.sum(),
+        "word_sparsity" : top_ten_frequencies
         }
-        
+    
 def get_frequencies(chapter):
     """ Compute lengths, comma counts, and semicolon counts for each paragraph in a chapter """
     ls, cs, ss = ([] for i in range(3))
