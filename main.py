@@ -228,6 +228,11 @@ for x in ["wordfreq","usagefreq","regionfreq","topicfreq","sensefreq","charngram
                         dest=x,
                         action="store_true",
                         help="calculate %s attributes"%x)
+parser.add_argument("--allfreq",
+                    dest="allfreq",
+                    action="store_true",
+                    help="calculate all frequencies")
+
 args = parser.parse_args()
 wordfreq=args.wordfreq
 usagefreq=args.usagefreq
@@ -237,4 +242,12 @@ sensefreq=args.sensefreq
 charngrams=args.charngrams
 wordngrams=args.wordngrams
 usestat=not args.hidestat
+if(args.allfreq):
+    wordfreq = True
+    usagefreq = True
+    regionfreq = True
+    topicfreq = True
+    sensefreq = True
+    charngrams = True
+    usestat = True
 main(args)
